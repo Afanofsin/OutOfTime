@@ -39,7 +39,7 @@ namespace ProjectFiles.Code.LevelGeneration
                         {
                             if (tileId != 0)
                             {
-                                map.occupied[x, y] = 1;
+                                map.occupied[x, map.height - 1 - y] = 1;
                             }
                         }
                     }

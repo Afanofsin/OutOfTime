@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Cysharp.Threading.Tasks.Triggers;
 using NaughtyAttributes;
-using NUnit.Framework.Interfaces;
 using ProjectFiles.Code.LevelGeneration;
 using UnityEngine;
 
@@ -10,6 +8,10 @@ public class LevelGenerator : MonoBehaviour
 {
     [Header("Room settings")]
     [SerializeField] private List<Room> rooms;
+
+    [SerializeField] private Room startRoom;
+    [SerializeField] private List<Room> specialRooms;
+    [SerializeField] private List<Room> bossRoom;
     [SerializeField] private int roomCount;
 
     [Header("Grid")]
@@ -18,6 +20,7 @@ public class LevelGenerator : MonoBehaviour
 
     private Dictionary<Vector2Int, int> occupiedTiles;
     private List<ConnectionPoint> availableConnections;
+    private List<ConnectionPoint> lastRoomConnections;
     private Vector2Int middleCoord;
     private System.Random random;
 
@@ -40,8 +43,9 @@ public class LevelGenerator : MonoBehaviour
 
         int tries = 0;
         int placedRooms = 0;
+        int mainBranch = (int)(roomCount * 0.6f);
 
-        Room firstRoom = rooms[0];
+        Room firstRoom = startRoom;
         PlaceRoomAt(middleCoord, firstRoom);
         placedRooms++;
 
@@ -52,10 +56,19 @@ public class LevelGenerator : MonoBehaviour
                 Debug.LogWarning("No More Available Connections");
                 return;
             }
-            
-            
-            Room room = rooms[random.Next(0, rooms.Count)];
-            Vector2Int? placePos = TryPlaceRoom(room);
+
+            Vector2Int? placePos;
+            Room room;
+            if (mainBranch != placedRooms)
+            {
+                room = rooms[random.Next(0, rooms.Count)];
+                placePos = TryPlaceRoom(room, lastRoomConnections);
+            }
+            else
+            {
+                room = rooms[random.Next(0, rooms.Count)];
+                placePos = TryPlaceRoom(room, availableConnections);
+            }
 
             if (placePos.HasValue)
             {
@@ -77,10 +90,10 @@ public class LevelGenerator : MonoBehaviour
         Debug.Log($"Generation complete tries : {tries}, rooms : {placedRooms}");
     }
 
-    private Vector2Int? TryPlaceRoom(Room room)
+    private Vector2Int? TryPlaceRoom(Room room, List<ConnectionPoint> connectionsList)
     {
         List<int> indices = new List<int>();
-        for (int i = 0; i < availableConnections.Count; i++)
+        for (int i = 0; i < connectionsList.Count; i++)
         {
             indices.Add(i);
         }
@@ -95,7 +108,7 @@ public class LevelGenerator : MonoBehaviour
 
         foreach (var index in indices)
         {
-            var globalPoint = availableConnections[index];
+            var globalPoint = connectionsList[index];
             if (globalPoint.isConnected)
                 continue;
 
@@ -109,24 +122,15 @@ public class LevelGenerator : MonoBehaviour
             
             foreach (var roomPoint in shuffledRoomConnections)
             {
-                Debug.Log($"    Checking room connection: {roomPoint.direction}");
                 if (AreConnectionsCompatible(globalPoint.direction, roomPoint.direction))
                 {
-                    Debug.Log($"      Compatible! Trying to place...");
-                    Vector2Int offset = GetConnectionOffset(globalPoint.direction);
-                    //Vector2Int potentialPos = globalPoint.localPosition + offset - roomPoint.localPosition;
                     Vector2Int potentialPos = globalPoint.localPosition - roomPoint.localPosition;
                     
                     if (CheckIfRoomFitsInGrid(potentialPos, room))
                     {
-                        Debug.Log($"      SUCCESS! Placed at {potentialPos}");
                         // Mark this connection as used
                         globalPoint.isConnected = true;
                         return potentialPos;
-                    }
-                    else
-                    {
-                        Debug.Log($"      Failed fit check at {potentialPos}");
                     }
                 }
             }
@@ -142,29 +146,19 @@ public class LevelGenerator : MonoBehaviour
                (dir1 == Direction.West && dir2 == Direction.East) ||
                (dir1 == Direction.South && dir2 == Direction.North);
     }
-    
-    private Vector2Int GetConnectionOffset(Direction direction)
-    {
-        return direction switch
-        {
-            Direction.North => new Vector2Int(0, 1),
-            Direction.South => new Vector2Int(0, -1),
-            Direction.East => new Vector2Int(1, 0),
-            Direction.West => new Vector2Int(-1, 0),
-            _ => Vector2Int.zero
-        };
-    }
-    
+
     private bool CheckIfRoomFitsInGrid(Vector2Int pos, Room room)
     {
         int h = room.GetHeight;
         int w = room.GetWidth;
-        int x = pos.x + w;
-        int y = pos.y + h;
+        int maxX = pos.x + w;
+        int maxY = pos.y + h;
 
-        if (x < 0 || y < 0 || x > size || y > size)
+        if (pos.x < 0 || pos.y < 0 || maxX > size || maxY > size)
+        {
             return false;
-        
+        }
+
         for (int i = 0; i < h; i++)
         {
             for (int j = 0; j < w; j++)
@@ -189,6 +183,7 @@ public class LevelGenerator : MonoBehaviour
         Vector3 worldPos = grid.CellToWorld(new Vector3Int(position.x, position.y, 0));
         Instantiate(room, worldPos, Quaternion.identity, this.transform);
 
+        lastRoomConnections.Clear();
         foreach (ConnectionPoint connectionPoint in room.ConnectionPoints)
         {
             var worldPosConnectionPoint = new ConnectionPoint
@@ -198,6 +193,7 @@ public class LevelGenerator : MonoBehaviour
                 isConnected = false
             };
             availableConnections.Add(worldPosConnectionPoint);
+            lastRoomConnections.Add(worldPosConnectionPoint);
         }
     }
 
@@ -205,7 +201,7 @@ public class LevelGenerator : MonoBehaviour
     {
         int height = room.GetHeight;
         int width = room.GetWidth;
-
+        
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
@@ -215,6 +211,7 @@ public class LevelGenerator : MonoBehaviour
                     continue;
                 
                 Vector2Int pos =  new Vector2Int(coords.x + x, coords.y + y);
+                
                 occupiedTiles[pos] = tileType;
             }
         }
@@ -236,6 +233,78 @@ public class LevelGenerator : MonoBehaviour
         string timeNow = DateTime.Now.ToString("yyyyMMddHHmmssfff");
         int hashedTime = timeNow.GetHashCode();
         return Math.Abs(hashedTime % 100000000);
+    }
+    
+    [Button]
+    public void VisualizeOccupancyOnGrid()
+    {
+        if (occupiedTiles == null || occupiedTiles.Count == 0)
+        {
+            Debug.LogError("No occupancy data!");
+            return;
+        }
+
+        Grid grid = GetComponentInChildren<Grid>();
+        if (grid == null)
+        {
+            Debug.LogError("No Grid found in children!");
+            return;
+        }
+
+        // Remove old visualization if it exists
+        ClearOccupancyVisualization();
+
+        GameObject vizParent = new GameObject($"{name}_Grid_Occupancy_Visualization");
+        vizParent.transform.SetParent(transform);
+        vizParent.transform.localPosition = Vector3.zero;
+
+        foreach (var kvp in occupiedTiles)
+        {
+            Vector2Int cell = kvp.Key;
+            int tileType = kvp.Value;
+
+            if (tileType == 0)
+                continue;
+
+            GameObject quad = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            quad.transform.SetParent(vizParent.transform);
+
+            Vector3Int cellPos = new Vector3Int(cell.x, cell.y, 0);
+            Vector3 cellCenter = grid.GetCellCenterWorld(cellPos);
+
+            quad.transform.position = cellCenter;
+            quad.transform.rotation = Quaternion.identity;
+
+            Vector3 cellSize = grid.cellSize;
+            quad.transform.localScale = new Vector3(
+                cellSize.x * 0.9f,
+                cellSize.y * 0.9f,
+                1f
+            );
+
+            var renderer = quad.GetComponent<Renderer>();
+            var mat = new Material(Shader.Find("Sprites/Default"));
+            mat.color = new Color(1f, 0f, 0f, 0.35f);
+            renderer.material = mat;
+
+            // Push forward so it renders above tiles
+            quad.transform.position += Vector3.back * 0.1f;
+
+            DestroyImmediate(quad.GetComponent<Collider>());
+        }
+
+        Debug.Log($"Visualized {occupiedTiles.Count} occupied grid cells.");
+    }
+
+    [Button]
+    public void ClearOccupancyVisualization()
+    {
+        var viz = transform.Find($"{name}_Grid_Occupancy_Visualization");
+        if (viz != null)
+        {
+            DestroyImmediate(viz.gameObject);
+            Debug.Log("Cleared occupancy visualization.");
+        }
     }
     
 }
