@@ -10,6 +10,7 @@ namespace ProjectFiles.Code.LevelGeneration
         [SerializeField] private int width;
         [SerializeField] private int height;
         [SerializeField] public List<int> occupiedTiles;
+        public int Index = 0;
         
         [SerializeField] public List<ConnectionPoint> ConnectionPoints;
         public int GetHeight => height;
@@ -193,7 +194,7 @@ public class ConnectionPoint
 {
     public Vector2Int localPosition;
     public Direction direction;
-    public bool isConnected;
+    public ConnectionState connectionState;
 }
 
 public enum Direction
@@ -202,4 +203,11 @@ public enum Direction
     South,
     East,
     West
+}
+
+public enum ConnectionState
+{
+    Open,
+    ClosedRandomly,
+    Used
 }
