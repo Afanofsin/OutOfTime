@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwingArc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwingArc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/CustomSquare.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/CustomSquare.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/pngtree-a-detailed-3d-render-of-medieval-sword-against-transparent-background-png-image_16281492.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/pngtree-a-detailed-3d-render-of-medieval-sword-against-transparent-background-png-image_16281492.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +119,7 @@
       <workItem from="1768656993190" duration="23877000" />
       <workItem from="1768730390310" duration="12549000" />
       <workItem from="1768744746263" duration="801000" />
+      <workItem from="1768747238689" duration="134000" />
     </task>
     <servers />
   </component>

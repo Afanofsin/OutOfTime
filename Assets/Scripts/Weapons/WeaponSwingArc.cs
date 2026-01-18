@@ -54,7 +54,7 @@ public class WeaponSwing : MonoBehaviour
     {
         if (_hitTargets.Add(other) && other.TryGetComponent<IDamageable>(out var damageable))
         {
-            
+            damageable.TakeDamage(15);
         }
 
         if (_hitTargets.Add(other) && other.TryGetComponent<IAttackReactor>(out var reactor))
