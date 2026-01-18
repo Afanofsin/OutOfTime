@@ -2,7 +2,7 @@ using System;
 using Interfaces;
 using UnityEngine;
 
-public class Goblin : EnemyBase
+public class Goblin : EnemyBase, IAttackReactor
 {
     private void Update()
     {
@@ -32,6 +32,11 @@ public class Goblin : EnemyBase
     public override void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
-        Debug.Log(CurrentHealth);
+        React();
+    }
+
+    public void React()
+    {
+        
     }
 }
