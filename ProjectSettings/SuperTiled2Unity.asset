@@ -54,4 +54,6 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 1, a: 1}
   - {r: 0.7372549, g: 0.56078434, b: 0.56078434, a: 1}
   m_CustomObjectTypes: []
-  m_PrefabReplacements: []
+  m_PrefabReplacements:
+  - m_TypeName: Spawner
+    m_Prefab: {fileID: 4042248177728594999, guid: f8a7e1a8e27cbf64fa8d2e42fb4076f8, type: 3}

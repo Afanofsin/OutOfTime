@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -194,7 +195,38 @@ public class ConnectionPoint
 {
     public Vector2Int localPosition;
     public Direction direction;
-    public ConnectionState connectionState;
+    private ConnectionState _currentConnectionState = (ConnectionState)(-1);
+    public GameObject Cover;
+    public ConnectionPoint WorldConnection;
+    public Action OnStateFinalized;
+    
+    public ConnectionState connectionState
+    {
+        get { return _currentConnectionState; }
+        set
+        {
+            _currentConnectionState = value;
+        }
+    }
+
+    public void FinalizeCoverState()
+    {
+        if (Cover == null) return;
+        ConnectionState stateToUse = WorldConnection?.connectionState ?? connectionState;
+        switch (stateToUse)
+        {
+            case ConnectionState.Open:
+            case ConnectionState.ClosedRandomly:
+                Cover?.SetActive(true);
+                break;
+            case ConnectionState.Used:
+                Cover?.SetActive(false);
+                break;
+            default:
+                Cover?.SetActive(false);
+                break;
+        }
+    }
 }
 
 public enum Direction
