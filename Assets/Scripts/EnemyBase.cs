@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Interfaces;
 using NaughtyAttributes;
 using UnityEngine;
@@ -5,12 +6,12 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public abstract class EnemyBase : MonoBehaviour, IEnemyAction, IHealth, IDamageable
 {
-    [SerializeField] private int maxHealth;
-    [SerializeField, ReadOnly] private int _currentHealth;
+    [SerializeField] private float maxHealth;
+    [SerializeField, ReadOnly] private float _currentHealth;
 
     [SerializeField, ReadOnly] private GameObject target;
     public GameObject Target => target;
-    public int CurrentHealth
+    public float CurrentHealth
     {
         get => _currentHealth;
 
@@ -30,11 +31,11 @@ public abstract class EnemyBase : MonoBehaviour, IEnemyAction, IHealth, IDamagea
         target = targetGo;
     }
     
-    public int MaxHealth => maxHealth;
+    public float MaxHealth => maxHealth;
     
     public abstract void Action();
     public abstract void Die();
     public abstract void Heal(int amount);
-    public abstract void TakeDamage(int amount);
+    public abstract void TakeDamage(Dictionary<DamageType, float> amount);
 
 }

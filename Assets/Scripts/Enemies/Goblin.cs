@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Interfaces;
 using UnityEngine;
 
@@ -29,9 +30,13 @@ public class Goblin : EnemyBase, IAttackReactor
         
     }
 
-    public override void TakeDamage(int amount)
+    public override void TakeDamage(Dictionary<DamageType, float> damage)
     {
-        CurrentHealth -= amount;
+        foreach (var damageValue in damage.Values)
+        {
+            CurrentHealth -= damageValue;
+        }
+        
         React();
     }
 

@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 namespace Interfaces
 {
     public interface IDamageable
     {
-        void TakeDamage(int amount);
+        void TakeDamage(Dictionary<DamageType, float> amount);
     }
 }

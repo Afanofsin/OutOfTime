@@ -2,8 +2,8 @@ using UnityEngine;
 
 public interface IHealth
 {
-    int CurrentHealth { get; }
-    int MaxHealth { get; }
+    float CurrentHealth { get; }
+    float MaxHealth { get; }
     void Heal(int amount); 
     void Die();
 }

@@ -3,9 +3,7 @@ using UnityEngine;
 
 public interface IWeapon
 {
-    int Damage { get; }
-    Sprite WeaponSprite { get; }
-    int SpeedModifier { get; }
-    List<DamageType> DamageTypes { get; }
+    float SpeedModifier { get; }
+    Dictionary<DamageType, float> Damage { get; }
     void PerformAttack(float f);
 }

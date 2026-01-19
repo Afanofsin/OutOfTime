@@ -791,6 +791,7 @@ GameObject:
   - component: {fileID: 811153501}
   - component: {fileID: 811153502}
   - component: {fileID: 811153503}
+  - component: {fileID: 811153504}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -906,7 +907,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.55, y: 0}
+  m_Offset: {x: 0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0.015625, y: 0.015625, z: 0.015625, w: 0.015625}
     pivot: {x: 0, y: 0.5}
@@ -916,7 +917,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1, y: 1.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &811153503
 MonoBehaviour:
@@ -932,11 +933,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponArcSwing
   startAngle: 60
   endAngle: 60
-  duration: 0.1
+  duration: 0.15
   ease: 2
   hitMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &811153504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811153499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e348bae790b14af4080eaf53422b0784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeWeaponBase
+  speedModifier: 0
+  attackSpeed: 0
+  swing: {fileID: 811153503}
+  weaponSprite: {fileID: 21300000, guid: 4bc12c054ccbb694c8bf81adc1a7cc45, type: 3}
+  damageKeys:
+  - key: 1
+    value: 30
+  modifiers:
+  - modifiers: 0
+    damageModifierType: 1
+    modifierValue: 1.5
 --- !u!1 &1329239410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,7 +1114,6 @@ GameObject:
   - component: {fileID: 1630180312}
   - component: {fileID: 1630180311}
   - component: {fileID: 1630180310}
-  - component: {fileID: 1630180309}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1098,21 +1121,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1630180309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630180308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c1013950342854c934bdfb433f291e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackHandler
-  weaponOffset: {x: 0.55, y: 0}
-  weaponHitSize: {x: 1.1, y: 1.5}
-  weaponCollider: {fileID: 811153502}
 --- !u!61 &1630180310
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1301,7 +1309,19 @@ MonoBehaviour:
     m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
     m_ActionName: 'Player/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1630180313}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:

@@ -15,12 +15,19 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move(moveInput);
-        
     }
     
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void Dash(InputAction.CallbackContext context)
+    {
+        if (context.action.WasPressedThisFrame())
+        {
+            Dash();
+        }
     }
 
     public void Interact(InputAction.CallbackContext context)
@@ -47,7 +54,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            PlayerRb.linearVelocity = Vector2.zero;
+            PlayerRb.linearVelocity = Vector3.zero;
         }
     }
 
@@ -59,6 +66,11 @@ public class PlayerController : MonoBehaviour
             component.Interact(gameObject);
         }
     }
+
+    private void Dash()
+    {
+        //Dash logic here
+    }
     
     private void Attack(Vector3 mousePos)
     {
@@ -69,6 +81,6 @@ public class PlayerController : MonoBehaviour
         {
             angle += 360f;
         }
-        gameObject.GetComponent<AttackHandler>().PerformAttack(angle);
+        GameObject.FindGameObjectWithTag("Player").gameObject.GetComponentInChildren<MeleeWeaponBase>().PerformAttack(angle);
     }
 }
