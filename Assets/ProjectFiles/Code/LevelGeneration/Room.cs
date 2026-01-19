@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.Tilemaps;
 
 namespace ProjectFiles.Code.LevelGeneration
 {
@@ -11,16 +14,56 @@ namespace ProjectFiles.Code.LevelGeneration
         [SerializeField] private int width;
         [SerializeField] private int height;
         [SerializeField] public List<int> occupiedTiles;
-        public int Index = 0;
+        [FormerlySerializedAs("Index")] public int CompassIndex = 0;
+        public int RoomIndex = 0;
         
         [SerializeField] public List<ConnectionPoint> ConnectionPoints;
         public int GetHeight => height;
         public int GetWidth => width;
         
+        public Action OnPlayerEnteringRoom;
+        public Action OnRoomCleared;
+
+        private void OnEnable()
+        {
+            OnPlayerEnteringRoom += CloseDoors;
+            OnRoomCleared += OpenDoors;
+        }
+
+        private void OnDisable()
+        {
+            OnPlayerEnteringRoom -= CloseDoors;
+            OnRoomCleared -= OpenDoors;
+        }
+        
         public Vector2Int GetWorldConnectionPoint(Vector2Int roomPosition, ConnectionPoint point)
         {
             return roomPosition + point.localPosition;
         }
+
+        private void OpenDoors()
+        {
+            List<ConnectionPoint> openCons = ConnectionPoints
+                .Where(c => c.WorldConnection.connectionState == ConnectionState.Open).ToList();
+
+            foreach (var c in openCons)
+            {
+                c.CoverCollider?.SetActive(true);
+            }
+        }
+
+        private void CloseDoors()
+        {
+            List<ConnectionPoint> openCons = ConnectionPoints
+                .Where(c => c.WorldConnection.connectionState == ConnectionState.Open).ToList();
+
+            foreach (var c in openCons)
+            {
+                c.CoverCollider?.SetActive(false);
+            }
+        }
+
+        #region Editor
         
         [Button]
         public void ParseTmxDimensions()
@@ -187,6 +230,7 @@ namespace ProjectFiles.Code.LevelGeneration
     
             Debug.Log($"Created occupancy visualization for {name}. Red cubes show where collision detection thinks tiles are.");
         }
+        #endregion
     }
 }
 
@@ -196,7 +240,8 @@ public class ConnectionPoint
     public Vector2Int localPosition;
     public Direction direction;
     private ConnectionState _currentConnectionState = (ConnectionState)(-1);
-    public GameObject Cover;
+    public TilemapRenderer VisualCover;
+    public GameObject CoverCollider;
     public ConnectionPoint WorldConnection;
     public Action OnStateFinalized;
     
@@ -211,19 +256,22 @@ public class ConnectionPoint
 
     public void FinalizeCoverState()
     {
-        if (Cover == null) return;
+        if (VisualCover == null || CoverCollider == null) return;
         ConnectionState stateToUse = WorldConnection?.connectionState ?? connectionState;
         switch (stateToUse)
         {
             case ConnectionState.Open:
             case ConnectionState.ClosedRandomly:
-                Cover?.SetActive(true);
+                VisualCover.enabled = true;
+                CoverCollider?.SetActive(true);
                 break;
             case ConnectionState.Used:
-                Cover?.SetActive(false);
+                VisualCover.enabled = false;
+                CoverCollider?.SetActive(false);
                 break;
             default:
-                Cover?.SetActive(false);
+                VisualCover.enabled = false;
+                CoverCollider?.SetActive(false);
                 break;
         }
     }

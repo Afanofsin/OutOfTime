@@ -142,7 +142,7 @@ public class LevelGenerator : MonoBehaviour
                 }
                 //TryToCloseConnection();
 
-                instance.Index = index;
+                instance.CompassIndex = index;
                 index++;
                 placedRooms++;
             }
