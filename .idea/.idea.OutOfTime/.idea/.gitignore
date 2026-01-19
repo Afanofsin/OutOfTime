@@ -2,10 +2,10 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
-/.idea.OutOfTime.iml
-/contentModel.xml
 /modules.xml
+/contentModel.xml
 /projectSettingsUpdater.xml
+/.idea.OutOfTime.iml
 # Ignored default folder with query files
 /queries/
 # Datasource local storage ignored files
