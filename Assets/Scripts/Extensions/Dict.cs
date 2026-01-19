@@ -1,39 +1,36 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 
-[System.Serializable]
-public abstract class SerializableDictionary<TKey, TValue> 
-    : ISerializationCallbackReceiver
+public static class DictionaryUtils
 {
-    [SerializeField] private List<TKey> keys = new();
-    [SerializeField] private List<TValue> values = new();
-
-    protected Dictionary<TKey, TValue> dictionary = new();
-
-    public IReadOnlyDictionary<TKey, TValue> Dictionary => dictionary;
-
-    public void OnBeforeSerialize()
+    public static Dictionary<TKey, TValue> Merge<TKey, TValue>(
+        Dictionary<TKey, TValue> a,
+        Dictionary<TKey, TValue> b,
+        Func<TValue, TValue, TValue> mergeFunc)
     {
-        keys.Clear();
-        values.Clear();
+        var result = new Dictionary<TKey, TValue>(a);
 
-        foreach (var kvp in dictionary)
+        foreach (var (key, value) in b)
         {
-            keys.Add(kvp.Key);
-            values.Add(kvp.Value);
+            result[key] = result.TryGetValue(key, out var existing) ? mergeFunc(existing, value) : value;
         }
+        return result;
     }
-
-    public void OnAfterDeserialize()
+    public static Dictionary<TKey, TValue> MergeIntersection<TKey, TValue>(
+        Dictionary<TKey, TValue> a,
+        Dictionary<TKey, TValue> b,
+        Func<TValue, TValue, TValue> mergeFunc)
     {
-        dictionary.Clear();
+        var result = new Dictionary<TKey, TValue>();
 
-        for (int i = 0; i < Mathf.Min(keys.Count, values.Count); i++)
+        foreach (var (key, valueA) in a)
         {
-            dictionary[keys[i]] = values[i];
+            if (b.TryGetValue(key, out var valueB))
+            {
+                result[key] = mergeFunc(valueA, valueB);
+            }
         }
+
+        return result;
     }
 }
-
-[System.Serializable]
-public class DamageTypeFloatDictionary : SerializableDictionary<DamageType, float> {}

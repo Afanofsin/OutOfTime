@@ -1,23 +1,20 @@
-using System;
 using System.Collections.Generic;
 using Interfaces;
 using UnityEngine;
 using PrimeTween;
-using Unity.VisualScripting;
 
 public class WeaponArcSwing : MonoBehaviour, ISwing
 {
     [SerializeField] private float startAngle;
     [SerializeField] private float endAngle;
-    [SerializeField] private float duration;
     [SerializeField] private Ease ease;
     [SerializeField] private LayerMask hitMask;
+    [SerializeField] private TrailRenderer trail;
     private Tween _swingTween;
-    private Dictionary<DamageType, float> _damage;
-    
+    private IReadOnlyDictionary<DamageType, float> _damage;
     private Collider2D _weaponCollider;
     private readonly HashSet<Collider2D> _hitTargets = new();
-
+    
     private void Start()
     {
         _weaponCollider = gameObject.GetComponent<Collider2D>();
@@ -25,10 +22,10 @@ public class WeaponArcSwing : MonoBehaviour, ISwing
         _weaponCollider.excludeLayers -= hitMask;
     }
 
-    public void StartSwing(float attackAngle, Dictionary<DamageType, float> damage)
-    {   
+    public void StartSwing(float attackAngle, IReadOnlyDictionary<DamageType, float> damage, float duration)
+    {
         
-        if(_swingTween.isAlive) return;
+        if (_swingTween.isAlive) return;
         
         _hitTargets.Clear();
         
@@ -37,8 +34,9 @@ public class WeaponArcSwing : MonoBehaviour, ISwing
 
         transform.localRotation = Quaternion.Euler(0f, 0f, from);
         _weaponCollider.enabled = true;
-
         _damage = damage;
+        
+        trail.Clear();
         _swingTween = Tween.Custom(
             from,
             to,
@@ -56,12 +54,14 @@ public class WeaponArcSwing : MonoBehaviour, ISwing
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_hitTargets.Add(other) && other.TryGetComponent<IDamageable>(out var damageable))
+        if (!_hitTargets.Add(other)) return;
+
+        if (other.TryGetComponent<IDamageable>(out var damageable))
         {
             damageable.TakeDamage(_damage);
         }
-
-        if (_hitTargets.Add(other) && other.TryGetComponent<IAttackReactor>(out var reactor))
+        
+        if (other.TryGetComponent<IAttackReactor>(out var reactor))
         {
             reactor.React();
         }

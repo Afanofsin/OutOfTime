@@ -1,101 +1,31 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 
-[ExecuteAlways]
-public class MeleeWeaponBase : MonoBehaviour, IWeapon
+
+public abstract class MeleeWeaponBase : SerializedMonoBehaviour, IWeapon, IEquipable
 {
-    [SerializeField] private float speedModifier;
-    [SerializeField] private float attackSpeed;
-    [SerializeField] private WeaponArcSwing swing;
+    [SerializeField] private float speedValue;
+    private StatModifier _speedModifier;
+    [SerializeField] private float attackSpeedValue;
+    private StatModifier _attackSpeedModifier;
+    [OdinSerialize] private ISwing swing;
     [SerializeField] private Sprite weaponSprite;
-    [SerializeField] private DamageTypeEntry[] damageKeys;
-    [SerializeField] private List<WeaponModifier> modifiers;
+    [OdinSerialize] private Dictionary<DamageType, float> _baseDamage = new();
+    public IReadOnlyDictionary<DamageType, float> BaseDamage => _baseDamage;
+    private void Awake() => gameObject.GetComponentInChildren<SpriteRenderer>().sprite = weaponSprite;
     
-    private Dictionary<DamageType, float> _damageMap = new();
-
-    public Dictionary<DamageType, float> Damage => _damageMap;
-    
-    public float SpeedModifier => speedModifier;
-    
-    private void Awake()
+    public void PerformAttack(float angle, Dictionary<DamageType, float> damageType, float durationModifier)
     {
-        gameObject.GetOrAddComponent<SpriteRenderer>().sprite = weaponSprite;
+        var merged = DictionaryUtils.MergeIntersection(_baseDamage, damageType, (x, y) => x + x * y/100);
+        var duration = attackSpeedValue * durationModifier / 100;
+        swing.StartSwing(angle, merged, Mathf.Max(0.1f, duration));
     }
 
-    private void Update()
+    public StatModifier GetStatModifier()
     {
-        foreach (var VARIABLE in _damageMap)
-        {
-            Debug.Log(VARIABLE);
-        }
-    }
-
-    public void PerformAttack(float angle)
-    {
-        swing.StartSwing(angle, Damage);
-    }
-    
-    public void AddDamageType(DamageTypeEntry damageEntry)
-    {
-        if (_damageMap.TryGetValue(damageEntry.key, out var value))
-        {
-            _damageMap[damageEntry.key] = value + damageEntry.value;
-        }
-        else
-        {
-            _damageMap.Add(damageEntry.key, damageEntry.value);
-        }
-    }
-
-    public void AddDamageType(DamageTypeEntry[] damageEntries)
-    {
-        for (var i = 0; i < damageEntries.Length; i++)
-        {
-            if (_damageMap.TryGetValue(damageKeys[i].key, out var value))
-            {
-                _damageMap[damageKeys[i].key] = value + damageKeys[i].value;
-            }
-            else
-            {
-                _damageMap.Add(damageKeys[i].key, damageKeys[i].value);
-            }
-        }
-    }
-
-    public void ApplyWeaponModifiers()
-    {
-        foreach (var modifier in modifiers)
-        {
-            switch (modifier.modifiers)
-            {
-                case WeaponModifierType.Damage:
-                {
-                    if (_damageMap.TryGetValue(modifier.damageModifierType, out var dmgValue ))
-                    {
-                        _damageMap[modifier.damageModifierType] = dmgValue * modifier.modifierValue;
-                    }
-                    break;
-                }
-                case WeaponModifierType.AttackSpeed:
-                {
-                    attackSpeed *= modifier.modifierValue;
-                    break;
-                }
-                case WeaponModifierType.WalkSpeed:
-                {
-                    speedModifier *= modifier.modifierValue;
-                    break;
-                }
-            }
-        }
-    }
-    
-    public void OnValidate()
-    {
-        _damageMap.Clear();
-        AddDamageType(damageKeys);
-        ApplyWeaponModifiers();
+        return _speedModifier = new StatModifierBase(StatType.Speed, x => x + speedValue);
     }
 }
+

@@ -1,6 +1,6 @@
 namespace Interfaces
 {
-    public interface IEnemyAction
+    public interface IEnemy
     {
         public void Action();
     }

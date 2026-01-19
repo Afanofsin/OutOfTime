@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private EnemyBase enemyToSpawn;
+    [SerializeField] private EnemyEntityBase enemyToSpawn;
     [SerializeField] private GameObject target;
 
     private void Start()

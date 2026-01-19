@@ -4,6 +4,6 @@ namespace Interfaces
 {
     public interface IDamageable
     {
-        void TakeDamage(Dictionary<DamageType, float> amount);
+        void TakeDamage(IReadOnlyDictionary<DamageType, float> amount);
     }
 }

@@ -7,9 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private Vector2 moveInput;
     [SerializeField] private LayerMask interactableMask;
-    [SerializeField] private LayerMask hitMask;
     
-    public static Vector3 WorldMousePos => Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+    public static Vector2 WorldMousePos => Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
     private Rigidbody2D PlayerRb => gameObject.GetOrAddComponent<Rigidbody2D>();
     
     private void Update()
@@ -74,13 +73,12 @@ public class PlayerController : MonoBehaviour
     
     private void Attack(Vector3 mousePos)
     {
-        mousePos.z = 0;
         var direction = mousePos - transform.position;
         var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         if (angle < 0)
         {
             angle += 360f;
         }
-        GameObject.FindGameObjectWithTag("Player").gameObject.GetComponentInChildren<MeleeWeaponBase>().PerformAttack(angle);
+        GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<Player>().Attack(angle);
     }
 }

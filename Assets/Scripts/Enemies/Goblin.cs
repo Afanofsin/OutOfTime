@@ -1,46 +1,28 @@
-using System;
 using System.Collections.Generic;
 using Interfaces;
 using UnityEngine;
 
-public class Goblin : EnemyBase, IAttackReactor
+public class Goblin : EnemyEntityBase, IDamageable
 {
-    private void Update()
+    public void TakeDamage(IReadOnlyDictionary<DamageType, float> damage)
+    {
+        foreach (var damageKvp in damage)
+        {
+            CurrentHealth -= Mathf.Max(0, damageKvp.Value - damageKvp.Value * (resists[damageKvp.Key] / 100));
+        }
+        React();
+    }
+
+    public override void React()
     {
         
     }
-
-    private void Start()
-    {
-        CurrentHealth = MaxHealth;
-    }
-    
     public override void Action()
     {
         
     }
-
-    public override void Die()
-    {
-        Destroy(gameObject);
-    }
-
-    public override void Heal(int amount)
-    {
-        
-    }
-
-    public override void TakeDamage(Dictionary<DamageType, float> damage)
-    {
-        foreach (var damageValue in damage.Values)
-        {
-            CurrentHealth -= damageValue;
-        }
-        
-        React();
-    }
-
-    public void React()
+    
+    public override void Heal(float amount)
     {
         
     }
