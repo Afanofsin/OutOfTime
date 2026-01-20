@@ -2,7 +2,8 @@ using UnityEngine;
 
 public enum DamageType
 {
-    Physical,
+    None = -1,
+    Physical = 0,
     Fire,
     Ice,
     Energy,
