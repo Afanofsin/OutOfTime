@@ -252,36 +252,6 @@ public class LevelGenerator : MonoBehaviour
         }
     }
     
-    // private bool StartNewBranch()
-    // {
-    //     for (int attempt = 0; attempt < 5; attempt++)
-    //     {
-    //         var available = branchStartConnections
-    //             .Where(c => c.connectionState == ConnectionState.Open)
-    //             .ToList();
-    //
-    //         if (available.Count == 0)
-    //         {
-    //             available = branchStartConnections
-    //                 .Where(c => c.connectionState == ConnectionState.ClosedRandomly)
-    //                 .ToList();
-    //
-    //             if (available.Count == 0)
-    //                 return false;
-    //         }
-    //
-    //         var start = available[random.Next(available.Count)];
-    //         if (startConnection.connectionState == ConnectionState.ClosedRandomly)
-    //         {
-    //             startConnection.connectionState = ConnectionState.Open;
-    //         }
-    //         lastPlacedRoomConnections.Clear();
-    //         lastPlacedRoomConnections.Add(start);
-    //         return true;
-    //     }
-    //     return false;
-    // }
-    
     private bool StartNewBranch()
     {
         // 1. Get all candidates (Open or ClosedRandomly)

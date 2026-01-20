@@ -22,18 +22,22 @@ namespace ProjectFiles.Code.LevelGeneration
         public int GetWidth => width;
         
         public Action OnPlayerEnteringRoom;
+        public Action OnEnemyDeath;
         public Action OnRoomCleared;
-
+        private int enemyCount;
+        
         private void OnEnable()
         {
             OnPlayerEnteringRoom += CloseDoors;
             OnRoomCleared += OpenDoors;
+            OnEnemyDeath += HandleEnemyDeath;
         }
 
         private void OnDisable()
         {
             OnPlayerEnteringRoom -= CloseDoors;
             OnRoomCleared -= OpenDoors;
+            OnEnemyDeath -= HandleEnemyDeath;
         }
         
         public Vector2Int GetWorldConnectionPoint(Vector2Int roomPosition, ConnectionPoint point)
@@ -63,6 +67,13 @@ namespace ProjectFiles.Code.LevelGeneration
             }
         }
 
+        public void SubscribeEnemyToRoom() => enemyCount++;
+
+        private void HandleEnemyDeath()
+        {
+            
+        }
+        
         #region Editor
         
         [Button]

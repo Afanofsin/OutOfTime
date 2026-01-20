@@ -1,3 +1,5 @@
+using System;
+using ProjectFiles.Code.LevelGeneration;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -5,9 +7,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private EnemyBase enemyToSpawn;
     [SerializeField] private GameObject target;
 
+    private Room room;
+    
     private void Start()
     {
-        Spawn();
+        room = GetComponentInParent<Room>();
+        room.OnPlayerEnteringRoom += Spawn;
+        //Spawn();
     }
     
     private void Spawn()
