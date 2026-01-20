@@ -9,8 +9,16 @@ namespace ProjectFiles.Code.LevelGeneration
 
         private void Awake()
         {
-            parentRoom = this.GetComponentInParent<Room>();
-            
+            parentRoom = GetComponentInParent<Room>(true);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                Debug.Log($"Player {other.name} is entering room");
+                parentRoom.OnPlayerEnteringRoom();
+            }
         }
     }
 }

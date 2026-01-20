@@ -13,6 +13,8 @@ public abstract class EntityBase : SerializedMonoBehaviour, IHealth, IAttackReac
     [OdinSerialize] public IReadOnlyDictionary<DamageType, float> resists;
     public float MaxHealth => maxHealth;
     
+    public Action OnEntityDeath;
+    
     public float CurrentHealth
     {
         get => currentHealth;
@@ -29,7 +31,12 @@ public abstract class EntityBase : SerializedMonoBehaviour, IHealth, IAttackReac
     }
 
     public virtual void Awake() => CurrentHealth = maxHealth;
-    public virtual void Die() => Destroy(gameObject);
+
+    public virtual void Die()
+    {
+        OnEntityDeath?.Invoke();
+        Destroy(gameObject);
+    }
     public abstract void React();
     public abstract void Heal(float amount);
 }

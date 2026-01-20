@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NaughtyAttributes;
+using Sirenix.OdinInspector; 
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -18,26 +18,28 @@ namespace ProjectFiles.Code.LevelGeneration
         public int RoomIndex = 0;
         
         [SerializeField] public List<ConnectionPoint> ConnectionPoints;
+        [SerializeField] public List<RoomDoor> Doors;
         public int GetHeight => height;
         public int GetWidth => width;
         
-        public Action OnPlayerEnteringRoom;
-        public Action OnEnemyDeath;
+        // Runtime mapping from instance connections to world connections
+        private Dictionary<ConnectionPoint, ConnectionPoint> connectionMapping = new Dictionary<ConnectionPoint, ConnectionPoint>();
+        
+        public Action OnPlayerEnteredRoom;
         public Action OnRoomCleared;
         private int enemyCount;
         
         private void OnEnable()
         {
-            OnPlayerEnteringRoom += CloseDoors;
+            if (Doors == null)
+                Doors = new List<RoomDoor>();
+            
             OnRoomCleared += OpenDoors;
-            OnEnemyDeath += HandleEnemyDeath;
         }
 
         private void OnDisable()
         {
-            OnPlayerEnteringRoom -= CloseDoors;
             OnRoomCleared -= OpenDoors;
-            OnEnemyDeath -= HandleEnemyDeath;
         }
         
         public Vector2Int GetWorldConnectionPoint(Vector2Int roomPosition, ConnectionPoint point)
@@ -47,33 +49,74 @@ namespace ProjectFiles.Code.LevelGeneration
 
         private void OpenDoors()
         {
-            List<ConnectionPoint> openCons = ConnectionPoints
-                .Where(c => c.WorldConnection.connectionState == ConnectionState.Open).ToList();
-
-            foreach (var c in openCons)
+            List<Direction> openDirs = new List<Direction>(4);
+        
+            foreach (var c in ConnectionPoints)
             {
-                c.CoverCollider?.SetActive(true);
+                if (GetConnectionState(c) == ConnectionState.Used)
+                {
+                    c.CoverCollider?.SetActive(false);
+                    openDirs.Add(c.direction);
+                }
+            }
+
+            foreach (var door in Doors.Where(d => openDirs.Contains(d.Direction)))
+            {
+                door.Open();
             }
         }
 
         private void CloseDoors()
         {
-            List<ConnectionPoint> openCons = ConnectionPoints
-                .Where(c => c.WorldConnection.connectionState == ConnectionState.Open).ToList();
-
-            foreach (var c in openCons)
+            //if (enemyCount == 0) return;
+            Debug.Log($"CloseDoors called in room {name}, doors count: {Doors.Count}");
+            List<Direction> openDirs = new List<Direction>(4);
+        
+            foreach (var c in ConnectionPoints)
             {
-                c.CoverCollider?.SetActive(false);
+                if (GetConnectionState(c) == ConnectionState.Used)
+                {
+                    c.CoverCollider?.SetActive(true);
+                    openDirs.Add(c.direction);
+                }
             }
+            
+            foreach (var door in Doors.Where(d => openDirs.Contains(d.Direction)))
+            {
+                door.Close();
+                Debug.Log($"Closing off a {door.Direction}");
+            }
+        }
+        
+        public void RegisterConnectionMapping(ConnectionPoint instanceConnection, ConnectionPoint worldConnection)
+        {
+            connectionMapping[instanceConnection] = worldConnection;
+        }
+    
+        public ConnectionState GetConnectionState(ConnectionPoint instanceConnection)
+        {
+            if (connectionMapping.TryGetValue(instanceConnection, out var worldConnection))
+            {
+                return worldConnection.connectionState;
+            }
+            return ConnectionState.Open; // Default
         }
 
         public void SubscribeEnemyToRoom() => enemyCount++;
 
-        private void HandleEnemyDeath()
+        public void HandleEnemyDeath()
         {
-            
+            enemyCount--;
+            if (enemyCount <= 0)
+                OnRoomCleared?.Invoke();
         }
-        
+
+        public void OnPlayerEnteringRoom()
+        {
+            OnPlayerEnteredRoom?.Invoke();
+            CloseDoors();
+        }
+
         #region Editor
         
         [Button]
@@ -253,7 +296,6 @@ public class ConnectionPoint
     private ConnectionState _currentConnectionState = (ConnectionState)(-1);
     public TilemapRenderer VisualCover;
     public GameObject CoverCollider;
-    public ConnectionPoint WorldConnection;
     public Action OnStateFinalized;
     
     public ConnectionState connectionState
@@ -265,10 +307,9 @@ public class ConnectionPoint
         }
     }
 
-    public void FinalizeCoverState()
+    public void FinalizeCoverState(ConnectionState stateToUse)
     {
         if (VisualCover == null || CoverCollider == null) return;
-        ConnectionState stateToUse = WorldConnection?.connectionState ?? connectionState;
         switch (stateToUse)
         {
             case ConnectionState.Open:

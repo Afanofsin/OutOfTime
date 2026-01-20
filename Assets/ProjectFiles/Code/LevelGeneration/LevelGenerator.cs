@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NaughtyAttributes;
+using Sirenix.OdinInspector; 
 using ProjectFiles.Code.LevelGeneration;
 using UnityEngine;
 
@@ -27,9 +27,9 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private float MAIN_BRANCH_LENGTH = 0.5f;
     private float probabilityToCloseConnection;
     
-    private List<ConnectionPoint> allConnections;
-    private List<ConnectionPoint> lastPlacedRoomConnections;
-    private List<ConnectionPoint> branchStartConnections;
+    private List<ConnectionPoint> allConnections = new List<ConnectionPoint>();
+    private List<ConnectionPoint> lastPlacedRoomConnections = new List<ConnectionPoint>();
+    private List<ConnectionPoint> branchStartConnections = new List<ConnectionPoint>();
     private HashSet<ConnectionPoint> specialRoomConnections = new HashSet<ConnectionPoint>();
     private HashSet<ConnectionPoint> firstBranchConnections = new HashSet<ConnectionPoint>();
     private List<(Vector2Int position, Direction direction)> pendingUsedConnections = new List<(Vector2Int, Direction)>();
@@ -447,8 +447,12 @@ public class LevelGenerator : MonoBehaviour
                     p.direction == worldPosConnectionPoint.direction);
             }
 
-            instanceConnection.WorldConnection = worldPosConnectionPoint;
-            worldPosConnectionPoint.OnStateFinalized = instanceConnection.FinalizeCoverState;
+            instance.RegisterConnectionMapping(instanceConnection, worldPosConnectionPoint);
+            worldPosConnectionPoint.OnStateFinalized = () =>
+            {
+                instanceConnection.connectionState = worldPosConnectionPoint.connectionState;
+                instanceConnection.FinalizeCoverState(worldPosConnectionPoint.connectionState);
+            };
             
             allConnections.Add(worldPosConnectionPoint);
             lastPlacedRoomConnections.Add(worldPosConnectionPoint);

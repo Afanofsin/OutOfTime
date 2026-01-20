@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         room = GetComponentInParent<Room>();
-        room.OnPlayerEnteringRoom += Spawn;
+        room.OnPlayerEnteredRoom += Spawn;
         //Spawn();
     }
     
@@ -21,6 +21,8 @@ public class EnemySpawner : MonoBehaviour
         var enemyInstance = Instantiate(enemyToSpawn);
         enemyInstance.transform.position = gameObject.transform.position;
         enemyInstance.SetTarget(target);
+        room.SubscribeEnemyToRoom();
+        enemyInstance.OnEntityDeath += room.HandleEnemyDeath;
         Destroy(gameObject);
     }
 }
