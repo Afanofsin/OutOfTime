@@ -28,11 +28,7 @@ public abstract class EntityBase : SerializedMonoBehaviour, IHealth, IAttackReac
         }
     }
 
-    private void Awake()
-    {
-        CurrentHealth = maxHealth;
-    }
-
+    public virtual void Awake() => CurrentHealth = maxHealth;
     public virtual void Die() => Destroy(gameObject);
     public abstract void React();
     public abstract void Heal(float amount);

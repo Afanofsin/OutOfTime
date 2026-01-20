@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class StatsMediator
 {
@@ -21,7 +22,7 @@ public class StatsMediator
         };
     }
 
-    private void Update()
+    public void Update()
     {
         var node = _modifiers.First;
         while (node != null)

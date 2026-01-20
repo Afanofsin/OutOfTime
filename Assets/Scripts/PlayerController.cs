@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private Vector2 moveInput;
+    [SerializeField] public float moveSpeed;
+    private Vector2 _moveInput;
     [SerializeField] private LayerMask interactableMask;
     
     public static Vector2 WorldMousePos => Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -13,12 +13,12 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        Move(moveInput);
+        Move(_moveInput);
     }
     
     public void Move(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        _moveInput = context.ReadValue<Vector2>();
     }
 
     public void Dash(InputAction.CallbackContext context)
@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
             Dash();
         }
     }
-
     public void Interact(InputAction.CallbackContext context)
     {
         if (context.action.WasPressedThisFrame())

@@ -1,59 +1,74 @@
 using System;
 using System.Collections.Generic;
 using Interfaces;
+using JetBrains.Annotations;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IHealth, IAttackReactor, IDamageable
+public class Player : EntityBase, IDamageable
 {
     [SerializeField] private BaseStats baseStats;
-    [SerializeField] private MeleeWeaponBase heldWeapon;
-    
-    public float CurrentHealth { get; }
-    public float MaxHealth { get; }
-    
-    public PlayerStats _playerStats { get; private set; }
+    [SerializeField] [CanBeNull] private MeleeWeaponBase heldWeapon;
+    [SerializeField] private PlayerController controller;
+    public PlayerStats PlayerStats { get; private set; }
 
-    private void Awake()
+    public override void Awake()
     {
-        _playerStats = new PlayerStats(baseStats, new StatsMediator());
+        base.Awake();
+        PlayerStats = new PlayerStats(baseStats, new StatsMediator());
         Equip(heldWeapon);
     }
-    
+
+    public void Update()
+    { 
+        controller.moveSpeed = PlayerStats.Speed;
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Unequip(heldWeapon);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Equip(heldWeapon);
+        }
+    }
+
     public void Attack(float angle)
     {
-        heldWeapon.PerformAttack(angle, _playerStats.Attack, _playerStats.AttackSpeed);
+        heldWeapon.PerformAttack(angle, PlayerStats.Attack, PlayerStats.AttackSpeed);
     }
 
     private void Equip(IEquipable item)
     {
-        Debug.Log(_playerStats.Speed);
-        _playerStats.Mediator.AddModifier(item.GetStatModifier());
-        Debug.Log(_playerStats.Speed);
+        var mod = item.GetStatModifier();
+        if (mod.MarkedForRemoval) return;
+        
+        mod.MarkedForRemoval = true;
+        PlayerStats.Mediator.AddModifier(item.GetStatModifier());
+
     }
 
     private void Unequip(IEquipable item)
     {
+        PlayerStats.Mediator.Update();
+        item.GetStatModifier().MarkedForRemoval = false;
+    }
+    
+    public override void Heal(float amount)
+    {
         
     }
     
-    public void Heal(float amount)
+    public override void React()
     {
-        throw new NotImplementedException();
+        
     }
 
-    public void Die()
+    public void TakeDamage(IReadOnlyDictionary<DamageType, float> damage)
     {
-        throw new NotImplementedException();
-    }
-
-    public void React()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void TakeDamage(IReadOnlyDictionary<DamageType, float> amount)
-    {
-        throw new NotImplementedException();
+        foreach (var damageKvp in damage)
+        {
+            CurrentHealth -= Mathf.Max(0, damageKvp.Value - damageKvp.Value * (resists[damageKvp.Key] / 100));
+        }
+        React();
     }
 }

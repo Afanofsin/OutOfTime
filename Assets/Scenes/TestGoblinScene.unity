@@ -982,7 +982,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811153499}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1115,7 +1115,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  speedValue: 5
+  speedValue: 0
   attackSpeedValue: 0.25
   weaponSprite: {fileID: 21300000, guid: b2379019591872d4f85bb560c651db13, type: 3}
 --- !u!1 &1329239410
@@ -1267,10 +1267,10 @@ GameObject:
   - component: {fileID: 1630180316}
   - component: {fileID: 1630180315}
   - component: {fileID: 1630180314}
-  - component: {fileID: 1630180313}
-  - component: {fileID: 1630180312}
   - component: {fileID: 1630180311}
   - component: {fileID: 1630180310}
+  - component: {fileID: 1630180312}
+  - component: {fileID: 1630180313}
   - component: {fileID: 1630180317}
   m_Layer: 0
   m_Name: Player
@@ -1378,7 +1378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
-  moveInput: {x: 0, y: 0}
   interactableMask:
     serializedVersion: 2
     m_Bits: 128
@@ -1623,8 +1622,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2efc9586d39de454383680f690a82d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: resists
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[DamageType, Assembly-CSharp],[System.Single,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[DamageType, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  maxHealth: 100
+  currentHealth: 0
   baseStats: {fileID: 11400000, guid: 268a8b9c1878ee942aafbb694ff3a72d, type: 2}
   heldWeapon: {fileID: 811153506}
+  controller: {fileID: 1630180313}
 --- !u!1 &1678581698
 GameObject:
   m_ObjectHideFlags: 0
