@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGenerator
   rooms:
-  - {fileID: 2709885332023417246, guid: 1fed2b16b0f44f541a1d6eb9a8b5453c, type: 3}
+  - {fileID: 6426680396767052743, guid: bc6307b9417770e4694fc7276668433d, type: 3}
   startRoom: {fileID: 3029761509758576348, guid: 5fd1e495620844f4cb9181abffdb3034, type: 3}
   specialRooms:
   - {fileID: 5143076219623469668, guid: 4c9923bea1b68e447b02ecb3b5dcd4ea, type: 3}
@@ -188,6 +188,101 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &345391096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345391100}
+  - component: {fileID: 345391099}
+  - component: {fileID: 345391098}
+  - component: {fileID: 345391097}
+  m_Layer: 0
+  m_Name: NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &345391097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345391096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fec7b7904f76c4498a68fd145934563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Extensions.RootSources2d
+  _rootSources:
+  - {fileID: 195443178}
+--- !u!114 &345391098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345391096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bd44a44cd62c64fbfc1eea95b24880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Extensions.CollectSources2d
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
+--- !u!114 &345391099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345391096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04976799df50f54ba128eff723155a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshSurface
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.033333335
+  m_BuildHeightMesh: 0
+  m_MinRegionArea: 0
+  m_HideEditorLogs: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!4 &345391100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345391096}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354002288
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +314,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectFiles.Code.LevelGeneration.Controller
   GenerateOnce: 0
   _generator: {fileID: 195443179}
+  surface: {fileID: 345391099}
+  player: {fileID: 0}
 --- !u!4 &354002290
 Transform:
   m_ObjectHideFlags: 0
@@ -397,8 +494,8 @@ Camera:
   m_GameObject: {fileID: 1515146911}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -423,7 +520,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -448,7 +545,7 @@ Transform:
   m_GameObject: {fileID: 1515146911}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -14, z: -10}
+  m_LocalPosition: {x: 103.5, y: 126, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -506,17 +603,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 443523540180174085, guid: f8a7e1a8e27cbf64fa8d2e42fb4076f8, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 443523540180174085, guid: f8a7e1a8e27cbf64fa8d2e42fb4076f8, type: 3}
     - target: {fileID: 4042248177728594999, guid: f8a7e1a8e27cbf64fa8d2e42fb4076f8, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4609215969909347523, guid: f8a7e1a8e27cbf64fa8d2e42fb4076f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.19
+      value: 108.5
       objectReference: {fileID: 0}
     - target: {fileID: 4609215969909347523, guid: f8a7e1a8e27cbf64fa8d2e42fb4076f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.38
+      value: 110.5
       objectReference: {fileID: 0}
     - target: {fileID: 4609215969909347523, guid: f8a7e1a8e27cbf64fa8d2e42fb4076f8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -550,6 +651,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9006088082922689745, guid: f8a7e1a8e27cbf64fa8d2e42fb4076f8, type: 3}
+      propertyPath: contoller
+      value: 
+      objectReference: {fileID: 354002289}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -563,4 +668,5 @@ SceneRoots:
   - {fileID: 1471032275}
   - {fileID: 5043936407661084892}
   - {fileID: 354002290}
+  - {fileID: 345391100}
   - {fileID: 195443181}

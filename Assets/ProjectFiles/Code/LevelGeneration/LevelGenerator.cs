@@ -170,10 +170,6 @@ public class LevelGenerator : MonoBehaviour
         SpawnBranch(secondBranch, ref placedRooms, ref tries, false);
         
         Debug.Log($"Generation complete tries : {tries}, rooms : {placedRooms}");
-        foreach (var connection in allConnections)
-        {
-            connection.OnStateFinalized?.Invoke();
-        }
     }
 
     private void SpawnBranch(int branchLength, ref int placedRooms, ref int tries, bool isFirstBranch)
@@ -284,7 +280,7 @@ public class LevelGenerator : MonoBehaviour
                 {
                     if (AreConnectionsCompatible(startNode.direction, roomPoint.direction))
                     {
-                        Vector2Int potentialPos = startNode.localPosition - roomPoint.localPosition;
+                        Vector2Int potentialPos = startNode.worldPosition - roomPoint.localPosition;
                     
                         if (CheckIfRoomFitsInGrid(potentialPos, testRoom))
                         {
@@ -297,7 +293,7 @@ public class LevelGenerator : MonoBehaviour
                         
                             lastPlacedRoomConnections.Clear();
                             lastPlacedRoomConnections.Add(startNode);
-                            Debug.Log($"Starting new branch from {startNode.localPosition}");
+                            Debug.Log($"Starting new branch from {startNode.worldPosition}");
                             return true;
                         }
                     }
@@ -343,7 +339,7 @@ public class LevelGenerator : MonoBehaviour
             {
                 if (AreConnectionsCompatible(globalPoint.direction, roomPoint.direction))
                 {
-                    Vector2Int potentialPos = globalPoint.localPosition - roomPoint.localPosition;
+                    Vector2Int potentialPos = globalPoint.worldPosition - roomPoint.localPosition;
                     
                     if (CheckIfRoomFitsInGrid(potentialPos, room))
                     {
@@ -428,34 +424,25 @@ public class LevelGenerator : MonoBehaviour
             ConnectionPoint prefabConnection = room.ConnectionPoints[i];
             ConnectionPoint instanceConnection = instance.ConnectionPoints[i];
         
-            var worldPosConnectionPoint = new ConnectionPoint
-            {
-                localPosition = position + prefabConnection.localPosition,
-                direction = prefabConnection.direction,
-                connectionState = ConnectionState.Open
-            };
+            instanceConnection.worldPosition = position + prefabConnection.localPosition;
             
             bool wasUsed = pendingUsedConnections.Any(p => 
-                p.position == worldPosConnectionPoint.localPosition && 
-                p.direction == worldPosConnectionPoint.direction);
+                p.position == instanceConnection.worldPosition && 
+                p.direction == instanceConnection.direction);
         
+            instanceConnection.connectionState = wasUsed
+                ? ConnectionState.Used
+                : ConnectionState.Open;
+
             if (wasUsed)
             {
-                worldPosConnectionPoint.connectionState = ConnectionState.Used;
-                pendingUsedConnections.RemoveAll(p => 
-                    p.position == worldPosConnectionPoint.localPosition && 
-                    p.direction == worldPosConnectionPoint.direction);
+                pendingUsedConnections.RemoveAll(p =>
+                    p.position == instanceConnection.worldPosition &&
+                    p.direction == instanceConnection.direction);
             }
-
-            instance.RegisterConnectionMapping(instanceConnection, worldPosConnectionPoint);
-            worldPosConnectionPoint.OnStateFinalized = () =>
-            {
-                instanceConnection.connectionState = worldPosConnectionPoint.connectionState;
-                instanceConnection.FinalizeCoverState(worldPosConnectionPoint.connectionState);
-            };
             
-            allConnections.Add(worldPosConnectionPoint);
-            lastPlacedRoomConnections.Add(worldPosConnectionPoint);
+            allConnections.Add(instanceConnection);
+            lastPlacedRoomConnections.Add(instanceConnection);
         }
     }
 

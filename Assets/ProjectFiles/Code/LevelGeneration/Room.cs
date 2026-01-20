@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector; 
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -21,9 +22,6 @@ namespace ProjectFiles.Code.LevelGeneration
         [SerializeField] public List<RoomDoor> Doors;
         public int GetHeight => height;
         public int GetWidth => width;
-        
-        // Runtime mapping from instance connections to world connections
-        private Dictionary<ConnectionPoint, ConnectionPoint> connectionMapping = new Dictionary<ConnectionPoint, ConnectionPoint>();
         
         public Action OnPlayerEnteredRoom;
         public Action OnRoomCleared;
@@ -53,7 +51,7 @@ namespace ProjectFiles.Code.LevelGeneration
         
             foreach (var c in ConnectionPoints)
             {
-                if (GetConnectionState(c) == ConnectionState.Used)
+                if (c.connectionState == ConnectionState.Used)
                 {
                     c.CoverCollider?.SetActive(false);
                     openDirs.Add(c.direction);
@@ -62,7 +60,7 @@ namespace ProjectFiles.Code.LevelGeneration
 
             foreach (var door in Doors.Where(d => openDirs.Contains(d.Direction)))
             {
-                door.Open();
+                door.Open().Forget();
             }
         }
 
@@ -74,32 +72,23 @@ namespace ProjectFiles.Code.LevelGeneration
         
             foreach (var c in ConnectionPoints)
             {
-                if (GetConnectionState(c) == ConnectionState.Used)
+                Debug.Log($"{c.connectionState}");
+                if (c.connectionState == ConnectionState.Used)
                 {
+                    Debug.Log($"Used connector");
                     c.CoverCollider?.SetActive(true);
                     openDirs.Add(c.direction);
                 }
             }
             
-            foreach (var door in Doors.Where(d => openDirs.Contains(d.Direction)))
+            foreach (var door in Doors)
             {
-                door.Close();
-                Debug.Log($"Closing off a {door.Direction}");
+                if (openDirs.Contains(door.Direction))
+                {
+                    door.Close();
+                    Debug.Log($"Closing off a {door.Direction}");
+                }
             }
-        }
-        
-        public void RegisterConnectionMapping(ConnectionPoint instanceConnection, ConnectionPoint worldConnection)
-        {
-            connectionMapping[instanceConnection] = worldConnection;
-        }
-    
-        public ConnectionState GetConnectionState(ConnectionPoint instanceConnection)
-        {
-            if (connectionMapping.TryGetValue(instanceConnection, out var worldConnection))
-            {
-                return worldConnection.connectionState;
-            }
-            return ConnectionState.Open; // Default
         }
 
         public void SubscribeEnemyToRoom() => enemyCount++;
@@ -292,6 +281,7 @@ namespace ProjectFiles.Code.LevelGeneration
 public class ConnectionPoint
 {
     public Vector2Int localPosition;
+    public Vector2Int worldPosition;
     public Direction direction;
     private ConnectionState _currentConnectionState = (ConnectionState)(-1);
     public TilemapRenderer VisualCover;
@@ -304,6 +294,7 @@ public class ConnectionPoint
         set
         {
             _currentConnectionState = value;
+            FinalizeCoverState(_currentConnectionState);
         }
     }
 

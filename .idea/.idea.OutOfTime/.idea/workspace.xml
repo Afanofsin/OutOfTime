@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="" />
+    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Player/DeathZone.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Player/DeathZone.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/GoblinNav.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/GoblinNav.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/LevelGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/LevelGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Mover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Mover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Room.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/RoomDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/RoomDoor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/ZoneCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/ZoneCollider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/DoorsRoom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/DoorsRoom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/RoomGeneratorTestingGrounds.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RoomGeneratorTestingGrounds.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyEntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyEntityBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/Goblin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prefabs/Goblin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +39,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Room.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/TmxParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/ZoneCollider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/Player/DeathZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/Player/PlayerTemplate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/BaseState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/FuncPredicate.cs" root0="FORCE_HIGHLIGHTING" />
@@ -32,14 +53,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/PlayerStates/PlayerMovingState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/Transition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/FirstDay.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/FirstDay.unity.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/GoblinNav.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EntityBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IEquipable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ISwing.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ModifierType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/CoolSword.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.h8man.2d.navmeshplus@b9abbd9c6304/NavMeshComponents/Scripts/NavMeshSurface.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.kyrylokuzyk.primetween@c8ebd3070cfb/Runtime/Internal/PrimeTweenManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.kyrylokuzyk.primetween@c8ebd3070cfb/Runtime/Tween.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.kyrylokuzyk.primetween@c8ebd3070cfb/Runtime/TweenSettings.cs" root0="SKIP_HIGHLIGHTING" />
@@ -55,26 +76,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "Art-Day-2",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Shelf.Project.Settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Art-Day-2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Shelf.Project.Settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Unity Editor\6000.3.4f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Unity\Editor\6000.3.4f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;D:\Unity slop\GameJam2\OutOfTime&quot; -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Unity slop\GameJam2\OutOfTime" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -84,7 +105,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Unity Editor\6000.3.4f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Unity\Editor\6000.3.4f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;D:\Unity slop\GameJam2\OutOfTime&quot; -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Unity slop\GameJam2\OutOfTime" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -127,6 +148,7 @@
       <workItem from="1768814491613" duration="35497000" />
       <workItem from="1768854695648" duration="1453000" />
       <workItem from="1768897693457" duration="5498000" />
+      <workItem from="1768905080246" duration="25066000" />
     </task>
     <servers />
   </component>

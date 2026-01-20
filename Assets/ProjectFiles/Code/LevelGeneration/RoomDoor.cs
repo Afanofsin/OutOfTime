@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace ProjectFiles.Code.LevelGeneration
@@ -20,10 +21,12 @@ namespace ProjectFiles.Code.LevelGeneration
             parentRoom.Doors.Add(this);
         }
 
-        public void Open()
+        public async UniTask Open()
         {
             CloseAnim?.SetActive(false);
             OpenAnim?.SetActive(true);
+            await UniTask.Delay(1500);
+            Destroy();
         }
 
         public void Close()
@@ -32,5 +35,7 @@ namespace ProjectFiles.Code.LevelGeneration
             OpenAnim?.SetActive(false);
             CloseAnim?.SetActive(true);
         }
+
+        private void Destroy() => DestroyImmediate(this.gameObject);
     }
 }
