@@ -35,7 +35,7 @@ public abstract class MeleeWeaponBase : WeaponBase, IPickable
     
     public override void PerformAttack(float angle, Dictionary<DamageType, float> damageType, float durationModifier)
     {
-        var merged = DictionaryUtils.MergeIntersection(_baseDamage, damageType, (x, y) => x + x * y/100);
+        var merged = DictionaryUtils.MergeIntersection(_baseDamage, damageType, (x, y) => x + x * y / 100);
         var duration = attackSpeedValue * durationModifier / 100;
         swing.StartSwing(angle, merged, Mathf.Max(0.1f, duration));
     }
@@ -44,7 +44,7 @@ public abstract class MeleeWeaponBase : WeaponBase, IPickable
 
     public void PickUp(Inventory context)
     {
-        if (context.TryAdd(this))
+        if (context.TryAdd(WeaponDatabase.Instance.GetWeaponByID(id)))
         {
             Destroy(gameObject);
         }

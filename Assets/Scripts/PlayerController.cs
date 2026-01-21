@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float moveSpeed;
     private Vector2 _moveInput;
     [SerializeField] private LayerMask interactableMask;
+    [SerializeField] private Player player;
     
     public static Vector2 WorldMousePos => Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
     private Rigidbody2D PlayerRb => gameObject.GetOrAddComponent<Rigidbody2D>();
@@ -61,14 +62,13 @@ public class PlayerController : MonoBehaviour
         var hit = Physics2D.OverlapCircle(transform.position, 1.5f, interactableMask);
         if (hit != null)
         {
-            if (hit.TryGetComponent<IInteractable>(out var component))
+            if (hit.TryGetComponent<IInteractable>(out var interactable))
             {
-                component.Interact(gameObject);
+                interactable.Interact(gameObject);
             }
             if (hit.TryGetComponent<IPickable>(out var pickable))
             {
-                Debug.Log("Fire");
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().PickUp(pickable);
+                player.PickUp(pickable);
             }
         }
     }
@@ -86,6 +86,6 @@ public class PlayerController : MonoBehaviour
         {
             angle += 360f;
         }
-        GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<Player>().Attack(angle);
+        player.Attack(angle);
     }
 }
