@@ -3,20 +3,69 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "Maps/Tester.tmx",
     "expandedProjectPaths": [
+        "Maps",
+        "Tilesets",
+        "."
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "Maps/TestMap.tmx": {
+            "scale": 2,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 168.5,
+                "y": 167.25
+            }
+        },
+        "Maps/Tester.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 219,
+                "y": 179.25
+            }
+        },
+        "Maps/template.tmx": {
+            "scale": 2.5590625,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 147.3195750396874,
+                "y": 158.06569788740995
+            }
+        },
+        "Tilesets/Doors.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 5.5
+        },
+        "Tilesets/SpriteSheetGeneral.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        }
     },
     "last.imagePath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Art",
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 10,
+    "map.width": 20,
     "openFiles": [
+        "Tilesets/SpriteSheetGeneral.tsx",
+        "Maps/TestMap.tmx",
+        "Maps/template.tmx",
+        "Maps/Tester.tmx"
     ],
     "project": "OutOfTimeBounds.tiled-project",
+    "property.type": "string",
     "recentFiles": [
+        "Tilesets/SpriteSheetGeneral.tsx",
+        "Maps/TestMap.tmx",
+        "Maps/template.tmx",
+        "Maps/Tester.tmx",
+        "Tilesets/Doors.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

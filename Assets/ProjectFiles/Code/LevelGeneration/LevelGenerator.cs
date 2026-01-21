@@ -280,6 +280,7 @@ public class LevelGenerator : MonoBehaviour
                 {
                     if (AreConnectionsCompatible(startNode.direction, roomPoint.direction))
                     {
+                        
                         Vector2Int potentialPos = startNode.worldPosition - roomPoint.localPosition;
                     
                         if (CheckIfRoomFitsInGrid(potentialPos, testRoom))

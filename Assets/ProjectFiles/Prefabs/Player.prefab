@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Mover
   moveSpeed: 5
   death: {fileID: 4778481365177149326}
+  contoller: {fileID: 0}
 --- !u!50 &2360267385974121849
 Rigidbody2D:
   serializedVersion: 5
@@ -111,7 +112,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.6751251, y: -0.7974911}
+  m_Offset: {x: -0.7082566, y: -2.376762}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -121,7 +122,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.6751251, y: 1.5991745}
+  m_Size: {x: 0.96095604, y: 0.17819881}
   m_EdgeRadius: 0
 --- !u!1 &4778481365177149326
 GameObject:
@@ -332,7 +333,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 6f5d4be7f15df1a45af1c5d4ce92056d, type: 3}
+  m_Sprite: {fileID: -2012405760381247191, guid: 2eb813ed390b0884dae15bb57a2fe91a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
