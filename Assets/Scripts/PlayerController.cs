@@ -59,9 +59,17 @@ public class PlayerController : MonoBehaviour
     private void CheckInteraction()
     {
         var hit = Physics2D.OverlapCircle(transform.position, 1.5f, interactableMask);
-        if (hit != null && hit.TryGetComponent<IInteractable>(out var component))
+        if (hit != null)
         {
-            component.Interact(gameObject);
+            if (hit.TryGetComponent<IInteractable>(out var component))
+            {
+                component.Interact(gameObject);
+            }
+            if (hit.TryGetComponent<IPickable>(out var pickable))
+            {
+                Debug.Log("Fire");
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().PickUp(pickable);
+            }
         }
     }
 
