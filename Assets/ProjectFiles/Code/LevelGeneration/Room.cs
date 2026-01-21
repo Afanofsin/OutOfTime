@@ -1,6 +1,11 @@
-﻿using System.Collections.Generic;
-using NaughtyAttributes;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector; 
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.Tilemaps;
 
 namespace ProjectFiles.Code.LevelGeneration
 {
@@ -10,15 +15,98 @@ namespace ProjectFiles.Code.LevelGeneration
         [SerializeField] private int width;
         [SerializeField] private int height;
         [SerializeField] public List<int> occupiedTiles;
+        [FormerlySerializedAs("Index")] public int CompassIndex = 0;
+        public int RoomIndex = 0;
         
         [SerializeField] public List<ConnectionPoint> ConnectionPoints;
+        [SerializeField] public List<RoomDoor> Doors;
         public int GetHeight => height;
         public int GetWidth => width;
+        
+        public Action OnPlayerEnteredRoom;
+        public Action OnRoomCleared;
+        private int enemyCount;
+        
+        private void OnEnable()
+        {
+            if (Doors == null)
+                Doors = new List<RoomDoor>();
+            
+            OnRoomCleared += OpenDoors;
+        }
+
+        private void OnDisable()
+        {
+            OnRoomCleared -= OpenDoors;
+        }
         
         public Vector2Int GetWorldConnectionPoint(Vector2Int roomPosition, ConnectionPoint point)
         {
             return roomPosition + point.localPosition;
         }
+
+        private void OpenDoors()
+        {
+            List<Direction> openDirs = new List<Direction>(4);
+        
+            foreach (var c in ConnectionPoints)
+            {
+                if (c.connectionState == ConnectionState.Used)
+                {
+                    c.CoverCollider?.SetActive(false);
+                    openDirs.Add(c.direction);
+                }
+            }
+
+            foreach (var door in Doors.Where(d => openDirs.Contains(d.Direction)))
+            {
+                door.Open().Forget();
+            }
+        }
+
+        private void CloseDoors()
+        {
+            //if (enemyCount == 0) return;
+            Debug.Log($"CloseDoors called in room {name}, doors count: {Doors.Count}");
+            List<Direction> openDirs = new List<Direction>(4);
+        
+            foreach (var c in ConnectionPoints)
+            {
+                Debug.Log($"{c.connectionState}");
+                if (c.connectionState == ConnectionState.Used)
+                {
+                    Debug.Log($"Used connector");
+                    c.CoverCollider?.SetActive(true);
+                    openDirs.Add(c.direction);
+                }
+            }
+            
+            foreach (var door in Doors)
+            {
+                if (openDirs.Contains(door.Direction))
+                {
+                    door.Close();
+                    Debug.Log($"Closing off a {door.Direction}");
+                }
+            }
+        }
+
+        public void SubscribeEnemyToRoom() => enemyCount++;
+
+        public void HandleEnemyDeath()
+        {
+            enemyCount--;
+            if (enemyCount <= 0)
+                OnRoomCleared?.Invoke();
+        }
+
+        public void OnPlayerEnteringRoom()
+        {
+            OnPlayerEnteredRoom?.Invoke();
+            CloseDoors();
+        }
+
+        #region Editor
         
         [Button]
         public void ParseTmxDimensions()
@@ -185,6 +273,7 @@ namespace ProjectFiles.Code.LevelGeneration
     
             Debug.Log($"Created occupancy visualization for {name}. Red cubes show where collision detection thinks tiles are.");
         }
+        #endregion
     }
 }
 
@@ -192,8 +281,43 @@ namespace ProjectFiles.Code.LevelGeneration
 public class ConnectionPoint
 {
     public Vector2Int localPosition;
+    public Vector2Int worldPosition;
     public Direction direction;
-    public bool isConnected;
+    private ConnectionState _currentConnectionState = (ConnectionState)(-1);
+    public TilemapRenderer VisualCover;
+    public GameObject CoverCollider;
+    public Action OnStateFinalized;
+    
+    public ConnectionState connectionState
+    {
+        get { return _currentConnectionState; }
+        set
+        {
+            _currentConnectionState = value;
+            FinalizeCoverState(_currentConnectionState);
+        }
+    }
+
+    public void FinalizeCoverState(ConnectionState stateToUse)
+    {
+        if (VisualCover == null || CoverCollider == null) return;
+        switch (stateToUse)
+        {
+            case ConnectionState.Open:
+            case ConnectionState.ClosedRandomly:
+                VisualCover.enabled = true;
+                CoverCollider?.SetActive(true);
+                break;
+            case ConnectionState.Used:
+                VisualCover.enabled = false;
+                CoverCollider?.SetActive(false);
+                break;
+            default:
+                VisualCover.enabled = false;
+                CoverCollider?.SetActive(false);
+                break;
+        }
+    }
 }
 
 public enum Direction
@@ -202,4 +326,11 @@ public enum Direction
     South,
     East,
     West
+}
+
+public enum ConnectionState
+{
+    Open,
+    ClosedRandomly,
+    Used
 }

@@ -1,20 +1,38 @@
+using System;
+using ProjectFiles.Code.LevelGeneration;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private EnemyEntityBase enemyToSpawn;
-    [SerializeField] private GameObject target;
 
+    private Room room;
+    
     private void Start()
     {
-        Spawn();
+        room = GetComponentInParent<Room>();
+        room.OnPlayerEnteredRoom += Spawn;
+        //Spawn();
     }
     
     private void Spawn()
     {
-        var enemyInstance = Instantiate(enemyToSpawn);
-        enemyInstance.transform.position = gameObject.transform.position;
-        enemyInstance.SetTarget(target);
+        Vector3 position;
+        if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 1f, NavMesh.AllAreas))
+        {
+            position = hit.position;
+        }
+        else
+        {
+            position = transform.position;
+        }
+        
+        var enemyInstance = Instantiate(enemyToSpawn, position, Quaternion.identity, transform.parent);
+        enemyInstance.SetTarget(Controller.Instance.player);
+        room.SubscribeEnemyToRoom();
+        enemyInstance.OnEntityDeath += room.HandleEnemyDeath;
+        room.OnPlayerEnteredRoom -= Spawn;
         Destroy(gameObject);
     }
 }
