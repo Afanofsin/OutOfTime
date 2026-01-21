@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, IInteractable
 {
-    [SerializeField] private int requiredKey;
     private IKeyHolder _cachedKeyHolder;
     
     public void Interact(GameObject interactor)
@@ -22,6 +21,6 @@ public class Door : MonoBehaviour, IInteractable
             return false;
         }
         
-        return _cachedKeyHolder.TryGetKey(requiredKey);
+        return _cachedKeyHolder.Keys;
     }
 }

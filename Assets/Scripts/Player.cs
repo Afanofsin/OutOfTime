@@ -1,34 +1,41 @@
-using System;
 using System.Collections.Generic;
 using Interfaces;
 using JetBrains.Annotations;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Player : EntityBase, IDamageable
 {
     [SerializeField] private BaseStats baseStats;
-    [SerializeField] [CanBeNull] private MeleeWeaponBase heldWeapon;
+    [SerializeField] private WeaponBase heldWeapon;
     [SerializeField] private PlayerController controller;
+    [SerializeField] private Inventory inventory;
     public PlayerStats PlayerStats { get; private set; }
-
+    
     public override void Awake()
     {
         base.Awake();
         PlayerStats = new PlayerStats(baseStats, new StatsMediator());
-        Equip(heldWeapon);
+    }
+
+    public void Start()
+    {
+        Equip(inventory.GetSlotItem(0));
     }
 
     public void Update()
     { 
         controller.moveSpeed = PlayerStats.Speed;
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Unequip(heldWeapon);
-        }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Equip(heldWeapon);
+            Equip(inventory.GetSlotItem(0));
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Equip(inventory.GetSlotItem(1));
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Equip(inventory.GetSlotItem(2));
         }
     }
 
@@ -37,20 +44,28 @@ public class Player : EntityBase, IDamageable
         heldWeapon.PerformAttack(angle, PlayerStats.Attack, PlayerStats.AttackSpeed);
     }
 
-    private void Equip(IEquipable item)
+    private void Equip(WeaponBase item)
     {
-        var mod = item.GetStatModifier();
+        if (heldWeapon != null)
+        {
+            Unequip(heldWeapon);
+        }
+        
+        heldWeapon = Instantiate(item, gameObject.transform);
+        
+        var mod = heldWeapon.GetStatModifier();
         if (mod.MarkedForRemoval) return;
         
         mod.MarkedForRemoval = true;
-        PlayerStats.Mediator.AddModifier(item.GetStatModifier());
+        PlayerStats.Mediator.AddModifier(mod);
 
     }
 
-    private void Unequip(IEquipable item)
+    private void Unequip(WeaponBase item)
     {
         PlayerStats.Mediator.Update();
         item.GetStatModifier().MarkedForRemoval = false;
+        Destroy(heldWeapon.gameObject);
     }
     
     public override void Heal(float amount)
@@ -61,6 +76,11 @@ public class Player : EntityBase, IDamageable
     public override void React()
     {
         
+    }
+
+    public void PickUp(IPickable item)
+    {
+        item.PickUp(inventory);
     }
 
     public void TakeDamage(IReadOnlyDictionary<DamageType, float> damage)
