@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using NaughtyAttributes;
+using System.Linq;
+using Sirenix.OdinInspector; 
 using ProjectFiles.Code.LevelGeneration;
 using UnityEngine;
 
@@ -19,16 +20,55 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private int size = 300;
 
     private Dictionary<Vector2Int, int> occupiedTiles;
-    private List<ConnectionPoint> availableConnections;
-    private List<ConnectionPoint> lastRoomConnections;
     private Vector2Int middleCoord;
     private System.Random random;
 
+    [SerializeField] private float BASIC_PROBABILITY = 0.10f;
+    [SerializeField] private float MAIN_BRANCH_LENGTH = 0.5f;
+    private float probabilityToCloseConnection;
+    
+    private List<ConnectionPoint> allConnections = new List<ConnectionPoint>();
+    private List<ConnectionPoint> lastPlacedRoomConnections = new List<ConnectionPoint>();
+    private List<ConnectionPoint> branchStartConnections = new List<ConnectionPoint>();
+    private HashSet<ConnectionPoint> specialRoomConnections = new HashSet<ConnectionPoint>();
+    private HashSet<ConnectionPoint> firstBranchConnections = new HashSet<ConnectionPoint>();
+    private List<(Vector2Int position, Direction direction)> pendingUsedConnections = new List<(Vector2Int, Direction)>();
+    private IEnumerable<ConnectionPoint> OpenConnections =>
+        allConnections.Where(c => c.connectionState == ConnectionState.Open);
+    private IEnumerable<ConnectionPoint> OpenLastConnections =>
+        lastPlacedRoomConnections.Where(c => c.connectionState == ConnectionState.Open);
+    private IEnumerable<ConnectionPoint> RandomlyClosedConnections =>
+        allConnections.Where(c => c.connectionState == ConnectionState.ClosedRandomly);
+    private IEnumerable<ConnectionPoint> RandomlyClosedLastConnections =>
+        lastPlacedRoomConnections.Where(c => c.connectionState == ConnectionState.ClosedRandomly);
+    
+    // Flags
+    public bool IsBossRoomGenerated { get; private set; }
+    public int SpecialRoomsGenerated { get; private set; }
+
+    private int index = 1;
+    public static LevelGenerator Instance { get; private set; }
+
     void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+
+        Instance = this;
+        
         occupiedTiles = new Dictionary<Vector2Int, int>();
-        availableConnections = new List<ConnectionPoint>();
+        allConnections = new List<ConnectionPoint>();
         middleCoord = new Vector2Int(size / 2, size / 2);
+        probabilityToCloseConnection = BASIC_PROBABILITY;
+        lastPlacedRoomConnections = new();
+        branchStartConnections = new();
+        specialRoomConnections = new HashSet<ConnectionPoint>();
+        firstBranchConnections = new HashSet<ConnectionPoint>();
+        pendingUsedConnections = new List<(Vector2Int, Direction)>();
+        index = 1;
     }
 
     [Button]
@@ -36,22 +76,29 @@ public class LevelGenerator : MonoBehaviour
     {
         ClearLevel();
         occupiedTiles = new();
-        availableConnections = new();
+        probabilityToCloseConnection = BASIC_PROBABILITY;
+        IsBossRoomGenerated = false;
+        SpecialRoomsGenerated = 0;
+        middleCoord = new Vector2Int(size / 2, size / 2);
+        index = 1;
 
         int seed = CreateGenerationSeed();
         random = new System.Random(seed);
 
         int tries = 0;
         int placedRooms = 0;
-        int mainBranch = (int)(roomCount * 0.6f);
+        int mainBranch = (int)(roomCount * MAIN_BRANCH_LENGTH);
+        int firstBranch = (int)(roomCount * (MAIN_BRANCH_LENGTH / 2));
+        int secondBranch = roomCount - mainBranch - firstBranch;
 
+        Debug.Log("###Start of Main Branch###");
         Room firstRoom = startRoom;
-        PlaceRoomAt(middleCoord, firstRoom);
+        PlaceRoomAt(middleCoord, firstRoom, out var firstInstance);
         placedRooms++;
 
-        for (int i = 0; i < roomCount; i++)
+        for (int i = 0; i < mainBranch; i++)
         {
-            if (availableConnections.Count == 0)
+            if (allConnections.Count == 0)
             {
                 Debug.LogWarning("No More Available Connections");
                 return;
@@ -59,20 +106,44 @@ public class LevelGenerator : MonoBehaviour
 
             Vector2Int? placePos;
             Room room;
-            if (mainBranch != placedRooms)
+            bool isBossRoom = false;
+            
+            if (i == mainBranch - 1 && bossRoom.Count > 0)
             {
-                room = rooms[random.Next(0, rooms.Count)];
-                placePos = TryPlaceRoom(room, lastRoomConnections);
+                room = bossRoom[random.Next(0, bossRoom.Count)];
+                IsBossRoomGenerated = true;
+                isBossRoom = true;
+                Debug.Log("Boss placed");
             }
             else
             {
-                room = rooms[random.Next(0, rooms.Count)];
-                placePos = TryPlaceRoom(room, availableConnections);
+                room = rooms[random.Next(0, rooms.Count)];                
             }
-
+            
+            var connectionPoints = OpenLastConnections.Any()
+                ? OpenLastConnections
+                : RandomlyClosedLastConnections;
+                
+            placePos = TryPlaceRoom(room, connectionPoints);
+            
             if (placePos.HasValue)
             {
-                PlaceRoomAt(placePos.Value, room);
+                PlaceRoomAt(placePos.Value, room, out var instance);
+                if (!isBossRoom) StorePossibleBranchStart(); 
+                if (isBossRoom)
+                {
+                    foreach (var connection in lastPlacedRoomConnections.ToList())
+                    {
+                        connection.connectionState = ConnectionState.Used;
+                        specialRoomConnections.Add(connection);
+                    }
+        
+                    lastPlacedRoomConnections.Clear();
+                }
+                //TryToCloseConnection();
+
+                instance.CompassIndex = index;
+                index++;
                 placedRooms++;
             }
             else
@@ -87,13 +158,157 @@ public class LevelGenerator : MonoBehaviour
                 return;
             }
         }
+        Debug.Log("###MainBranchComplete###");
+        
+        Debug.Log("###Start 1 Branch###");
+        SpawnBranch(firstBranch, ref placedRooms, ref tries, true);
+        
+        branchStartConnections?.RemoveAll(c => firstBranchConnections.Contains(c));
+        firstBranchConnections?.Clear();
+        
+        Debug.Log("###Start 2 Branch###");
+        SpawnBranch(secondBranch, ref placedRooms, ref tries, false);
+        
         Debug.Log($"Generation complete tries : {tries}, rooms : {placedRooms}");
     }
 
-    private Vector2Int? TryPlaceRoom(Room room, List<ConnectionPoint> connectionsList)
+    private void SpawnBranch(int branchLength, ref int placedRooms, ref int tries, bool isFirstBranch)
+    {
+        int initialTries = tries;
+        if (StartNewBranch())
+        {
+            for (int i = 0; i < branchLength; i++)
+            {
+                Room room;
+                Vector2Int? placePos;
+                bool isSpecialRoom = false;
+                if (i == branchLength - 1 && specialRooms.Count > 0)
+                {
+                    room = specialRooms[random.Next(0, specialRooms.Count)];
+                    isSpecialRoom = true;
+                }
+                else
+                {
+                    room = rooms[random.Next(0, rooms.Count)];
+                }
+                
+                var connectionPoints = OpenLastConnections.Any()
+                    ? OpenLastConnections
+                    : RandomlyClosedLastConnections;
+                
+                placePos = TryPlaceRoom(room, connectionPoints);
+                TryToCloseConnection();
+            
+                if (placePos.HasValue)
+                {
+                    PlaceRoomAt(placePos.Value, room, out var instance);
+                    
+                    if (isFirstBranch && !isSpecialRoom)
+                    {
+                        foreach (var connection in lastPlacedRoomConnections.ToList())
+                        {
+                            firstBranchConnections.Add(connection);
+                        }
+                    }
+                    
+                    if (isSpecialRoom)
+                    {
+                        foreach (var connection in lastPlacedRoomConnections.ToList())
+                        {
+                            connection.connectionState = ConnectionState.Used;
+                            specialRoomConnections.Add(connection);
+                        }
+                        SpecialRoomsGenerated++;
+                        lastPlacedRoomConnections.Clear();
+                    }
+                    placedRooms++;
+                }
+                else
+                {
+                    tries++;
+                    i--;
+                }
+
+                if (tries > initialTries + 100)
+                {
+                    break;
+                }
+            }
+        }
+    }
+    
+    private void StorePossibleBranchStart()
+    {
+        foreach (var connection in lastPlacedRoomConnections)
+        {
+            if (connection.connectionState != ConnectionState.Open)
+                continue;
+
+            branchStartConnections.Add(connection);
+        }
+    }
+    
+    private bool StartNewBranch()
+    {
+        // 1. Get all candidates (Open or ClosedRandomly)
+        var candidates = branchStartConnections
+            .Where(c => c.connectionState == ConnectionState.Open || c.connectionState == ConnectionState.ClosedRandomly)
+            .ToList();
+
+        if (candidates.Count == 0) return false;
+
+        // 2. Shuffle candidates (Fisher-Yates) so we don't always pick the first one
+        for (int i = 0; i < candidates.Count; i++)
+        {
+            var temp = candidates[i];
+            int randomIndex = random.Next(i, candidates.Count);
+            candidates[i] = candidates[randomIndex];
+            candidates[randomIndex] = temp;
+        }
+
+        // 3. Find the first candidate where a room actually fits
+        foreach (var startNode in candidates)
+        {
+            // Try a few times to find a room that fits this specific connection
+            // We test with a "Hypothetical" check without actually placing it yet
+            for (int k = 0; k < 5; k++) 
+            {
+                Room testRoom = rooms[random.Next(rooms.Count)];
+            
+                // Check all connection points on the room to see if one aligns
+                foreach (var roomPoint in testRoom.ConnectionPoints)
+                {
+                    if (AreConnectionsCompatible(startNode.direction, roomPoint.direction))
+                    {
+                        Vector2Int potentialPos = startNode.worldPosition - roomPoint.localPosition;
+                    
+                        if (CheckIfRoomFitsInGrid(potentialPos, testRoom))
+                        {
+                            // FOUND A VALID SPOT!
+                            // Set this as our starting point
+                            if (startNode.connectionState == ConnectionState.ClosedRandomly)
+                            {
+                                startNode.connectionState = ConnectionState.Open;
+                            }
+                        
+                            lastPlacedRoomConnections.Clear();
+                            lastPlacedRoomConnections.Add(startNode);
+                            Debug.Log($"Starting new branch from {startNode.worldPosition}");
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        // If we looped through ALL candidates and NO room fit anywhere:
+        return false;
+    }
+    
+    private Vector2Int? TryPlaceRoom(Room room, IEnumerable<ConnectionPoint> connections)
     {
         List<int> indices = new List<int>();
-        for (int i = 0; i < connectionsList.Count; i++)
+        var connectionPoints = connections.ToList();
+        for (int i = 0; i < connectionPoints.Count; i++)
         {
             indices.Add(i);
         }
@@ -108,8 +323,8 @@ public class LevelGenerator : MonoBehaviour
 
         foreach (var index in indices)
         {
-            var globalPoint = connectionsList[index];
-            if (globalPoint.isConnected)
+            var globalPoint = connectionPoints[index];
+            if (globalPoint.connectionState == ConnectionState.Used)
                 continue;
 
             List<ConnectionPoint> shuffledRoomConnections = new List<ConnectionPoint>(room.ConnectionPoints);
@@ -124,12 +339,14 @@ public class LevelGenerator : MonoBehaviour
             {
                 if (AreConnectionsCompatible(globalPoint.direction, roomPoint.direction))
                 {
-                    Vector2Int potentialPos = globalPoint.localPosition - roomPoint.localPosition;
+                    Vector2Int potentialPos = globalPoint.worldPosition - roomPoint.localPosition;
                     
                     if (CheckIfRoomFitsInGrid(potentialPos, room))
                     {
-                        // Mark this connection as used
-                        globalPoint.isConnected = true;
+                        // Eliminate connection
+                        globalPoint.connectionState = ConnectionState.Used;
+                        // Store connection of this room to be Consumed later
+                        pendingUsedConnections.Add((potentialPos + roomPoint.localPosition, roomPoint.direction));
                         return potentialPos;
                     }
                 }
@@ -137,6 +354,23 @@ public class LevelGenerator : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void TryToCloseConnection()
+    {
+        probabilityToCloseConnection = BASIC_PROBABILITY;
+        if (allConnections.Count < 5) return;
+        foreach (var connection in OpenConnections.ToList())
+        {
+            if (branchStartConnections.Contains(connection))
+                continue;
+            
+            if (random.NextDouble() < probabilityToCloseConnection)
+            {
+                connection.connectionState = ConnectionState.ClosedRandomly;
+                probabilityToCloseConnection = Mathf.Max(0f, probabilityToCloseConnection - 0.3f);
+            }
+        }
     }
 
     private bool AreConnectionsCompatible(Direction dir1, Direction dir2)
@@ -177,23 +411,38 @@ public class LevelGenerator : MonoBehaviour
         return true;
     }
 
-    private void PlaceRoomAt(Vector2Int position, Room room)
+    private void PlaceRoomAt(Vector2Int position, Room room, out Room instance)
     {
         PlaceRoom(position, room);
         Vector3 worldPos = grid.CellToWorld(new Vector3Int(position.x, position.y, 0));
-        Instantiate(room, worldPos, Quaternion.identity, this.transform);
-
-        lastRoomConnections.Clear();
-        foreach (ConnectionPoint connectionPoint in room.ConnectionPoints)
+        instance = Instantiate(room, worldPos, Quaternion.identity, this.transform);
+        
+        lastPlacedRoomConnections?.Clear();
+        
+        for (int i = 0; i < room.ConnectionPoints.Count; i++)
         {
-            var worldPosConnectionPoint = new ConnectionPoint
+            ConnectionPoint prefabConnection = room.ConnectionPoints[i];
+            ConnectionPoint instanceConnection = instance.ConnectionPoints[i];
+        
+            instanceConnection.worldPosition = position + prefabConnection.localPosition;
+            
+            bool wasUsed = pendingUsedConnections.Any(p => 
+                p.position == instanceConnection.worldPosition && 
+                p.direction == instanceConnection.direction);
+        
+            instanceConnection.connectionState = wasUsed
+                ? ConnectionState.Used
+                : ConnectionState.Open;
+
+            if (wasUsed)
             {
-                localPosition = position + connectionPoint.localPosition,
-                direction = connectionPoint.direction,
-                isConnected = false
-            };
-            availableConnections.Add(worldPosConnectionPoint);
-            lastRoomConnections.Add(worldPosConnectionPoint);
+                pendingUsedConnections.RemoveAll(p =>
+                    p.position == instanceConnection.worldPosition &&
+                    p.direction == instanceConnection.direction);
+            }
+            
+            allConnections.Add(instanceConnection);
+            lastPlacedRoomConnections.Add(instanceConnection);
         }
     }
 
@@ -217,6 +466,8 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
+    #region Debugging 
+    
     [Button]
     private void ClearLevel()
     {
@@ -225,7 +476,12 @@ public class LevelGenerator : MonoBehaviour
             DestroyImmediate(transform.GetChild(i).gameObject);
         }
         occupiedTiles?.Clear();
-        availableConnections?.Clear();
+        allConnections?.Clear();
+        branchStartConnections?.Clear();
+        specialRoomConnections?.Clear();
+        firstBranchConnections?.Clear();
+        pendingUsedConnections?.Clear();
+        probabilityToCloseConnection = BASIC_PROBABILITY;
     }
 
     private int CreateGenerationSeed()
@@ -307,4 +563,5 @@ public class LevelGenerator : MonoBehaviour
         }
     }
     
+    #endregion
 }

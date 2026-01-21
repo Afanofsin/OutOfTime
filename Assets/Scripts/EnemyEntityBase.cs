@@ -10,6 +10,6 @@ public abstract class EnemyEntityBase : EntityBase, IEnemy
     [OdinSerialize] private Dictionary<DamageType, float> damage;
     public Dictionary<DamageType, float> Damage => damage;
     public GameObject Target => target;
-    public void SetTarget(GameObject targetGo) => target = targetGo;
+    public virtual void SetTarget(GameObject targetGo) => target = targetGo;
     public abstract void Action();
 }

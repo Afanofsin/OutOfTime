@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff72ddc2da234e244a8e96eb44e4c03d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SuperTiled2UnityEditor::SuperTiled2Unity.Editor.ST2USettings
-  m_DefaultPixelsPerUnit: 100
+  m_DefaultPixelsPerUnit: 16
   m_DefaultEdgesPerEllipse: 32
   m_AnimationFramerate: 20
   m_DefaultMaterial: {fileID: 0}
@@ -54,4 +54,12 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 1, a: 1}
   - {r: 0.7372549, g: 0.56078434, b: 0.56078434, a: 1}
   m_CustomObjectTypes: []
-  m_PrefabReplacements: []
+  m_PrefabReplacements:
+  - m_TypeName: WestDoor
+    m_Prefab: {fileID: 6494502748652885352, guid: 73d6c0f8292331e4885e0cbc2d208d4d, type: 3}
+  - m_TypeName: EastDoor
+    m_Prefab: {fileID: 931763153926098084, guid: 7d13f088247ec614eb4b58857129d30a, type: 3}
+  - m_TypeName: NorthDoor
+    m_Prefab: {fileID: 4297601137284205738, guid: f9f4524ea7ab0204689cb636c233e299, type: 3}
+  - m_TypeName: SouthDoor
+    m_Prefab: {fileID: 7572373221624720860, guid: 3f6162415edaa7c4b855ae9979d3972d, type: 3}
