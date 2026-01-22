@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : EntityBase, IDamageable
 {
     [SerializeField] private BaseStats baseStats;
-    [SerializeField] private WeaponBase heldWeapon;
+    public WeaponBase HeldWeapon { get; private set; }
     [SerializeField] private PlayerController controller;
     [SerializeField] private Inventory inventory;
     public PlayerStats PlayerStats { get; private set; }
@@ -24,7 +24,6 @@ public class Player : EntityBase, IDamageable
 
     public void Update()
     { 
-        controller.moveSpeed = PlayerStats.Speed;
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Equip(inventory.GetSlotItem(0));
@@ -39,21 +38,21 @@ public class Player : EntityBase, IDamageable
         }
     }
 
-    public void Attack(float angle)
+    public void Attack()
     {
-        heldWeapon.PerformAttack(angle, PlayerStats.Attack, PlayerStats.AttackSpeed);
+        HeldWeapon.PerformAttack(PlayerStats.Attack, PlayerStats.AttackSpeed);
     }
 
     private void Equip(WeaponBase item)
     {
-        if (heldWeapon != null)
+        if (HeldWeapon != null)
         {
-            Unequip(heldWeapon);
+            Unequip(HeldWeapon);
         }
         
-        heldWeapon = Instantiate(item, gameObject.transform);
+        HeldWeapon = Instantiate(item, gameObject.transform);
         
-        var mod = heldWeapon.GetStatModifier();
+        var mod = HeldWeapon.GetStatModifier();
         if (mod.MarkedForRemoval) return;
         
         mod.MarkedForRemoval = true;
@@ -65,12 +64,7 @@ public class Player : EntityBase, IDamageable
     {
         PlayerStats.Mediator.Update();
         item.GetStatModifier().MarkedForRemoval = false;
-        Destroy(heldWeapon.gameObject);
-    }
-    
-    public override void Heal(float amount)
-    {
-        
+        Destroy(HeldWeapon.gameObject);
     }
     
     public override void React()

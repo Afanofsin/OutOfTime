@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
@@ -7,7 +6,8 @@ using UnityEngine;
 public abstract class WeaponBase : SerializedMonoBehaviour, IWeapon, IEquipable
 {
     public abstract IReadOnlyDictionary<DamageType, float> BaseDamage { get; }
-    public abstract void PerformAttack(float angle, Dictionary<DamageType, float> damage, float durationMultiplier);
+    public abstract float AttackSpeed { get; }
+    public abstract void PerformAttack(Dictionary<DamageType, float> damage, float durationMultiplier);
     public abstract StatModifier GetStatModifier();
     [SerializeField] public readonly int id;
 }
@@ -18,26 +18,24 @@ public abstract class MeleeWeaponBase : WeaponBase, IPickable
     [SerializeField] private float speedValue;
     [SerializeField] private float attackSpeedValue;
     
-    [OdinSerialize] private ISwing swing;
+    [OdinSerialize] private ISwing _swing;
     [SerializeField] private Sprite weaponSprite;
     [OdinSerialize] private Dictionary<DamageType, float> _baseDamage = new();
     public override IReadOnlyDictionary<DamageType, float> BaseDamage => _baseDamage;
-    
-    public Sprite PickableSprite => weaponSprite;
+    public override float AttackSpeed => attackSpeedValue;
     
     private StatModifier _speedMod;
-    private StatModifier _attackSpeedModifier;
     private void Awake()
     {
         _speedMod = new StatModifierBase(StatType.Speed, x => x + speedValue);
-        gameObject.GetComponentInChildren<SpriteRenderer>().sprite = PickableSprite;
+        weaponSprite = gameObject.GetComponentInChildren<SpriteRenderer>().sprite;
     } 
     
-    public override void PerformAttack(float angle, Dictionary<DamageType, float> damageType, float durationModifier)
+    public override void PerformAttack(Dictionary<DamageType, float> damageType, float durationModifier)
     {
         var merged = DictionaryUtils.MergeIntersection(_baseDamage, damageType, (x, y) => x + x * y / 100);
-        var duration = attackSpeedValue * durationModifier / 100;
-        swing.StartSwing(angle, merged, Mathf.Max(0.1f, duration));
+        var duration = Mathf.Max(0.1f, attackSpeedValue * durationModifier / 100);
+        _swing.StartSwing(PlayerController.Instance.GetAngle(), merged, duration);
     }
     
     public override StatModifier GetStatModifier() => _speedMod;

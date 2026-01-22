@@ -21,9 +21,4 @@ public class Goblin : EnemyEntityBase, IDamageable
     {
         
     }
-    
-    public override void Heal(float amount)
-    {
-        
-    }
 }
