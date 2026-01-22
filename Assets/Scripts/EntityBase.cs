@@ -38,5 +38,5 @@ public abstract class EntityBase : SerializedMonoBehaviour, IHealth, IAttackReac
         Destroy(gameObject);
     }
     public abstract void React();
-    public abstract void Heal(float amount);
+    public virtual void Heal(float amount) => CurrentHealth += amount;
 }

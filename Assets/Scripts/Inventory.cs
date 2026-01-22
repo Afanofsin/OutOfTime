@@ -13,7 +13,7 @@ public class Inventory : MonoBehaviour, IKeyHolder
     {
         foreach (var slot in inventorySlots)
         {
-            if (slot.HeldItem == null || slot.HeldItem == WeaponDatabase.Instance.GetWeaponByID(item.id))
+            if (slot.HeldItem == null || slot.HeldItem == WeaponDatabase.Instance.GetWeaponByID(0))
             {
                 slot.SetItem(item);
                 return true;

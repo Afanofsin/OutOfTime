@@ -27,7 +27,6 @@ public class WeaponThrustSwing : SwingBase, ISwing
     
     public void StartSwing(float attackAngle, IReadOnlyDictionary<DamageType, float> damage, float duration)
     {
-        
         if (_swingTween.isAlive) return;
         
         _hitTargets.Clear();
@@ -35,7 +34,7 @@ public class WeaponThrustSwing : SwingBase, ISwing
         Vector2 direction = Quaternion.Euler(0f, 0f, attackAngle) * Vector2.right;
 
         Vector3 from = transform.localPosition;
-        Vector3 to   = from + (Vector3)(direction * endOffset.magnitude);
+        Vector3 to = from + (Vector3)(direction * endOffset.magnitude);
 
         transform.localRotation = Quaternion.Euler(0f, 0f, attackAngle);
         weaponCollider.enabled = true;
@@ -45,10 +44,10 @@ public class WeaponThrustSwing : SwingBase, ISwing
         _swingTween = Tween.Custom(
             from,
             to,
-            duration,
-            angle =>
+            duration * (2f/3f),
+            position =>
             {
-                transform.localPosition = angle;
+                transform.localPosition = position;
             },
             ease
         ).OnComplete(() =>
@@ -56,15 +55,16 @@ public class WeaponThrustSwing : SwingBase, ISwing
             _swingTween = Tween.Custom(
                 to,
                 from,
-                duration / 2.5f,
-                angle =>
+                duration * (1f/3f),
+                position =>
                 {
-                    transform.localPosition = angle;
+                    transform.localPosition = position;
                 },
                 ease
             ).OnComplete(() =>
             { 
                 weaponCollider.enabled = false;
+                _hitTargets.Clear();
             }); 
             
         }); 
@@ -72,9 +72,7 @@ public class WeaponThrustSwing : SwingBase, ISwing
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!_hitTargets.Add(other)) return;
-
-        if (other.TryGetComponent<IDamageable>(out var damageable))
+        if (other.TryGetComponent<IDamageable>(out var damageable) && _hitTargets.Add(other))
         {
             damageable.TakeDamage(_damage);
         }
