@@ -195,6 +195,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172137908}
   m_CullTransparentMesh: 1
+--- !u!4 &483720159 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4496599261175345837, guid: 05a6d2549e4126946a217201fe5ffa1b, type: 3}
+  m_PrefabInstance: {fileID: 1635639978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &934431463
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +592,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 934431464}
-  - {fileID: 1635639979}
+  - {fileID: 483720159}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1393140884
@@ -740,11 +745,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05a6d2549e4126946a217201fe5ffa1b, type: 3}
---- !u!4 &1635639979 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1364113383797411890, guid: 05a6d2549e4126946a217201fe5ffa1b, type: 3}
-  m_PrefabInstance: {fileID: 1635639978}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1637832458
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +880,7 @@ GameObject:
   - component: {fileID: 2076303776}
   - component: {fileID: 2076303775}
   - component: {fileID: 2076303774}
+  - component: {fileID: 2076303777}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -970,6 +971,28 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 9999
   m_TargetDisplay: 0
+--- !u!95 &2076303777
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076303772}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c4f596da1b06684ea0521747f9d31c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -11,12 +11,23 @@
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "Maps/Room_01.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 4,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 107,
+                "y": 181.375
+            }
+        },
         "Maps/TestMap.tmx": {
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 168.5,
-                "y": 167.25
+                "x": 96.5,
+                "y": 159.75
             }
         },
         "Maps/Tester.tmx": {
@@ -24,15 +35,15 @@
                 9
             ],
             "scale": 2,
-            "selectedLayer": 9,
+            "selectedLayer": 5,
             "viewCenter": {
                 "x": 219,
-                "y": 179.25
+                "y": 242.25
             }
         },
         "Maps/template.tmx": {
             "scale": 2.5590625,
-            "selectedLayer": 6,
+            "selectedLayer": 8,
             "viewCenter": {
                 "x": 147.3195750396874,
                 "y": 158.06569788740995
@@ -48,6 +59,8 @@
         }
     },
     "last.imagePath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Art",
+    "last.objectTemplatePath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Templates",
+    "last.objectTypesPath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/propertytypes.xml",
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,

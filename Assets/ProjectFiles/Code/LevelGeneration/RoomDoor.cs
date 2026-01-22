@@ -21,6 +21,28 @@ namespace ProjectFiles.Code.LevelGeneration
             parentRoom.Doors.Add(this);
         }
 
+        public void SetDirection(string direction)
+        {
+            switch (direction)
+            {
+                case "North":
+                    Direction = Direction.North;
+                    break;
+                case "South":
+                    Direction = Direction.South;
+                    break;
+                case "East":
+                    Direction = Direction.East;
+                    break;
+                case "West":
+                    Direction = Direction.West;
+                    break;
+                default:
+                    Debug.LogWarning("Wrong Direction Name in imported door.");
+                    break;
+            }
+        }
+
         public async UniTask Open()
         {
             CloseAnim?.SetActive(false);
