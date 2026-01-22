@@ -1,4 +1,5 @@
 ﻿using System;
+using ProjectFiles.Code.Events;
 using UnityEngine;
 
 namespace ProjectFiles.Code.Controllers
@@ -55,6 +56,7 @@ namespace ProjectFiles.Code.Controllers
             }
             playerReference.transform.position = spawn;
             playerReference.SetActive(true);
+            GameEvents.OnPlayerCreated?.Invoke(playerReference.transform);
         }
     }
 }

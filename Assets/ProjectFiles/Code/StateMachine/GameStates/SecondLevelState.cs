@@ -1,17 +1,24 @@
 ﻿using ProjectFiles.Code.Controllers;
 using ProjectFiles.Code.Other;
-using SuperTiled2Unity.Ase.Editor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace FSM.GameStates
 {
-    public class GameplayState : BaseState
+    public class SecondLevelState : BaseState
     {
         public bool MoveToPlay = false;
         public override async void OnEnter()
         {
-
+            MoveToPlay = false;
+            Debug.Log("$$$$SecondLevelLoading$$$$");
+            await SceneController.Instance
+                .NewTransition()
+                .Load(SceneDatabase.Slots.SessionContent, SceneDatabase.Scenes.SecondLevel)
+                .WithOverlay()
+                .Perform();
+            GameController.Instance.GenerateLevel();
+            Debug.Log("SecondLevelLoaded");
         }
 
         public override void OnUpdate()
@@ -29,9 +36,9 @@ namespace FSM.GameStates
 
         public override void OnExit()
         {
-            Debug.Log("Exiting Gameplay");
+            Debug.Log("Exiting SecondLevel");
             MoveToPlay = false;
         }
-        
+
     }
 }

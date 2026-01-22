@@ -15,9 +15,8 @@ namespace ProjectFiles.Code.Controllers
         
         private MainMenuState mainMenuState;
         private MainMenuState initialMenuState;
-        private LoadLevelState loadLevelState;
-        private GameplayState firstLevelState;
-        private GameplayState secondLevelState;
+        private FirstLevelState firstLevelState;
+        private SecondLevelState secondLevelState;
         private PausedState pausedState;
         private TutorialState tutorialState;
         private InitialState initialState;
@@ -40,9 +39,8 @@ namespace ProjectFiles.Code.Controllers
 
             initialMenuState = new MainMenuState(true);
             mainMenuState = new MainMenuState(false);
-            loadLevelState = new LoadLevelState();
-            firstLevelState = new GameplayState(SceneDatabase.Scenes.FirstLevel, true);
-            secondLevelState = new GameplayState(SceneDatabase.Scenes.SecondLevel, false);
+            firstLevelState = new FirstLevelState();
+            secondLevelState = new SecondLevelState();
             pausedState = new PausedState();
             tutorialState = new TutorialState();
             initialState = new  InitialState();

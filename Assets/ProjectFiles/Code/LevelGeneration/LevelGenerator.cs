@@ -99,7 +99,7 @@ public class LevelGenerator : MonoBehaviour
         Debug.Log("###Start of Main Branch###");
         Room firstRoom = startRoom;
         PlaceRoomAt(middleCoord, firstRoom, out var firstInstance);
-        Vector3 spawnPoint = firstRoom.transform.Find("SpawnPoint").transform.position;
+        Vector3 spawnPoint = firstInstance.transform.Find("SpawnPoint").transform.position;
         placedRooms++;
 
         for (int i = 0; i < mainBranch; i++)
