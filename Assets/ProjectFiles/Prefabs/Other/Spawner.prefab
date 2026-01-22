@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3722f9b5b66fa2742b9fbd75e2dd612e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  enemyDb: {fileID: 11400000, guid: 8245a2c293841d348941cbe442d22c42, type: 2}
   enemyToSpawn: {fileID: 0}

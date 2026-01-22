@@ -6,4 +6,7 @@
  <objecttype name="01_Door_Top" color="#a0a0a4">
   <property name="SetDirection" type="string" default="North"/>
  </objecttype>
+ <objecttype name="Spawner" color="#a0a0a4">
+  <property name="SetEnemy" type="string" default="GoblinRanged"/>
+ </objecttype>
 </objecttypes>

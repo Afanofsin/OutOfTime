@@ -158,6 +158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1920657600}
     m_Modifications:
+    - target: {fileID: 2357901760052640895, guid: f4ac7667159f01f47bec51c41eaa5364, type: 3}
+      propertyPath: '_rootSources.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1463697596}
     - target: {fileID: 4325208892321977793, guid: f4ac7667159f01f47bec51c41eaa5364, type: 3}
       propertyPath: m_Name
       value: NavMesh
@@ -216,6 +220,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6076407760432053343, guid: f4ac7667159f01f47bec51c41eaa5364, type: 3}
   m_PrefabInstance: {fileID: 689811101}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &689811103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8873739125138194496, guid: f4ac7667159f01f47bec51c41eaa5364, type: 3}
+  m_PrefabInstance: {fileID: 689811101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04976799df50f54ba128eff723155a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshSurface
 --- !u!1001 &1463697594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -224,6 +239,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1770977071}
     m_Modifications:
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: surface
+      value: 
+      objectReference: {fileID: 689811103}
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: roomCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: 'rooms.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6974220090823286338, guid: 02acd7529ca77a040876fa4f553a1beb, type: 3}
     - target: {fileID: 7454212384478216553, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -280,6 +307,11 @@ PrefabInstance:
 --- !u!4 &1463697595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7454212384478216553, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+  m_PrefabInstance: {fileID: 1463697594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1463697596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7567894915284409935, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
   m_PrefabInstance: {fileID: 1463697594}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1770977070

@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using ProjectFiles.Code.Events;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ namespace ProjectFiles.Code.Controllers
         
         private GameObject playerReference;
         private Transform ControllerTransform;
+        
+        public GameObject GetPlayerReference => playerReference;
         
         private void Awake()
         {
@@ -31,14 +34,21 @@ namespace ProjectFiles.Code.Controllers
             
         }
         
-        public void GenerateLevel()
+        public async UniTask GenerateLevel()
         {
-            LevelGenerator.Instance.GenerateLevel();
+            
+            Vector3 spawnPoint = await LevelGenerator.Instance.GenerateLevel();
             if (!LevelGenerator.Instance.IsBossRoomGenerated &&
                 LevelGenerator.Instance.SpecialRoomsGenerated != 2)
             {
-                LevelGenerator.Instance.GenerateLevel();
+                spawnPoint = await LevelGenerator.Instance.GenerateLevel();
             }
+
+            if (spawnPoint == Vector3.zero)
+            {
+                return;
+            }
+            SpawnPlayer(spawnPoint);
         }
 
         private void InstantiatePlayer()

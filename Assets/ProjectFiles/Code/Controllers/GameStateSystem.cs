@@ -17,7 +17,6 @@ namespace ProjectFiles.Code.Controllers
         private MainMenuState initialMenuState;
         private FirstLevelState firstLevelState;
         private SecondLevelState secondLevelState;
-        private PausedState pausedState;
         private TutorialState tutorialState;
         private InitialState initialState;
 
@@ -36,12 +35,10 @@ namespace ProjectFiles.Code.Controllers
         private void InitializeStateMachine()
         {
             stateMachine = new StateMachine();
-
             initialMenuState = new MainMenuState(true);
             mainMenuState = new MainMenuState(false);
             firstLevelState = new FirstLevelState();
             secondLevelState = new SecondLevelState();
-            pausedState = new PausedState();
             tutorialState = new TutorialState();
             initialState = new  InitialState();
             

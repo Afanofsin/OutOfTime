@@ -59,6 +59,31 @@
                 "wangset",
                 "project"
             ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 5,
+            "members": [
+                {
+                    "name": "SetEnemy",
+                    "type": "string",
+                    "value": "GoblinRanged"
+                }
+            ],
+            "name": "Spawner",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset",
+                "project"
+            ]
         }
     ]
 }

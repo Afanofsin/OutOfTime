@@ -3,8 +3,9 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Maps/Tester.tmx",
+    "activeFile": "Maps/Room_4Way.tmx",
     "expandedProjectPaths": [
+        "Templates",
         "Maps",
         "Tilesets",
         "."
@@ -15,11 +16,19 @@
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 4,
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 225,
+                "y": 154.75
+            }
+        },
+        "Maps/Room_4Way.tmx": {
+            "scale": 5.5,
             "selectedLayer": 8,
             "viewCenter": {
-                "x": 107,
-                "y": 181.375
+                "x": 311.0909090909091,
+                "y": 82.45454545454545
             }
         },
         "Maps/TestMap.tmx": {
@@ -43,7 +52,7 @@
         },
         "Maps/template.tmx": {
             "scale": 2.5590625,
-            "selectedLayer": 8,
+            "selectedLayer": 1,
             "viewCenter": {
                 "x": 147.3195750396874,
                 "y": 158.06569788740995
@@ -69,7 +78,9 @@
         "Tilesets/SpriteSheetGeneral.tsx",
         "Maps/TestMap.tmx",
         "Maps/template.tmx",
-        "Maps/Tester.tmx"
+        "Maps/Tester.tmx",
+        "Maps/Room_01.tmx",
+        "Maps/Room_4Way.tmx"
     ],
     "project": "OutOfTimeBounds.tiled-project",
     "property.type": "string",
@@ -78,6 +89,8 @@
         "Maps/TestMap.tmx",
         "Maps/template.tmx",
         "Maps/Tester.tmx",
+        "Maps/Room_01.tmx",
+        "Maps/Room_4Way.tmx",
         "Tilesets/Doors.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",

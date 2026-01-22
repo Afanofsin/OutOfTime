@@ -66,18 +66,16 @@ MonoBehaviour:
     - m_Name: SetDirection
       m_Type: string
       m_Value: North
+  - m_Name: Spawner
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetEnemy
+      m_Type: string
+      m_Value: GoblinRanged
   m_PrefabReplacements:
-  - m_TypeName: 01_NorthDoor
-    m_Prefab: {fileID: 4297601137284205738, guid: f9f4524ea7ab0204689cb636c233e299, type: 3}
-  - m_TypeName: 01_SouthDoor
-    m_Prefab: {fileID: 7572373221624720860, guid: 3f6162415edaa7c4b855ae9979d3972d, type: 3}
-  - m_TypeName: 01_EastDoor
-    m_Prefab: {fileID: 931763153926098084, guid: 7d13f088247ec614eb4b58857129d30a, type: 3}
-  - m_TypeName: 01_WestDoor
-    m_Prefab: {fileID: 6494502748652885352, guid: 73d6c0f8292331e4885e0cbc2d208d4d, type: 3}
-  - m_TypeName: Spawner
-    m_Prefab: {fileID: 6494502748652885352, guid: 73d6c0f8292331e4885e0cbc2d208d4d, type: 3}
   - m_TypeName: 01_Door_Side
     m_Prefab: {fileID: 6494502748652885352, guid: 73d6c0f8292331e4885e0cbc2d208d4d, type: 3}
   - m_TypeName: 01_Door_Top
     m_Prefab: {fileID: 4297601137284205738, guid: f9f4524ea7ab0204689cb636c233e299, type: 3}
+  - m_TypeName: Spawner
+    m_Prefab: {fileID: 7664460637648515451, guid: 883be9c5cff357847b7df03d261f23b7, type: 3}

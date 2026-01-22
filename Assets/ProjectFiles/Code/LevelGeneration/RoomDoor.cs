@@ -30,6 +30,12 @@ namespace ProjectFiles.Code.LevelGeneration
                     break;
                 case "South":
                     Direction = Direction.South;
+                    var sprites = CloseAnim.GetComponentsInChildren<SpriteRenderer>(true);
+                    foreach (var sprite in sprites )
+                    {
+                        sprite.sortingLayerName = "Entities";
+                        sprite.sortingOrder = 100;
+                    }
                     break;
                 case "East":
                     Direction = Direction.East;

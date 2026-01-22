@@ -19,7 +19,7 @@ namespace FSM.GameStates
                 .Unload(SceneDatabase.Slots.MainMenu)
                 .WithOverlay()
                 .Perform();
-            GameController.Instance.GenerateLevel();
+            await GameController.Instance.GenerateLevel();
             Debug.Log("$$$$FirstLevelLoaded$$$$");
         }
 
