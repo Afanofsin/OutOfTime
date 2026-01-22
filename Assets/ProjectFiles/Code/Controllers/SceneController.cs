@@ -78,7 +78,7 @@ namespace ProjectFiles.Code.Controllers
 
         private async UniTask LoadAdditiveScene(string slotKey, string sceneName, bool setActive)
         {
-            AsyncOperation loadOp = SceneManager.LoadSceneAsync(slotKey, LoadSceneMode.Additive);
+            AsyncOperation loadOp = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
             if (loadOp == null) return;
             loadOp.allowSceneActivation = false;
             while (loadOp.progress < 0.9f)

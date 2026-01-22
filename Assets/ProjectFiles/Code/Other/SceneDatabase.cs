@@ -13,7 +13,8 @@
         {
             public const string MainMenu = "MainMenu";
             public const string Session = "Session";
-            public const string SessionContent = "SessionContent";
+            public const string FirstLevel = "FirstLevel";
+            public const string SecondLevel = "SecondLevel";
         }
     }
 }

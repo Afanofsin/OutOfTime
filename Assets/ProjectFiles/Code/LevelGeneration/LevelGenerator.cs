@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ProjectFiles.Code.Controllers;
 using Sirenix.OdinInspector; 
 using ProjectFiles.Code.LevelGeneration;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    #region Variables 
     [Header("Room settings")]
     [SerializeField] private List<Room> rooms;
 
@@ -47,6 +49,8 @@ public class LevelGenerator : MonoBehaviour
     public int SpecialRoomsGenerated { get; private set; }
 
     private int index = 1;
+    #endregion
+    #region Singleton/Awake
     public static LevelGenerator Instance { get; private set; }
 
     void Awake()
@@ -70,6 +74,7 @@ public class LevelGenerator : MonoBehaviour
         pendingUsedConnections = new List<(Vector2Int, Direction)>();
         index = 1;
     }
+    #endregion
 
     [Button]
     public void GenerateLevel()
@@ -94,6 +99,7 @@ public class LevelGenerator : MonoBehaviour
         Debug.Log("###Start of Main Branch###");
         Room firstRoom = startRoom;
         PlaceRoomAt(middleCoord, firstRoom, out var firstInstance);
+        Vector3 spawnPoint = firstRoom.transform.Find("SpawnPoint").transform.position;
         placedRooms++;
 
         for (int i = 0; i < mainBranch; i++)
@@ -170,6 +176,7 @@ public class LevelGenerator : MonoBehaviour
         SpawnBranch(secondBranch, ref placedRooms, ref tries, false);
         
         Debug.Log($"Generation complete tries : {tries}, rooms : {placedRooms}");
+        GameController.Instance.SpawnPlayer(spawnPoint);
     }
 
     private void SpawnBranch(int branchLength, ref int placedRooms, ref int tries, bool isFirstBranch)
@@ -294,7 +301,6 @@ public class LevelGenerator : MonoBehaviour
                         
                             lastPlacedRoomConnections.Clear();
                             lastPlacedRoomConnections.Add(startNode);
-                            Debug.Log($"Starting new branch from {startNode.worldPosition}");
                             return true;
                         }
                     }
