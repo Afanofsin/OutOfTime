@@ -31,7 +31,7 @@ namespace Enemies
 
         private void Start()
         {
-            StartCoroutine(DebugAgent());
+            // StartCoroutine(DebugAgent());
         }
 
         private IEnumerator DebugAgent()

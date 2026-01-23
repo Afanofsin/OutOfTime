@@ -286,7 +286,7 @@ public class ConnectionPoint
     private ConnectionState _currentConnectionState = (ConnectionState)(-1);
     public TilemapRenderer VisualCover;
     public GameObject CoverCollider;
-    public Action OnStateFinalized;
+    public Action<Direction> OnStateFinalized;
     
     public ConnectionState connectionState
     {
@@ -311,10 +311,12 @@ public class ConnectionPoint
             case ConnectionState.Used:
                 VisualCover.enabled = false;
                 CoverCollider?.SetActive(false);
+                OnStateFinalized?.Invoke(this.direction);
                 break;
             default:
                 VisualCover.enabled = false;
                 CoverCollider?.SetActive(false);
+                OnStateFinalized?.Invoke(this.direction);
                 break;
         }
     }

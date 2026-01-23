@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
+using NavMeshPlus.Components;
+using ProjectFiles.Code.Controllers;
 using Sirenix.OdinInspector; 
 using ProjectFiles.Code.LevelGeneration;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    #region Variables 
     [Header("Room settings")]
     [SerializeField] private List<Room> rooms;
 
@@ -25,6 +29,7 @@ public class LevelGenerator : MonoBehaviour
 
     [SerializeField] private float BASIC_PROBABILITY = 0.10f;
     [SerializeField] private float MAIN_BRANCH_LENGTH = 0.5f;
+    [SerializeField] private NavMeshSurface surface;
     private float probabilityToCloseConnection;
     
     private List<ConnectionPoint> allConnections = new List<ConnectionPoint>();
@@ -47,6 +52,9 @@ public class LevelGenerator : MonoBehaviour
     public int SpecialRoomsGenerated { get; private set; }
 
     private int index = 1;
+    private Vector3 offset = new Vector3(0.5f, 0.5f, 0);
+    #endregion
+    #region Singleton/Awake
     public static LevelGenerator Instance { get; private set; }
 
     void Awake()
@@ -70,9 +78,10 @@ public class LevelGenerator : MonoBehaviour
         pendingUsedConnections = new List<(Vector2Int, Direction)>();
         index = 1;
     }
+    #endregion
 
     [Button]
-    public void GenerateLevel()
+    public async UniTask<Vector3> GenerateLevel()
     {
         ClearLevel();
         occupiedTiles = new();
@@ -94,6 +103,7 @@ public class LevelGenerator : MonoBehaviour
         Debug.Log("###Start of Main Branch###");
         Room firstRoom = startRoom;
         PlaceRoomAt(middleCoord, firstRoom, out var firstInstance);
+        Vector3 spawnPoint = firstInstance.transform.Find("SpawnPoint").transform.position;
         placedRooms++;
 
         for (int i = 0; i < mainBranch; i++)
@@ -101,7 +111,7 @@ public class LevelGenerator : MonoBehaviour
             if (allConnections.Count == 0)
             {
                 Debug.LogWarning("No More Available Connections");
-                return;
+                return Vector3.zero;
             }
 
             Vector2Int? placePos;
@@ -155,7 +165,7 @@ public class LevelGenerator : MonoBehaviour
             if (tries > 100)
             {
                 Debug.LogWarning("Run out of tries");
-                return;
+                return Vector3.zero;;
             }
         }
         Debug.Log("###MainBranchComplete###");
@@ -170,6 +180,18 @@ public class LevelGenerator : MonoBehaviour
         SpawnBranch(secondBranch, ref placedRooms, ref tries, false);
         
         Debug.Log($"Generation complete tries : {tries}, rooms : {placedRooms}");
+        
+        Physics2D.SyncTransforms();
+
+        Vector3 originalPos = transform.position;
+        transform.position = originalPos + offset;
+            
+        await surface.BuildNavMeshAsync();
+            
+        transform.position = originalPos;
+        
+        //GameController.Instance.SpawnPlayer(spawnPoint);
+        return spawnPoint;
     }
 
     private void SpawnBranch(int branchLength, ref int placedRooms, ref int tries, bool isFirstBranch)
@@ -280,6 +302,7 @@ public class LevelGenerator : MonoBehaviour
                 {
                     if (AreConnectionsCompatible(startNode.direction, roomPoint.direction))
                     {
+                        
                         Vector2Int potentialPos = startNode.worldPosition - roomPoint.localPosition;
                     
                         if (CheckIfRoomFitsInGrid(potentialPos, testRoom))
@@ -293,7 +316,6 @@ public class LevelGenerator : MonoBehaviour
                         
                             lastPlacedRoomConnections.Clear();
                             lastPlacedRoomConnections.Add(startNode);
-                            Debug.Log($"Starting new branch from {startNode.worldPosition}");
                             return true;
                         }
                     }
