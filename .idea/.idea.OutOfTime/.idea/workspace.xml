@@ -4,56 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/NorthWall.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/NorthWall.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/AttackState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/AttackState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/DeadState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/DeadState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/EnemyInitState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/EnemyInitState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/EngageState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/EngageState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/Predicates.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/Predicates/IsDeadPredicate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/Predicates/IsDeadPredicate.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/Predicates/IsInAttackRangePredicate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/Predicates/IsInAttackRangePredicate.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/Predicates/IsTooClosePredicate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/Predicates/IsTooClosePredicate.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/Predicates/IsTooFarPredicate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/Predicates/IsTooFarPredicate.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/RetreatState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/RetreatState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/GoblinRanged.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/GoblinRanged.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RangedEnemyBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RangedEnemyBase.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameStateSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/LevelGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/LevelGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Room.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/RoomDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/RoomDoor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/FirstLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/FirstLevelState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/GameplayState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/GameplayState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/PausedState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/PausedState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Other/Spawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Other/Spawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Art/DoorAnims/01_Door_Side.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Art/DoorAnims/01_Door_Side.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/Room_01.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/Room_01.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/template.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/template.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-project" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-session" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-session" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/propertytypes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/propertytypes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Final/FirstLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Final/FirstLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Recovery/0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Recovery/0.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/SuperTiled2Unity.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SuperTiled2Unity.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,26 +91,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "Art-Day-2",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Shelf.Project.Settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Art-Day-2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Shelf.Project.Settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Unity Editor\6000.3.4f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Unity\Editor\6000.3.4f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;D:\Unity slop\GameJam2\OutOfTime&quot; -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Unity slop\GameJam2\OutOfTime" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -169,7 +120,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Unity Editor\6000.3.4f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Unity\Editor\6000.3.4f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;D:\Unity slop\GameJam2\OutOfTime&quot; -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Unity slop\GameJam2\OutOfTime" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -217,6 +168,7 @@
       <workItem from="1768905080246" duration="25066000" />
       <workItem from="1768897693457" duration="30476000" />
       <workItem from="1769066373214" duration="6212000" />
+      <workItem from="1769154140679" duration="208000" />
     </task>
     <servers />
   </component>

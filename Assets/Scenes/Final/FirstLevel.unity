@@ -248,9 +248,33 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: rooms.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
       propertyPath: 'rooms.Array.data[0]'
       value: 
       objectReference: {fileID: 6974220090823286338, guid: 02acd7529ca77a040876fa4f553a1beb, type: 3}
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: 'rooms.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4943845100303179053, guid: 62bc849a5a768924d82bc2d87adfbd01, type: 3}
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: 'rooms.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8416647202626050398, guid: 5ad8333c6d9a3f245b8ca2560038709d, type: 3}
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: 'rooms.Array.data[3]'
+      value: 
+      objectReference: {fileID: 320460871897523058, guid: d43e4e5924ae8e04392fb2d41fbc190e, type: 3}
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: 'rooms.Array.data[4]'
+      value: 
+      objectReference: {fileID: 6638303792341912810, guid: 3771d7691eb63b04ea5cb0fbfe53ec92, type: 3}
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: 'rooms.Array.data[5]'
+      value: 
+      objectReference: {fileID: 6566818682104437523, guid: 95bc760bd56f7cf4694a1b0259e9356c, type: 3}
     - target: {fileID: 7454212384478216553, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
