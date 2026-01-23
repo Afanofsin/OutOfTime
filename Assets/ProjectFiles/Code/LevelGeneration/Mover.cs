@@ -7,14 +7,12 @@ public class Mover : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private GameObject death;
-    [SerializeField] private Controller contoller;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        contoller.ReferencePlayer(this.gameObject);
     }
     
     void Update()

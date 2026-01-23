@@ -1,0 +1,159 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Maps/Room_4Way.tmx",
+    "expandedProjectPaths": [
+        "Templates",
+        "Maps",
+        "Tilesets",
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "Maps/Room_01.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 160,
+                "y": 159.75
+            }
+        },
+        "Maps/Room_3Way_1.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 290.66666666666663,
+                "y": 166.33333333333334
+            }
+        },
+        "Maps/Room_3Way_2.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 380,
+                "y": 357.5
+            }
+        },
+        "Maps/Room_4Way.tmx": {
+            "scale": 2,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 287,
+                "y": 248.25
+            }
+        },
+        "Maps/Room_4Way_2.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 269,
+                "y": 259.75
+            }
+        },
+        "Maps/Room_4Way_3.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 195,
+                "y": 210.75
+            }
+        },
+        "Maps/Room_4Way_4.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 3,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 136.33333333333331,
+                "y": 454.16666666666663
+            }
+        },
+        "Maps/TestMap.tmx": {
+            "scale": 2,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 96.5,
+                "y": 159.75
+            }
+        },
+        "Maps/Tester.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 219,
+                "y": 242.25
+            }
+        },
+        "Maps/template.tmx": {
+            "scale": 2.5590625,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 147.3195750396874,
+                "y": 158.06569788740995
+            }
+        },
+        "Tilesets/Doors.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 5.5
+        },
+        "Tilesets/SpriteSheetGeneral.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        }
+    },
+    "last.imagePath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Art",
+    "last.objectTemplatePath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Templates",
+    "last.objectTypesPath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/propertytypes.xml",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 20,
+    "openFiles": [
+        "Tilesets/SpriteSheetGeneral.tsx",
+        "Maps/TestMap.tmx",
+        "Maps/template.tmx",
+        "Maps/Tester.tmx",
+        "Maps/Room_01.tmx",
+        "Maps/Room_4Way.tmx"
+    ],
+    "project": "OutOfTimeBounds.tiled-project",
+    "property.type": "string",
+    "recentFiles": [
+        "Maps/Room_4Way_4.tmx",
+        "Maps/Room_4Way_3.tmx",
+        "Maps/Room_4Way_2.tmx",
+        "Maps/Room_4Way.tmx",
+        "Maps/Room_01.tmx",
+        "Tilesets/SpriteSheetGeneral.tsx",
+        "Maps/TestMap.tmx",
+        "Maps/template.tmx",
+        "Maps/Tester.tmx",
+        "Tilesets/Doors.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

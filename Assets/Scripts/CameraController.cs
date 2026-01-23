@@ -1,4 +1,6 @@
 using System;
+using ProjectFiles.Code.Events;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -11,12 +13,24 @@ public class CameraController : MonoBehaviour
 
     private int _currentX;
     private int _currentY;
+    private bool playerExists;
 
+    private void OnEnable()
+    {
+        playerExists = false;
+        GameEvents.OnPlayerCreated += GainPlayerReference;
+    }
+        
+    private void OnDisable()
+    {
+        GameEvents.OnPlayerCreated -= GainPlayerReference;
+    }
+    
     private void Start()
     {
         var cam = GetComponent<Camera>();
-        _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-
+        _playerPos = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if(_playerPos != null) playerExists = true;
         _camHeight = cam.orthographicSize * 2;
         _camWidth = _camHeight * cam.aspect;
         
@@ -25,6 +39,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
+        if(!playerExists) return;
         UpdateCell(false);
     }
 
@@ -42,5 +57,16 @@ public class CameraController : MonoBehaviour
             transform.position.z);
 
         transform.position = targetPos;
+    }
+    
+    private void GainPlayerReference(Transform player)
+    {
+        float zPos = this.transform.position.z;
+        _playerPos = player;
+        Vector3 moveTo = _playerPos.position;
+        moveTo.z = zPos;
+        this.transform.position = moveTo;
+        playerExists = true;
+        
     }
 }
