@@ -9,8 +9,8 @@ public abstract class WeaponBase : SerializedMonoBehaviour, IWeapon, IEquipable
     public abstract float AttackSpeed { get; }
     public abstract void PerformAttack(Dictionary<DamageType, float> damage, float durationMultiplier);
     public abstract StatModifier GetStatModifier();
-    [SerializeField] public readonly int id;
-    [SerializeField] public Collider2D interactCollider;
+    public readonly int id;
+    public Collider2D interactCollider;
 }
 
 public abstract class MeleeWeaponBase : WeaponBase, IPickable

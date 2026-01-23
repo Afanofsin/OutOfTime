@@ -72,7 +72,6 @@ namespace ProjectFiles.Code.Controllers
 
         private void Update()
         {
-            Debug.LogWarning(CurrentState);
             stateMachine?.Update();
         }
 

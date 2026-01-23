@@ -170,13 +170,13 @@ public class LevelGenerator : MonoBehaviour
         }
         Debug.Log("###MainBranchComplete###");
         
-        Debug.Log("###Start 1 Branch###");
+        //Debug.Log("###Start 1 Branch###");
         SpawnBranch(firstBranch, ref placedRooms, ref tries, true);
         
         branchStartConnections?.RemoveAll(c => firstBranchConnections.Contains(c));
         firstBranchConnections?.Clear();
         
-        Debug.Log("###Start 2 Branch###");
+        //Debug.Log("###Start 2 Branch###");
         SpawnBranch(secondBranch, ref placedRooms, ref tries, false);
         
         Debug.Log($"Generation complete tries : {tries}, rooms : {placedRooms}");

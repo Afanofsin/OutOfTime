@@ -67,15 +67,12 @@ namespace ProjectFiles.Code.LevelGeneration
         private void CloseDoors()
         {
             //if (enemyCount == 0) return;
-            Debug.Log($"CloseDoors called in room {name}, doors count: {Doors.Count}");
             List<Direction> openDirs = new List<Direction>(4);
         
             foreach (var c in ConnectionPoints)
             {
-                Debug.Log($"{c.connectionState}");
                 if (c.connectionState == ConnectionState.Used)
                 {
-                    Debug.Log($"Used connector");
                     c.CoverCollider?.SetActive(true);
                     openDirs.Add(c.direction);
                 }
@@ -86,7 +83,6 @@ namespace ProjectFiles.Code.LevelGeneration
                 if (openDirs.Contains(door.Direction))
                 {
                     door.Close();
-                    Debug.Log($"Closing off a {door.Direction}");
                 }
             }
         }

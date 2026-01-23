@@ -12,6 +12,25 @@
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "Maps/01_BoonRoom.tmx": {
+            "scale": 8,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 190.25,
+                "y": 174.9375
+            }
+        },
+        "Maps/01_LootRoom.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 3,
+            "selectedLayer": 11,
+            "viewCenter": {
+                "x": 195.33333333333331,
+                "y": 174.16666666666663
+            }
+        },
         "Maps/Room_01.tmx": {
             "expandedObjectLayers": [
                 9
@@ -27,22 +46,55 @@
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 1.5,
+            "scale": 2,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 290.66666666666663,
-                "y": 166.33333333333334
+                "x": 226.5,
+                "y": 192.75
             }
         },
         "Maps/Room_3Way_2.tmx": {
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 1,
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 370.66666666666663,
+                "y": 315
+            }
+        },
+        "Maps/Room_3Way_3.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 239,
+                "y": 243.75
+            }
+        },
+        "Maps/Room_3Way_4.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
             "selectedLayer": 9,
             "viewCenter": {
-                "x": 380,
-                "y": 357.5
+                "x": 318.66666666666663,
+                "y": 235
+            }
+        },
+        "Maps/Room_3Way_5.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 357,
+                "y": 232.5
             }
         },
         "Maps/Room_4Way.tmx": {
@@ -82,8 +134,8 @@
             "scale": 3,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 136.33333333333331,
-                "y": 454.16666666666663
+                "x": 169.66666666666669,
+                "y": 155.5
             }
         },
         "Maps/TestMap.tmx": {
@@ -113,15 +165,32 @@
                 "y": 158.06569788740995
             }
         },
+        "Tilesets/Chests.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 11
+        },
         "Tilesets/Doors.tsx": {
             "scaleInDock": 4,
             "scaleInEditor": 5.5
+        },
+        "Tilesets/Doors3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tilesets/Level3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "Tilesets/NewWalls.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 8
         },
         "Tilesets/SpriteSheetGeneral.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 5.5
         }
     },
+    "last.externalTilesetPath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Tilesets",
     "last.imagePath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Art",
     "last.objectTemplatePath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Templates",
     "last.objectTypesPath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/propertytypes.xml",
@@ -141,16 +210,19 @@
     "property.type": "string",
     "recentFiles": [
         "Maps/Room_4Way_4.tmx",
+        "Tilesets/NewWalls.tsx",
+        "Tilesets/Chests.tsx",
+        "Tilesets/Level3.tsx",
+        "Tilesets/Doors3.tsx",
         "Maps/Room_4Way_3.tmx",
         "Maps/Room_4Way_2.tmx",
         "Maps/Room_4Way.tmx",
         "Maps/Room_01.tmx",
         "Tilesets/SpriteSheetGeneral.tsx",
         "Maps/TestMap.tmx",
-        "Maps/template.tmx",
-        "Maps/Tester.tmx",
-        "Tilesets/Doors.tsx"
+        "Maps/template.tmx"
     ],
+    "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
         "height": 16,
