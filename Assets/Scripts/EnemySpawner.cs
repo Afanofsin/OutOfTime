@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
         var enemyInstance = Instantiate(enemyToSpawn, position, Quaternion.identity, transform.parent);
         enemyInstance.SetTarget(Controller.Instance.player);
         room.SubscribeEnemyToRoom();
-        enemyInstance.OnEntityDeath += room.HandleEnemyDeath;
+        enemyInstance.onEntityDeath += room.HandleEnemyDeath;
         room.OnPlayerEnteredRoom -= Spawn;
         Destroy(gameObject);
     }

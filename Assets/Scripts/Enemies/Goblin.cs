@@ -12,11 +12,6 @@ public class Goblin : EnemyEntityBase, IDamageable
         }
         React();
     }
-
-    public override void React()
-    {
-        
-    }
     public override void Action()
     {
         

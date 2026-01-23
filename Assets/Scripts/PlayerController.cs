@@ -12,68 +12,68 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask interactableMask;
     [SerializeField] private Player player;
     
-    public static Vector2 WorldMousePos => Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+    public static Vector2 WorldMousePos => Camera.main!.ScreenToWorldPoint(Mouse.current.position.ReadValue());
     public static float WorldMouseAngle;
     private Rigidbody2D PlayerRb => gameObject.GetOrAddComponent<Rigidbody2D>();
     private bool IsMoving => _moveInput.sqrMagnitude != 0;
     private bool _isDashing;
     private bool _isAttacking;
-    public IState CurrentState => stateMachine.GetState();
-    private StateMachine stateMachine;
+    public IState CurrentState => _stateMachine.GetState();
+    private StateMachine _stateMachine;
         
-    private PlayerIdleState idleState;
-    private PlayerMovingState movingState;
-    private PlayerAttackingState attackingState;
-    private PlayerInteractingState interactingState;
-    private PlayerDashingState dashingState;
+    private PlayerIdleState _idleState;
+    private PlayerMovingState _movingState;
+    private PlayerAttackingState _attackingState;
+    private PlayerInteractingState _interactingState;
+    private PlayerDashingState _dashingState;
 
     public static PlayerController Instance; 
     
     private void InitializeStateMachine()
     {
-        stateMachine = new StateMachine();
-        idleState = new PlayerIdleState();
-        movingState = new PlayerMovingState();
-        attackingState = new PlayerAttackingState(()=> Mathf.Max(0.1f,player.HeldWeapon.AttackSpeed * player.PlayerStats.AttackSpeed / 100), player);
-        interactingState = new PlayerInteractingState();
-        dashingState = new PlayerDashingState(PlayerRb, ()=> _moveInput);
+        _stateMachine = new StateMachine();
+        _idleState = new PlayerIdleState();
+        _movingState = new PlayerMovingState();
+        _attackingState = new PlayerAttackingState(()=> Mathf.Max(0.1f,player.HeldWeapon.AttackSpeed * player.PlayerStats.AttackSpeed / 100), player);
+        _interactingState = new PlayerInteractingState();
+        _dashingState = new PlayerDashingState(PlayerRb, ()=> _moveInput);
         
-        stateMachine.AddTransition(idleState, movingState, new FuncPredicate(
+        _stateMachine.AddTransition(_idleState, _movingState, new FuncPredicate(
             () => IsMoving
         ));
-        stateMachine.AddTransition(movingState, idleState, new FuncPredicate(
+        _stateMachine.AddTransition(_movingState, _idleState, new FuncPredicate(
             () => !IsMoving
         ));
         
-        stateMachine.AddTransition(dashingState, idleState, new FuncPredicate(
-            () => dashingState.IsComplete && !_isDashing && !IsMoving
+        _stateMachine.AddTransition(_dashingState, _idleState, new FuncPredicate(
+            () => _dashingState.IsComplete && !_isDashing && !IsMoving
         ));
         
-        stateMachine.AddTransition(dashingState, movingState, new FuncPredicate(
-            () => dashingState.IsComplete && !_isDashing && IsMoving
+        _stateMachine.AddTransition(_dashingState, _movingState, new FuncPredicate(
+            () => _dashingState.IsComplete && !_isDashing && IsMoving
         ));
         
-        stateMachine.AddTransition(movingState, dashingState, new FuncPredicate(
-            () => !dashingState.IsComplete && _isDashing && IsMoving
+        _stateMachine.AddTransition(_movingState, _dashingState, new FuncPredicate(
+            () => !_dashingState.IsComplete && _isDashing && IsMoving
         ));
         
-        stateMachine.AddTransition(idleState, attackingState, new FuncPredicate(
-            () => !attackingState.IsComplete && _isAttacking && !IsMoving
+        _stateMachine.AddTransition(_idleState, _attackingState, new FuncPredicate(
+            () => !_attackingState.IsComplete && _isAttacking && !IsMoving
         ));
         
-        stateMachine.AddTransition(attackingState, idleState, new FuncPredicate(
-            () => attackingState.IsComplete && !_isAttacking && !IsMoving
+        _stateMachine.AddTransition(_attackingState, _idleState, new FuncPredicate(
+            () => _attackingState.IsComplete && !_isAttacking && !IsMoving
         ));
         
-        stateMachine.AddTransition(movingState, attackingState, new FuncPredicate(
-            () => !attackingState.IsComplete && _isAttacking && IsMoving
+        _stateMachine.AddTransition(_movingState, _attackingState, new FuncPredicate(
+            () => !_attackingState.IsComplete && _isAttacking && IsMoving
         ));
         
-        stateMachine.AddTransition(attackingState, movingState, new FuncPredicate(
-            () => attackingState.IsComplete && !_isAttacking && IsMoving
+        _stateMachine.AddTransition(_attackingState, _movingState, new FuncPredicate(
+            () => _attackingState.IsComplete && !_isAttacking && IsMoving
         ));
         
-        stateMachine.SetState(idleState);
+        _stateMachine.SetState(_idleState);
     }
 
     private void Awake()
@@ -95,9 +95,9 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        stateMachine.Update();
+        _stateMachine.Update();
         Move(_moveInput);
-        if (CurrentState != attackingState)
+        if (CurrentState != _attackingState)
         {
             player.HeldWeapon.transform.localRotation =
                 Quaternion.Slerp(
@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if(CurrentState == dashingState) return;
+        if(CurrentState == _dashingState) return;
         
         if (context.action.WasPressedThisFrame())
         {
@@ -157,27 +157,35 @@ public class PlayerController : MonoBehaviour
 
     public void Previous(InputAction.CallbackContext context)
     {
-        if(CurrentState == attackingState || CurrentState == dashingState) return;
+        if(CurrentState == _attackingState || CurrentState == _dashingState) return;
         
         if (context.action.WasReleasedThisFrame())
         {
-            
+            player.Previous();
         }
     }
     
     public void Next(InputAction.CallbackContext context)
     {
-        if(CurrentState == attackingState || CurrentState == dashingState) return;
+        if(CurrentState == _attackingState || CurrentState == _dashingState) return;
         
         if (context.action.WasReleasedThisFrame())
         {
-            
+            player.Next();
+        }
+    }
+
+    public void Drop(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            player.Drop();
         }
     }
     
     private void Move(Vector3 direction)
     {
-        if (CurrentState == dashingState) return;
+        if (CurrentState == _dashingState) return;
         
         if (direction.sqrMagnitude > 0.01f)
         {
@@ -216,5 +224,10 @@ public class PlayerController : MonoBehaviour
     public Quaternion GetQuaternion()
     {
         return Quaternion.Euler(0f, 0f, GetAngle() + 1);
+    }
+
+    public Vector3 GetPlayerPos()
+    {
+        return player.transform.position;
     }
 }

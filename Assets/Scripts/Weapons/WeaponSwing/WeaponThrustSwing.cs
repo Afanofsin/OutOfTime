@@ -5,13 +5,11 @@ using PrimeTween;
 
 public abstract class SwingBase : MonoBehaviour
 {
-    [SerializeField] private LayerMask hitMask;
     protected Collider2D weaponCollider;
+    protected readonly RaycastHit2D[] hits = new RaycastHit2D[10];
     public virtual void Awake()
     {
         weaponCollider = gameObject.GetComponent<Collider2D>();
-        weaponCollider.includeLayers = hitMask;
-        weaponCollider.excludeLayers = 0;
     }
 }
 
@@ -72,14 +70,45 @@ public class WeaponThrustSwing : SwingBase, ISwing
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<IDamageable>(out var damageable) && _hitTargets.Add(other))
+        if (!other.TryGetComponent<IDamageable>(out var damageable) || damageable is Player)
+            return;
+
+        if (!_hitTargets.Add(other))
+            return;
+
+        Vector2 playerPos = PlayerController.Instance.GetPlayerPos();
+        Vector2 targetPoint = other.ClosestPoint(other.transform.position);
+        Vector2 direction = (targetPoint - playerPos).normalized;
+
+        var size = Physics2D.RaycastNonAlloc(playerPos, direction, hits, Mathf.Infinity, weaponCollider.includeLayers);
+
+        // Find the closest hit
+        RaycastHit2D closestHit = default;
+        float closestDistance = float.MaxValue;
+        
+        foreach (var hit in hits)
+        {
+            if (hit.collider == null)
+                continue;
+
+            if (hit.distance < closestDistance)
+            {
+                closestDistance = hit.distance;
+                closestHit = hit;
+            }
+        }
+
+        if (closestHit.collider == null)
+            return;
+
+        // If closest hit is the damageable target
+        if (closestHit.collider == other)
         {
             damageable.TakeDamage(_damage);
         }
-        
-        if (other.TryGetComponent<IAttackReactor>(out var reactor))
+        else
         {
-            reactor.React();
+            Debug.Log("Wall is closer, blocked by: " + closestHit.collider.name);
         }
     }
 }

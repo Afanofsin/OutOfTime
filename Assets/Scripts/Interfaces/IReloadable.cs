@@ -4,6 +4,7 @@ public interface IReloadable
 {
    void Reload();
    void CancelReload();
-   float CurrentAmmo { get; }
+   bool IsReloading { get; }
+   static float CurrentAmmo { get; }
    int MaxAmmo { get; }
 }
