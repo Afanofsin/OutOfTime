@@ -48,14 +48,11 @@ public class Projectile : SerializedMonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<IEnemy>(out var enemy))
+        if (other.TryGetComponent<IEnemy>(out var enemy) && enemy is IDamageable damageable)
         {
-            if (enemy is IDamageable damageable)
-            { 
-                damageable.TakeDamage(_damage);
-                ReturnToPool();
-            }
+            damageable.TakeDamage(_damage);
         } 
+        ReturnToPool();
     }
 
     private void ReturnToPool()

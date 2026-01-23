@@ -185,5 +185,5 @@ MonoBehaviour:
       Data: 
   attackSpeed: 100
   health: 0
-  speed: 5
+  speed: 4
   dashRange: 0

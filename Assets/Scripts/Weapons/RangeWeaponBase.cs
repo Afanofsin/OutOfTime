@@ -3,12 +3,13 @@ using PrimeTween;
 using Sirenix.Serialization;
 using UnityEngine;
 
-public abstract class RangeWeaponBase : WeaponBase, IPickable, IReloadable
+public abstract class RangeWeaponBase : WeaponBase, IPickable
 {
     [SerializeField] private float speedValue;
     [SerializeField] private float attackSpeedValue;
     [SerializeField] private Projectile bulletPrefab;
     [SerializeField] private Vector2 projectileAttenuation;
+    [SerializeField] private float reloadTime;
     private ProjectilePool _projectilePool;
     private SpriteRenderer _weaponSprite;
     [OdinSerialize] private Dictionary<DamageType, float> _baseDamage = new();
@@ -21,8 +22,6 @@ public abstract class RangeWeaponBase : WeaponBase, IPickable, IReloadable
     [SerializeField] private Ease ease;
     [SerializeField] private float recoilAngle;
     
-    public float CurrentAmmo { get; }
-    public int MaxAmmo { get; }
     private void Awake()
     {
         _speedMod = new StatModifierBase(StatType.Speed, x => x + speedValue);
@@ -34,6 +33,7 @@ public abstract class RangeWeaponBase : WeaponBase, IPickable, IReloadable
     public virtual void Update()
     {
         _weaponSprite.flipY = transform.localRotation.eulerAngles.z is > 90f and < 270f;
+        _weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 0f and < 180f ? 8 : 10;
     }
     
     public override void PerformAttack(Dictionary<DamageType, float> damageType, float durationModifier)
@@ -48,10 +48,12 @@ public abstract class RangeWeaponBase : WeaponBase, IPickable, IReloadable
         projectile.transform.rotation = PlayerController.Instance.GetQuaternion();
         var merged = DictionaryUtils.MergeIntersection(_baseDamage, damageType, (x, y) => x + x * y / 100);
         projectile.Launch(dir, merged);
+        var flipAngle = !_weaponSprite.flipY ? recoilAngle : -recoilAngle;
+        
         _recoilTween = Tween.Custom(
-            PlayerController.Instance.GetAngle() + recoilAngle,
+            PlayerController.Instance.GetAngle() + flipAngle,
             PlayerController.Instance.GetAngle(),
-            0.15f,
+            Mathf.Max(0.1f, AttackSpeed * 0.25f),
             angle =>
             {
                 transform.localRotation = Quaternion.Euler(0f, 0f, angle);
@@ -68,15 +70,5 @@ public abstract class RangeWeaponBase : WeaponBase, IPickable, IReloadable
         {
             Destroy(gameObject);
         }
-    }
-
-    public virtual void Reload()
-    {
-        
-    }
-
-    public virtual void CancelReload()
-    {
-        
     }
 }

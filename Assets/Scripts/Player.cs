@@ -10,6 +10,11 @@ public class Player : EntityBase, IDamageable
     [SerializeField] private PlayerController controller;
     [SerializeField] private Inventory inventory;
     public PlayerStats PlayerStats { get; private set; }
+    public ParticleSystem ps;
+    
+    [SerializeField] private float invulnerabilityDuration = 0.15f;
+    private float _invulnerableUntil;
+    public bool CanTakeDamage => Time.time >= _invulnerableUntil;
     
     public override void Awake()
     {
@@ -21,23 +26,7 @@ public class Player : EntityBase, IDamageable
     {
         Equip(inventory.GetSlotItem(0));
     }
-
-    public void Update()
-    { 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Equip(inventory.GetSlotItem(0));
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Equip(inventory.GetSlotItem(1));
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Equip(inventory.GetSlotItem(2));
-        }
-    }
-
+    
     public void Attack()
     {
         HeldWeapon.PerformAttack(PlayerStats.Attack, PlayerStats.AttackSpeed);
@@ -51,13 +40,54 @@ public class Player : EntityBase, IDamageable
         }
         
         HeldWeapon = Instantiate(item, gameObject.transform);
+        HeldWeapon.transform.localRotation = PlayerController.Instance.GetQuaternion();
         
         var mod = HeldWeapon.GetStatModifier();
+        HeldWeapon.interactCollider.enabled = false;
         if (mod.MarkedForRemoval) return;
         
         mod.MarkedForRemoval = true;
         PlayerStats.Mediator.AddModifier(mod);
+    }
 
+    public void Next()
+    {
+        if (inventory.Next() == null) return;
+        
+        if (HeldWeapon is RangeWeaponBase)
+        {
+            ProjectilePool.Instance.Clear();
+        }
+        
+        Equip(inventory.CurrentItem);
+    }
+
+    public void Previous()
+    {
+        if (inventory.Previous() == null) return;
+        
+        if (HeldWeapon is RangeWeaponBase)
+        {
+            ProjectilePool.Instance.Clear();
+        }
+        
+        Equip(inventory.CurrentItem);
+    }
+
+    public void Drop()
+    {
+        var droppedItem = inventory.TryDropCurrent();
+        if (droppedItem == null)
+            return;
+
+        SpawnDroppedWeapon(droppedItem);
+        
+        if (HeldWeapon is RangeWeaponBase)
+        {
+            ProjectilePool.Instance.Clear();
+        }
+
+        Equip(inventory.CurrentItem);
     }
 
     private void Unequip(WeaponBase item)
@@ -76,9 +106,20 @@ public class Player : EntityBase, IDamageable
     {
         item.PickUp(inventory);
     }
+    
+    private void SpawnDroppedWeapon(WeaponBase weapon)
+    {
+        var instance = Instantiate(weapon, transform.position, Quaternion.identity);
+        instance.interactCollider.enabled = true;
+        
+    }
 
     public void TakeDamage(IReadOnlyDictionary<DamageType, float> damage)
     {
+        if (!CanTakeDamage) return;
+        
+        _invulnerableUntil = Time.time + invulnerabilityDuration;
+
         foreach (var damageKvp in damage)
         {
             CurrentHealth -= Mathf.Max(0, damageKvp.Value - damageKvp.Value * (resists[damageKvp.Key] / 100));

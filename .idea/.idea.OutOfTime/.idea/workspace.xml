@@ -5,6 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="" />
+    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/New Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Trail.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Trail.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/CoolSpear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/CoolSpear.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/CoolSword.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/CoolSword.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Fists.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Fists.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/Bullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Revolver.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Revolver.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/WeaponDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/WeaponDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestGoblinScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestGoblinScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseStats.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Goblin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Goblin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyEntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyEntityBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EntityBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IReloadable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IReloadable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/MeleeWeaponBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/MeleeWeaponBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/RangeWeaponBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/RangeWeaponBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwing/WeaponArcSwing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwing/WeaponArcSwing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwing/WeaponThrustSwing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwing/WeaponThrustSwing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Renderer2D.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Renderer2D.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +104,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ModifierType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RangedEnemyBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pools/HitPoolManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/ProjectilePool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/RangeWeaponBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/Fists.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/Revolver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.h8man.2d.navmeshplus@b9abbd9c6304/NavMeshComponents/Scripts/NavMeshSurface.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.kyrylokuzyk.primetween@c8ebd3070cfb/Runtime/Internal/Assert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.kyrylokuzyk.primetween@c8ebd3070cfb/Runtime/Internal/PrimeTweenManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -169,6 +205,14 @@
       <workItem from="1768897693457" duration="30476000" />
       <workItem from="1769066373214" duration="6212000" />
       <workItem from="1769154140679" duration="208000" />
+      <workItem from="1768993055922" duration="18600000" />
+      <workItem from="1769015281440" duration="12081000" />
+      <workItem from="1769074755024" duration="5920000" />
+      <workItem from="1769080788027" duration="11471000" />
+      <workItem from="1769093649528" duration="300000" />
+      <workItem from="1769095850078" duration="14043000" />
+      <workItem from="1769161272221" duration="7902000" />
+      <workItem from="1769174849326" duration="4457000" />
     </task>
     <servers />
   </component>

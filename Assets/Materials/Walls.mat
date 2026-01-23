@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6381982932063851088
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
-  m_Shader: {fileID: -6465566751694194690, guid: 90540207f0f681d4ba1062240755092f, type: 3}
+  m_Name: Walls
+  m_Shader: {fileID: -6465566751694194690, guid: 4eaeb7d3902c42f45b0d14ecc615be2d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -40,12 +53,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_a2c5828835914eb78577d8e29605c1a1_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 12625c3829aff0d40844635495a73986, type: 3}
+    - _SampleTexture2D_c898e095584642ecaa1565e2ef0514b1_Texture_1_Texture2D:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: 043177ca8fb434048bd438bb65070931, type: 3}
+    - _SampleTexture2D_f15cd223edf448c399711002bca5b828_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 4bc12c054ccbb694c8bf81adc1a7cc45, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -62,26 +75,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BehindThresh: 0
+    - _EdgeSoftness: 5.08
     - _EnableExternalAlpha: 0
+    - _FadeAlpha: 0
+    - _FadeRadius: 1.5
+    - _FadeRange: 0
+    - _FadeSoftness: 0.5
+    - _FadeStrength: 0
+    - _PlayerY: 0
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RevealRadius: 2.41
     - _ZWrite: 0
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _PlayerPos: {r: -10, g: -9.29, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &7284836580215487515
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
-  version: 10

@@ -47,14 +47,9 @@ public class WeaponArcSwing : SwingBase, ISwing
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<IDamageable>(out var damageable) && _hitTargets.Add(other))
+        if (other.TryGetComponent<IDamageable>(out var damageable) && damageable is not Player && _hitTargets.Add(other))
         {
             damageable.TakeDamage(_damage);
-        }
-        
-        if (other.TryGetComponent<IAttackReactor>(out var reactor))
-        {
-            reactor.React();
         }
     }
 }

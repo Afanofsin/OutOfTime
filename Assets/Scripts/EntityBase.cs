@@ -10,10 +10,11 @@ public abstract class EntityBase : SerializedMonoBehaviour, IHealth, IAttackReac
 {
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
-    [OdinSerialize] public IReadOnlyDictionary<DamageType, float> resists;
+    [OdinSerialize] protected HitEffectType hitEffect;
+    [OdinSerialize] protected IReadOnlyDictionary<DamageType, float> resists;
     public float MaxHealth => maxHealth;
     
-    public Action OnEntityDeath;
+    public Action onEntityDeath;
     
     public float CurrentHealth
     {
@@ -34,9 +35,14 @@ public abstract class EntityBase : SerializedMonoBehaviour, IHealth, IAttackReac
 
     public virtual void Die()
     {
-        OnEntityDeath?.Invoke();
+        onEntityDeath?.Invoke();
         Destroy(gameObject);
     }
-    public abstract void React();
+
+    public virtual void React()
+    {
+        var instance = PoolManager.Instance.pools[hitEffect].Get();
+        instance.transform.position = transform.position;
+    }
     public virtual void Heal(float amount) => CurrentHealth += amount;
 }
