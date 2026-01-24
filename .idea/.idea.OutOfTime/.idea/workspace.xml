@@ -4,38 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/LevelGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/LevelGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Room.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_3Way_1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_3Way_1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_3Way_2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_3Way_2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_4Way.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_4Way.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_4Way_2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_4Way_2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_4Way_3.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_4Way_3.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_4Way_4.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/NewRooms/Room_4Way_4.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/UI/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/UI/Main Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/01_BoonRoom.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/01_BoonRoom.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/01_LootRoom.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/01_LootRoom.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/Room_4Way.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/Room_4Way.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-session" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-session" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/propertytypes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/propertytypes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Final/Core.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Final/Core.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Final/FirstLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Final/FirstLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/GoblinRanged.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prefabs/GoblinRanged.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/SuperTiled2Unity.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SuperTiled2Unity.asset" afterDir="false" />
-    </list>
+    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -223,7 +192,7 @@
       <workItem from="1769095850078" duration="14043000" />
       <workItem from="1769161272221" duration="7902000" />
       <workItem from="1769174849326" duration="4457000" />
-      <workItem from="1769244704977" duration="12902000" />
+      <workItem from="1769244704977" duration="13156000" />
     </task>
     <servers />
   </component>
