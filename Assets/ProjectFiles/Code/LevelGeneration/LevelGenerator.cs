@@ -144,14 +144,11 @@ public class LevelGenerator : MonoBehaviour
                 {
                     foreach (var connection in lastPlacedRoomConnections.ToList())
                     {
-                        connection.connectionState = ConnectionState.Used;
                         specialRoomConnections.Add(connection);
                     }
         
-                    lastPlacedRoomConnections.Clear();
+                    //lastPlacedRoomConnections.Clear();
                 }
-                //TryToCloseConnection();
-
                 instance.CompassIndex = index;
                 index++;
                 placedRooms++;
@@ -174,6 +171,7 @@ public class LevelGenerator : MonoBehaviour
         SpawnBranch(firstBranch, ref placedRooms, ref tries, true);
         
         branchStartConnections?.RemoveAll(c => firstBranchConnections.Contains(c));
+        branchStartConnections?.RemoveAll(c => specialRoomConnections.Contains(c));
         firstBranchConnections?.Clear();
         
         //Debug.Log("###Start 2 Branch###");
@@ -181,7 +179,12 @@ public class LevelGenerator : MonoBehaviour
         
         Debug.Log($"Generation complete tries : {tries}, rooms : {placedRooms}");
         
-        Physics2D.SyncTransforms();
+        //Physics2D.SyncTransforms();
+
+        foreach (var connection in allConnections)
+        {
+            connection.FinalizeCoverState(connection.connectionState);
+        }
 
         Vector3 originalPos = transform.position;
         transform.position = originalPos + offset;
@@ -219,11 +222,11 @@ public class LevelGenerator : MonoBehaviour
                     : RandomlyClosedLastConnections;
                 
                 placePos = TryPlaceRoom(room, connectionPoints);
-                TryToCloseConnection();
             
                 if (placePos.HasValue)
                 {
                     PlaceRoomAt(placePos.Value, room, out var instance);
+                    //TryToCloseConnection();
                     
                     if (isFirstBranch && !isSpecialRoom)
                     {
@@ -237,12 +240,12 @@ public class LevelGenerator : MonoBehaviour
                     {
                         foreach (var connection in lastPlacedRoomConnections.ToList())
                         {
-                            connection.connectionState = ConnectionState.Used;
                             specialRoomConnections.Add(connection);
                         }
                         SpecialRoomsGenerated++;
                         lastPlacedRoomConnections.Clear();
                     }
+                    
                     placedRooms++;
                 }
                 else
@@ -369,6 +372,7 @@ public class LevelGenerator : MonoBehaviour
                         globalPoint.connectionState = ConnectionState.Used;
                         // Store connection of this room to be Consumed later
                         pendingUsedConnections.Add((potentialPos + roomPoint.localPosition, roomPoint.direction));
+
                         return potentialPos;
                     }
                 }

@@ -194,6 +194,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2568110467009503180, guid: 913fc70aa074cb649bef9b44c090edd5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6164648236862936317}
+    - targetCorrespondingSourceObject: {fileID: -6539409631508349417, guid: 913fc70aa074cb649bef9b44c090edd5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8694940161560480570}
     - targetCorrespondingSourceObject: {fileID: 2595913476603950458, guid: 913fc70aa074cb649bef9b44c090edd5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5163023294099247512}
@@ -240,6 +243,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0c81c43856484cbc81ba7101de6386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectFiles.Code.LevelGeneration.ZoneCollider
+--- !u!1 &2002562458715800083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6539409631508349417, guid: 913fc70aa074cb649bef9b44c090edd5, type: 3}
+  m_PrefabInstance: {fileID: 4536776722223528964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8694940161560480570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002562458715800083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e508a865eb84ab5a07a607febbc7e4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectFiles.Code.LevelGeneration.NorthWall
 --- !u!483693784 &3416070907616916721 stripped
 TilemapRenderer:
   m_CorrespondingSourceObject: {fileID: 1269324603384760565, guid: 913fc70aa074cb649bef9b44c090edd5, type: 3}

@@ -595,6 +595,35 @@ Transform:
   - {fileID: 483720159}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1183867922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3335639161278958353, guid: 05a6d2549e4126946a217201fe5ffa1b, type: 3}
+  m_PrefabInstance: {fileID: 1635639978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1183867927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183867922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
+  m_ComponentVersion: 1
+  m_AssetsPPU: 64
+  m_RefResolutionX: 1920
+  m_RefResolutionY: 1080
+  m_CropFrame: 0
+  m_GridSnapping: 0
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &1393140884
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,10 +769,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4720507224626738669, guid: 05a6d2549e4126946a217201fe5ffa1b, type: 3}
+      propertyPath: orthographic size
+      value: 8.4375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000073047964739642, guid: 05a6d2549e4126946a217201fe5ffa1b, type: 3}
+      propertyPath: boundry
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000073047964739642, guid: 05a6d2549e4126946a217201fe5ffa1b, type: 3}
+      propertyPath: maxPlayerDistanceFromCamera
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3335639161278958353, guid: 05a6d2549e4126946a217201fe5ffa1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1183867927}
   m_SourcePrefab: {fileID: 100100000, guid: 05a6d2549e4126946a217201fe5ffa1b, type: 3}
 --- !u!1 &1637832458
 GameObject:

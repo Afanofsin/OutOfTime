@@ -3,21 +3,24 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Maps/Room_4Way.tmx",
+    "activeFile": "Maps/Room_3Way_2.tmx",
     "expandedProjectPaths": [
-        "Templates",
         "Maps",
-        "Tilesets",
-        "."
+        "Templates",
+        ".",
+        "Tilesets"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "Maps/01_BoonRoom.tmx": {
-            "scale": 8,
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 4,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 190.25,
-                "y": 174.9375
+                "x": 149.75,
+                "y": 158.125
             }
         },
         "Maps/01_LootRoom.tmx": {
@@ -38,8 +41,49 @@
             "scale": 2,
             "selectedLayer": 9,
             "viewCenter": {
-                "x": 160,
-                "y": 159.75
+                "x": 180,
+                "y": 129.75
+            }
+        },
+        "Maps/Room_2Way_1.tmx": {
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 239,
+                "y": 172.25
+            }
+        },
+        "Maps/Room_2Way_2.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 262.5,
+                "y": 277.75
+            }
+        },
+        "Maps/Room_2Way_3.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 369.33333333333337,
+                "y": 238.3333333333333
+            }
+        },
+        "Maps/Room_2Way_4.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 243,
+                "y": 280.75
             }
         },
         "Maps/Room_3Way_1.tmx": {
@@ -99,21 +143,21 @@
         },
         "Maps/Room_4Way.tmx": {
             "scale": 2,
-            "selectedLayer": 2,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 287,
-                "y": 248.25
+                "x": 264,
+                "y": 224.25
             }
         },
         "Maps/Room_4Way_2.tmx": {
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 2,
+            "scale": 4,
             "selectedLayer": 8,
             "viewCenter": {
-                "x": 269,
-                "y": 259.75
+                "x": 146.25,
+                "y": 68.875
             }
         },
         "Maps/Room_4Way_3.tmx": {
@@ -121,7 +165,7 @@
                 9
             ],
             "scale": 2,
-            "selectedLayer": 0,
+            "selectedLayer": 8,
             "viewCenter": {
                 "x": 195,
                 "y": 210.75
@@ -158,11 +202,11 @@
             }
         },
         "Maps/template.tmx": {
-            "scale": 2.5590625,
+            "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 147.3195750396874,
-                "y": 158.06569788740995
+                "x": 157,
+                "y": 130.75
             }
         },
         "Tilesets/Chests.tsx": {
@@ -200,27 +244,30 @@
     "map.width": 20,
     "openFiles": [
         "Tilesets/SpriteSheetGeneral.tsx",
-        "Maps/TestMap.tmx",
         "Maps/template.tmx",
-        "Maps/Tester.tmx",
-        "Maps/Room_01.tmx",
-        "Maps/Room_4Way.tmx"
+        "Maps/Room_3Way_1.tmx",
+        "Maps/Room_3Way_2.tmx",
+        "Maps/Room_3Way_3.tmx",
+        "Maps/Room_3Way_4.tmx",
+        "Maps/Room_3Way_5.tmx",
+        "Maps/01_LootRoom.tmx",
+        "Maps/01_BoonRoom.tmx"
     ],
     "project": "OutOfTimeBounds.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "Maps/01_LootRoom.tmx",
+        "Maps/01_BoonRoom.tmx",
+        "Maps/Room_3Way_2.tmx",
+        "Maps/Room_3Way_3.tmx",
+        "Maps/Room_3Way_4.tmx",
         "Maps/Room_4Way_4.tmx",
-        "Tilesets/NewWalls.tsx",
-        "Tilesets/Chests.tsx",
-        "Tilesets/Level3.tsx",
-        "Tilesets/Doors3.tsx",
-        "Maps/Room_4Way_3.tmx",
         "Maps/Room_4Way_2.tmx",
         "Maps/Room_4Way.tmx",
-        "Maps/Room_01.tmx",
-        "Tilesets/SpriteSheetGeneral.tsx",
-        "Maps/TestMap.tmx",
-        "Maps/template.tmx"
+        "Maps/Room_3Way_5.tmx",
+        "Maps/Room_4Way_3.tmx",
+        "Maps/Room_2Way_2.tmx",
+        "Maps/Room_2Way_3.tmx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",

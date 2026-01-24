@@ -99,6 +99,7 @@ namespace ProjectFiles.Code.LevelGeneration
         public void OnPlayerEnteringRoom()
         {
             OnPlayerEnteredRoom?.Invoke();
+            if (enemyCount < 1) return;
             CloseDoors();
         }
 
@@ -302,16 +303,16 @@ public class ConnectionPoint
             case ConnectionState.Open:
             case ConnectionState.ClosedRandomly:
                 VisualCover.enabled = true;
-                CoverCollider?.SetActive(true);
+                CoverCollider.SetActive(true);
                 break;
             case ConnectionState.Used:
                 VisualCover.enabled = false;
-                CoverCollider?.SetActive(false);
+                CoverCollider.SetActive(false);
                 OnStateFinalized?.Invoke(this.direction);
                 break;
             default:
                 VisualCover.enabled = false;
-                CoverCollider?.SetActive(false);
+                CoverCollider.SetActive(false);
                 OnStateFinalized?.Invoke(this.direction);
                 break;
         }

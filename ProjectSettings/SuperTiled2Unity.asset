@@ -66,6 +66,18 @@ MonoBehaviour:
     - m_Name: SetDirection
       m_Type: string
       m_Value: North
+  - m_Name: BoonSpawn
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetBoon
+      m_Type: string
+      m_Value: 
+  - m_Name: LootSpawn
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetLoot
+      m_Type: string
+      m_Value: 
   - m_Name: Spawner
     m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
     m_CustomProperties:
@@ -79,3 +91,7 @@ MonoBehaviour:
     m_Prefab: {fileID: 4297601137284205738, guid: f9f4524ea7ab0204689cb636c233e299, type: 3}
   - m_TypeName: Spawner
     m_Prefab: {fileID: 7664460637648515451, guid: 883be9c5cff357847b7df03d261f23b7, type: 3}
+  - m_TypeName: BoonSpawn
+    m_Prefab: {fileID: 0}
+  - m_TypeName: LootSpawn
+    m_Prefab: {fileID: 0}

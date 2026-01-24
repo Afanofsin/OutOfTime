@@ -36,18 +36,24 @@ namespace ProjectFiles.Code.Controllers
         
         public async UniTask GenerateLevel()
         {
-            
-            Vector3 spawnPoint = await LevelGenerator.Instance.GenerateLevel();
-            if (!LevelGenerator.Instance.IsBossRoomGenerated &&
-                LevelGenerator.Instance.SpecialRoomsGenerated != 2)
+            Vector3 spawnPoint;
+            int maxAttemps = 10;
+            int attempts = 0;
+
+            do
             {
                 spawnPoint = await LevelGenerator.Instance.GenerateLevel();
-            }
+                attempts++;
 
-            if (spawnPoint == Vector3.zero)
-            {
-                return;
-            }
+                if (attempts >= maxAttemps)
+                {
+                    // TODO : Restart the session.
+                    return;
+                }
+                
+            } while (!LevelGenerator.Instance.IsBossRoomGenerated &&
+                     LevelGenerator.Instance.SpecialRoomsGenerated != 2);
+            
             SpawnPlayer(spawnPoint);
         }
 

@@ -6,6 +6,12 @@
  <objecttype name="01_Door_Top" color="#a0a0a4">
   <property name="SetDirection" type="string" default="North"/>
  </objecttype>
+ <objecttype name="BoonSpawn" color="#a0a0a4">
+  <property name="SetBoon" type="string" default=""/>
+ </objecttype>
+ <objecttype name="LootSpawn" color="#a0a0a4">
+  <property name="SetLoot" type="string" default=""/>
+ </objecttype>
  <objecttype name="Spawner" color="#a0a0a4">
   <property name="SetEnemy" type="string" default="GoblinRanged"/>
  </objecttype>
