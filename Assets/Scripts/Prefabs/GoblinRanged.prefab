@@ -213,7 +213,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: hitEffect
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: resists
       Entry: 7
       Data: 0|System.Collections.Generic.Dictionary`2[[DamageType, Assembly-CSharp],[System.Single,
@@ -258,6 +258,44 @@ MonoBehaviour:
     - Name: _damage
       Entry: 6
       Data: 
+    - Name: Damage
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[DamageType, Assembly-CSharp],[System.Single,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[DamageType, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 4
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   maxHealth: 1000
   currentHealth: 0
   target: {fileID: 0}
@@ -266,3 +304,4 @@ MonoBehaviour:
   strafeRadius: 3
   moveSpeed: 3
   attackCooldown: 1.5
+  bulletType: 0

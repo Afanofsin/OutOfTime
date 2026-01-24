@@ -1,10 +1,11 @@
 ﻿using DefaultNamespace;
+using Interfaces;
 
 namespace FSM.EnemyStates
 {
     public class EngageState : BaseState
     {
-        private RangedEnemyBase enemy;
+        private IRangedEnemy enemy;
         
         public override void OnEnter()
         {
@@ -26,7 +27,7 @@ namespace FSM.EnemyStates
             base.OnExit();
         }
 
-        public EngageState(RangedEnemyBase Enemy)
+        public EngageState(IRangedEnemy Enemy)
         {
             enemy = Enemy;
         }

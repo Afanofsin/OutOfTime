@@ -1,12 +1,13 @@
 ﻿using DefaultNamespace;
+using Interfaces;
 
 namespace FSM.EnemyStates.Predicates
 {
     public class IsTooFarPredicate : IPredicate
     {
-        private RangedEnemyBase enemy;
+        private IRangedEnemy enemy;
 
-        public IsTooFarPredicate(RangedEnemyBase Enemy)
+        public IsTooFarPredicate(IRangedEnemy Enemy)
         {
             enemy = Enemy;
         }

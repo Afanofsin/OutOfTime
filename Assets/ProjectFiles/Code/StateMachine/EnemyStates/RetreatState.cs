@@ -1,10 +1,11 @@
 ﻿using DefaultNamespace;
+using Interfaces;
 
 namespace FSM.EnemyStates
 {
     public class RetreatState : BaseState
     {
-        private RangedEnemyBase enemy;
+        private IRangedEnemy enemy;
         
         public override void OnEnter()
         {
@@ -26,7 +27,7 @@ namespace FSM.EnemyStates
             base.OnExit();
         }
 
-        public RetreatState(RangedEnemyBase Enemy)
+        public RetreatState(IRangedEnemy Enemy)
         {
             enemy = Enemy;
         }

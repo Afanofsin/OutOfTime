@@ -24,7 +24,7 @@ public class Player : EntityBase, IDamageable
 
     public void Start()
     {
-        Equip(inventory.GetSlotItem(0));
+        //Equip(inventory.GetSlotItem(0));
     }
     
     public void Attack()

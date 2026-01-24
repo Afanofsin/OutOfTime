@@ -1,20 +1,23 @@
-﻿using DefaultNamespace;
+﻿using Enemies;
 using Interfaces;
+using UnityEngine;
 
 namespace FSM.EnemyStates
 {
-    public class DeadState : BaseState
+    public class GoblinRangeRetreatState : RetreatState
     {
-        private IRangedEnemy enemy;
-        
+        private GoblinRanged enemy;
+        private float attackTimer;
         public override void OnEnter()
         {
-            enemy.OnDeath();
+            base.OnEnter();
+            attackTimer = 0;
         }
 
         public override void OnUpdate()
         {
             base.OnUpdate();
+            enemy.Action();
         }
 
         public override void OnFixedUpdate()
@@ -26,8 +29,7 @@ namespace FSM.EnemyStates
         {
             base.OnExit();
         }
-
-        public DeadState(IRangedEnemy Enemy)
+        public GoblinRangeRetreatState(GoblinRanged Enemy) : base(Enemy)
         {
             enemy = Enemy;
         }

@@ -1,12 +1,13 @@
 ﻿using DefaultNamespace;
+using Interfaces;
 
 namespace FSM.EnemyStates.Predicates
 {
     public class IsInAttackRangePredicate : IPredicate
     {
-        private RangedEnemyBase enemy;
+        private IRangedEnemy enemy;
         
-        public IsInAttackRangePredicate(RangedEnemyBase Enemy)
+        public IsInAttackRangePredicate(IRangedEnemy Enemy)
         {
             enemy = Enemy;
         }

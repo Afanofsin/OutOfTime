@@ -1,20 +1,19 @@
 ﻿using DefaultNamespace;
-using Interfaces;
 
 namespace FSM.EnemyStates
 {
-    public class DeadState : BaseState
+    public class MeleeAttackState : BaseState
     {
-        private IRangedEnemy enemy;
-        
+        private MeleeEnemyBase enemy;
         public override void OnEnter()
         {
-            enemy.OnDeath();
+            enemy.StopMovement();
+            enemy.Action();
         }
 
         public override void OnUpdate()
         {
-            base.OnUpdate();
+            enemy.FaceTarget();
         }
 
         public override void OnFixedUpdate()
@@ -27,7 +26,7 @@ namespace FSM.EnemyStates
             base.OnExit();
         }
 
-        public DeadState(IRangedEnemy Enemy)
+        public MeleeAttackState(MeleeEnemyBase Enemy)
         {
             enemy = Enemy;
         }

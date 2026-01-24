@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using ProjectFiles.Code.Events;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace ProjectFiles.Code.Controllers
@@ -27,6 +28,8 @@ namespace ProjectFiles.Code.Controllers
             Instance = this;
             ControllerTransform = transform;
             InstantiatePlayer();
+            SpawnPlayer(new Vector3(21,13,0));
+            Debug.Log($"GameController.Awake() END - playerReference is {(playerReference != null ? playerReference.name : "NULL")}");
         }
 
         private void Start()
@@ -63,6 +66,7 @@ namespace ProjectFiles.Code.Controllers
             playerReference.SetActive(false);
         }
 
+        [Button]
         public void SpawnPlayer(Vector3 spawn)
         {
             if (playerReference == null)

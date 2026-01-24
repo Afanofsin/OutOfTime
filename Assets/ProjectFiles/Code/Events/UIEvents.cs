@@ -1,7 +1,9 @@
-﻿namespace ProjectFiles.Code.Events
+﻿using System;
+
+namespace ProjectFiles.Code.Events
 {
     public static class UIEvents
     {
-        
+
     }
 }
