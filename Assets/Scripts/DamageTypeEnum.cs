@@ -7,5 +7,6 @@ public enum DamageType
     Fire,
     Ice,
     Energy,
-    Blood
+    Blood,
+    Poison
 }

@@ -8,6 +8,8 @@ public class Projectile : SerializedMonoBehaviour
 {
     [SerializeField] private float speed = 20f;
     [SerializeField] private float lifetime = 2f;
+    [SerializeField] private TrailRenderer trail;
+    [SerializeField] private BulletType pool;
     private Vector2 _direction;
     private Dictionary<DamageType, float> _damage;
     private Rigidbody2D _rb;
@@ -17,6 +19,11 @@ public class Projectile : SerializedMonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+    }
+    
+    private void Start()
+    {
+        SetPool(PoolManager.Instance.projectilePools[pool]);
     }
 
     internal void SetPool(ProjectilePool owner)
@@ -28,6 +35,7 @@ public class Projectile : SerializedMonoBehaviour
     {
         _damage = damage;
         _timer = 0f;
+        trail.Clear();
         _direction = direction;
         gameObject.SetActive(true);
     }

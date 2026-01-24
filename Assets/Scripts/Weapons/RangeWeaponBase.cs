@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using PrimeTween;
 using Sirenix.Serialization;
@@ -7,11 +8,9 @@ public abstract class RangeWeaponBase : WeaponBase, IPickable
 {
     [SerializeField] private float speedValue;
     [SerializeField] private float attackSpeedValue;
-    [SerializeField] private Projectile bulletPrefab;
     [SerializeField] private Vector2 projectileAttenuation;
-    [SerializeField] private float reloadTime;
-    private ProjectilePool _projectilePool;
-    private SpriteRenderer _weaponSprite;
+    [SerializeField] private BulletType bulletType;
+    protected SpriteRenderer weaponSprite;
     [OdinSerialize] private Dictionary<DamageType, float> _baseDamage = new();
     public override IReadOnlyDictionary<DamageType, float> BaseDamage => _baseDamage;
     public override float AttackSpeed => attackSpeedValue;
@@ -25,15 +24,13 @@ public abstract class RangeWeaponBase : WeaponBase, IPickable
     private void Awake()
     {
         _speedMod = new StatModifierBase(StatType.Speed, x => x + speedValue);
-        _weaponSprite = gameObject.GetComponentInChildren<SpriteRenderer>();
-        _projectilePool = ProjectilePool.Instance;
-        _projectilePool.SetPrefab(bulletPrefab);
+        weaponSprite = gameObject.GetComponentInChildren<SpriteRenderer>();
     }
-
+    
     public virtual void Update()
     {
-        _weaponSprite.flipY = transform.localRotation.eulerAngles.z is > 90f and < 270f;
-        _weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 0f and < 180f ? 8 : 10;
+        weaponSprite.flipY = transform.localRotation.eulerAngles.z is > 90f and < 270f;
+        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 0f and < 180f ? 8 : 10;
     }
     
     public override void PerformAttack(Dictionary<DamageType, float> damageType, float durationModifier)
@@ -42,13 +39,15 @@ public abstract class RangeWeaponBase : WeaponBase, IPickable
         var radians = PlayerController.Instance.GetAngle() * Mathf.Deg2Rad;
         var dir = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
 
-        var projectile = _projectilePool.Get();
-        var spawnPos = _weaponSprite.transform.TransformPoint(projectileAttenuation);
+        var projectile = PoolManager.Instance.projectilePools[bulletType].Get();
+        
+        var attune = weaponSprite.flipY ? -projectileAttenuation.y : projectileAttenuation.y;
+        var spawnPos = weaponSprite.transform.TransformPoint(new Vector3(projectileAttenuation.x, attune, 0));
         projectile.transform.position = spawnPos;
         projectile.transform.rotation = PlayerController.Instance.GetQuaternion();
         var merged = DictionaryUtils.MergeIntersection(_baseDamage, damageType, (x, y) => x + x * y / 100);
-        projectile.Launch(dir, merged);
-        var flipAngle = !_weaponSprite.flipY ? recoilAngle : -recoilAngle;
+        projectile.Launch(dir, merged); 
+        var flipAngle = weaponSprite.flipY || weaponSprite.flipX ? -recoilAngle : recoilAngle;
         
         _recoilTween = Tween.Custom(
             PlayerController.Instance.GetAngle() + flipAngle,

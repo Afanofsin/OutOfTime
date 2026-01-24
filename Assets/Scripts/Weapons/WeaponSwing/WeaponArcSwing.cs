@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Interfaces;
 using UnityEngine;
@@ -14,25 +15,38 @@ public class WeaponArcSwing : SwingBase, ISwing
     
     private IReadOnlyDictionary<DamageType, float> _damage;
     private readonly HashSet<Collider2D> _hitTargets = new();
+
+    public bool IsRunning => _swingTween.isAlive;
+    
+    private void Start() => trail.emitting = false;
     
     public void StartSwing(float attackAngle, IReadOnlyDictionary<DamageType, float> damage, float duration)
     {
         if (_swingTween.isAlive) return;
         
         _hitTargets.Clear();
-        
-        var from = attackAngle - startAngle;
-        var to = attackAngle + endAngle;
 
-        transform.localRotation = Quaternion.Euler(0f, 0f, from);
-        weaponCollider.enabled = true;
-        _damage = damage;
+        float from;
+        float to;
         
+        if (attackAngle is > 90f and < 270f)
+        {
+            from = attackAngle - startAngle;
+            to = attackAngle + endAngle;
+        }
+        else
+        {
+            from = attackAngle + startAngle;
+            to = attackAngle - endAngle;
+        }
+        
+        _damage = damage;
         trail.Clear();
+        
         _swingTween = Tween.Custom(
+            attackAngle,
             from,
-            to,
-            duration,
+            duration * (2f/3f),
             angle =>
             {
                 transform.localRotation = Quaternion.Euler(0f, 0f, angle);
@@ -40,16 +54,58 @@ public class WeaponArcSwing : SwingBase, ISwing
             ease
         ).OnComplete(() =>
         { 
-            weaponCollider.enabled = false;
-            _hitTargets.Clear();
+            weaponCollider.enabled = true;
+            trail.emitting = true;
+            _swingTween = Tween.Custom(
+                from,
+                to,
+                duration * (1f/3f),
+                angle =>
+                {
+                    transform.localRotation = Quaternion.Euler(0f, 0f, angle);
+                },
+                ease
+            ).OnComplete(() =>
+            { 
+                weaponCollider.enabled = false;
+                _hitTargets.Clear();
+                trail.emitting = false;
+            }); 
         }); 
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<IDamageable>(out var damageable) && damageable is not Player && _hitTargets.Add(other))
+        if (!other.TryGetComponent<IDamageable>(out var damageable) || damageable is Player) return;
+
+        if (!_hitTargets.Add(other)) return;
+
+        var playerPos = (Vector2)PlayerController.Instance.GetPlayerPos();
+        var targetPoint = other.ClosestPoint(other.transform.position);
+        var direction = (targetPoint - playerPos).normalized;
+
+        var size = Physics2D.RaycastNonAlloc(playerPos, direction, hits, Mathf.Infinity, weaponCollider.includeLayers);
+        
+        RaycastHit2D closestHit = default;
+        var closestDistance = float.MaxValue;
+        
+        foreach (var hit in hits)
+        {
+            if (hit.collider == null) continue;
+
+            if (hit.distance < closestDistance)
+            {
+                closestDistance = hit.distance;
+                closestHit = hit;
+            }
+        }
+
+        if (closestHit.collider == null) return;
+        
+        if (closestHit.collider == other)
         {
             damageable.TakeDamage(_damage);
         }
     }
 }
+

@@ -41,7 +41,7 @@ public abstract class EntityBase : SerializedMonoBehaviour, IHealth, IAttackReac
 
     public virtual void React()
     {
-        var instance = PoolManager.Instance.pools[hitEffect].Get();
+        var instance = PoolManager.Instance.hitPools[hitEffect].Get();
         instance.transform.position = transform.position;
     }
     public virtual void Heal(float amount) => CurrentHealth += amount;

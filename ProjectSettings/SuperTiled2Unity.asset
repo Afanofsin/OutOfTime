@@ -86,7 +86,7 @@ MonoBehaviour:
       m_Value: GoblinRanged
   m_PrefabReplacements:
   - m_TypeName: 01_Door_Side
-    m_Prefab: {fileID: 6494502748652885352, guid: 73d6c0f8292331e4885e0cbc2d208d4d, type: 3}
+    m_Prefab: {fileID: 931763153926098084, guid: 7d13f088247ec614eb4b58857129d30a, type: 3}
   - m_TypeName: 01_Door_Top
     m_Prefab: {fileID: 4297601137284205738, guid: f9f4524ea7ab0204689cb636c233e299, type: 3}
   - m_TypeName: Spawner
