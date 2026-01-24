@@ -7,10 +7,8 @@ public abstract class SwingBase : MonoBehaviour
 {
     protected Collider2D weaponCollider;
     protected readonly RaycastHit2D[] hits = new RaycastHit2D[10];
-    public virtual void Awake()
-    {
-        weaponCollider = gameObject.GetComponent<Collider2D>();
-    }
+    
+    public virtual void Awake() => weaponCollider = gameObject.GetComponent<BoxCollider2D>();
 }
 
 public class WeaponThrustSwing : SwingBase, ISwing
@@ -22,6 +20,9 @@ public class WeaponThrustSwing : SwingBase, ISwing
     private Tween _swingTween;
     private IReadOnlyDictionary<DamageType, float> _damage;
     private readonly HashSet<Collider2D> _hitTargets = new();
+    public bool IsRunning => _swingTween.isAlive;
+    
+    private void Start() => trail.emitting = false;
     
     public void StartSwing(float attackAngle, IReadOnlyDictionary<DamageType, float> damage, float duration)
     {
@@ -39,10 +40,11 @@ public class WeaponThrustSwing : SwingBase, ISwing
         _damage = damage;
         
         trail.Clear();
+        trail.emitting = true;
         _swingTween = Tween.Custom(
             from,
             to,
-            duration * (2f/3f),
+            duration * 0.5f,
             position =>
             {
                 transform.localPosition = position;
@@ -50,10 +52,11 @@ public class WeaponThrustSwing : SwingBase, ISwing
             ease
         ).OnComplete(() =>
         { 
+            trail.emitting = false;
             _swingTween = Tween.Custom(
                 to,
                 from,
-                duration * (1f/3f),
+                duration * 0.5f,
                 position =>
                 {
                     transform.localPosition = position;
@@ -105,10 +108,6 @@ public class WeaponThrustSwing : SwingBase, ISwing
         if (closestHit.collider == other)
         {
             damageable.TakeDamage(_damage);
-        }
-        else
-        {
-            Debug.Log("Wall is closer, blocked by: " + closestHit.collider.name);
         }
     }
 }

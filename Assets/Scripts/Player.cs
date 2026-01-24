@@ -54,22 +54,12 @@ public class Player : EntityBase, IDamageable
     {
         if (inventory.Next() == null) return;
         
-        if (HeldWeapon is RangeWeaponBase)
-        {
-            ProjectilePool.Instance.Clear();
-        }
-        
         Equip(inventory.CurrentItem);
     }
 
     public void Previous()
     {
         if (inventory.Previous() == null) return;
-        
-        if (HeldWeapon is RangeWeaponBase)
-        {
-            ProjectilePool.Instance.Clear();
-        }
         
         Equip(inventory.CurrentItem);
     }
@@ -82,11 +72,6 @@ public class Player : EntityBase, IDamageable
 
         SpawnDroppedWeapon(droppedItem);
         
-        if (HeldWeapon is RangeWeaponBase)
-        {
-            ProjectilePool.Instance.Clear();
-        }
-
         Equip(inventory.CurrentItem);
     }
 

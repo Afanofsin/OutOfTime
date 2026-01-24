@@ -15,8 +15,10 @@ public class HitPool : MonoBehaviour
 
     private void Warmup()
     {
-        for (int i = 0; i < initialSize; i++)
+        for (var i = 0; i < initialSize; i++)
+        {
             CreateNew();
+        }
     }
 
     private HitEffect CreateNew()

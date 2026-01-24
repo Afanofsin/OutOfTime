@@ -3,19 +3,13 @@ using UnityEngine;
 
 public class ProjectilePool : MonoBehaviour
 {
-    private Projectile _prefab;
+    [SerializeField] private Projectile prefab;
     [SerializeField] private int initialSize = 32;
-    public static ProjectilePool Instance;
-    private readonly Queue<Projectile> pool = new();
-
+    private readonly Queue<Projectile> _pool = new();
+    
     private void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(Instance);
-        }
-        Instance = this;
-        
+        Warmup();
     }
 
     private void Warmup()
@@ -26,36 +20,36 @@ public class ProjectilePool : MonoBehaviour
 
     private Projectile CreateNew()
     {
-        var p = Instantiate(_prefab, transform);
+        var p = Instantiate(prefab, transform);
         p.gameObject.SetActive(false);
         p.SetPool(this);
-        pool.Enqueue(p);
+        _pool.Enqueue(p);
         return p;
     }
 
     public Projectile Get()
     {
-        if (pool.Count == 0)
+        if (_pool.Count == 0)
             CreateNew();
 
-        return pool.Dequeue();
+        return _pool.Dequeue();
     }
 
     public void Release(Projectile projectile)
     {
-        pool.Enqueue(projectile);
+        _pool.Enqueue(projectile);
     }
 
     public void SetPrefab(Projectile prefab)
     {
-        _prefab = prefab;
+        this.prefab = prefab;
     } 
     
     public void Clear()
     {
-        while (pool.Count > 0)
+        while (_pool.Count > 0)
         {
-            var p = pool.Dequeue();
+            var p = _pool.Dequeue();
             if (p != null)
                 Destroy(p.gameObject);
         }

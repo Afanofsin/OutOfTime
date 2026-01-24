@@ -86,7 +86,7 @@ namespace ProjectFiles.Code.LevelGeneration
                 if (openDirs.Contains(door.Direction))
                 {
                     door.Close();
-                    Debug.Log($"Closing off a {door.Direction}");
+                    Debug.Log($"Closing offf a {door.Direction}");
                 }
             }
         }

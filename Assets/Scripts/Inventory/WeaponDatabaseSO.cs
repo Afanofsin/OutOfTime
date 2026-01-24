@@ -11,9 +11,7 @@ public class WeaponDatabaseSO : SerializedScriptableObject
 
     private bool HasUniqueInts(Dictionary<int, WeaponBase> dict)
     {
-        if (dict == null)
-            return true;
-
+        if (dict == null) return true;
         return dict.Values.Distinct().Count() == dict.Values.Count;
     }
 }

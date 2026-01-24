@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275b9fdcaf244352a51016d88d89416a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectFiles.Code.Controllers.GameController
-  playerPrefab: {fileID: 4042248177728594999, guid: f8a7e1a8e27cbf64fa8d2e42fb4076f8, type: 3}
+  playerPrefab: {fileID: 2116426250889604768, guid: 168176389a239dd468f6bfcb0dcd2a4c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

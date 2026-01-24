@@ -1,14 +1,6 @@
 using System;
 using UnityEngine;
 
-public enum HitEffectType
-{
-    Blood,
-    GreenBlood,
-    Sand,
-    PurpleBlood
-}
-
 
 public class HitEffect : MonoBehaviour
 {
@@ -26,7 +18,7 @@ public class HitEffect : MonoBehaviour
 
     private void Start()
     {
-        SetPool(PoolManager.Instance.pools[pool]);
+        SetPool(PoolManager.Instance.hitPools[pool]);
     }
 
     private void OnEnable()

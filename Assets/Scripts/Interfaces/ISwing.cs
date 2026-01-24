@@ -4,4 +4,5 @@ using UnityEngine;
 public interface ISwing
 { 
     void StartSwing(float angle, IReadOnlyDictionary<DamageType, float> damage, float duration);
+    bool IsRunning { get; }
 }

@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Player player;
     
     public static Vector2 WorldMousePos => Camera.main!.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-    public static float WorldMouseAngle;
     private Rigidbody2D PlayerRb => gameObject.GetOrAddComponent<Rigidbody2D>();
     private bool IsMoving => _moveInput.sqrMagnitude != 0;
     private bool _isDashing;
@@ -97,7 +96,7 @@ public class PlayerController : MonoBehaviour
     {
         _stateMachine.Update();
         Move(_moveInput);
-        if (CurrentState != _attackingState)
+        if (CurrentState != _attackingState && player.HeldWeapon != null)
         {
             player.HeldWeapon.transform.localRotation =
                 Quaternion.Slerp(
@@ -206,6 +205,9 @@ public class PlayerController : MonoBehaviour
             {
                 interactable.Interact(gameObject);
             }
+
+            if (CurrentState == _attackingState) return;
+            
             if (hit.TryGetComponent<IPickable>(out var pickable))
             {
                 player.PickUp(pickable);
@@ -217,13 +219,12 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 direction = WorldMousePos - (Vector2)transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        if (angle < 0f) angle += 360f;
-        return angle;
+        return angle < 0 ? angle + 360f : angle;
     }
 
     public Quaternion GetQuaternion()
     {
-        return Quaternion.Euler(0f, 0f, GetAngle() + 1);
+        return Quaternion.Euler(0f, 0f, GetAngle());
     }
 
     public Vector3 GetPlayerPos()
