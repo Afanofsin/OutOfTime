@@ -6,6 +6,30 @@
  <objecttype name="01_Door_Top" color="#a0a0a4">
   <property name="SetDirection" type="string" default="North"/>
  </objecttype>
+ <objecttype name="02_BoonSpawn" color="#a0a0a4">
+  <property name="SetBoon" type="string" default=""/>
+ </objecttype>
+ <objecttype name="02_Door_Side" color="#a0a0a4">
+  <property name="SetDirection" type="string" default="East"/>
+ </objecttype>
+ <objecttype name="02_Door_Top" color="#a0a0a4">
+  <property name="SetDirection" type="string" default="North"/>
+ </objecttype>
+ <objecttype name="02_LootSpawn" color="#a0a0a4">
+  <property name="SetLoot" type="string" default=""/>
+ </objecttype>
+ <objecttype name="03_BoonSpawn" color="#a0a0a4">
+  <property name="SetBoon" type="string" default=""/>
+ </objecttype>
+ <objecttype name="03_Door_Side" color="#a0a0a4">
+  <property name="SetDirection" type="string" default="East"/>
+ </objecttype>
+ <objecttype name="03_Door_Top" color="#a0a0a4">
+  <property name="SetDirection" type="string" default="North"/>
+ </objecttype>
+ <objecttype name="03_LootSpawn" color="#a0a0a4">
+  <property name="SetLoot" type="string" default=""/>
+ </objecttype>
  <objecttype name="BoonSpawn" color="#a0a0a4">
   <property name="SetBoon" type="string" default=""/>
  </objecttype>

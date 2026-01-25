@@ -123,7 +123,7 @@ namespace Enemies
             var instance = PoolManager.Instance.projectilePools[bulletType].Get();
             var dirToPlayer = (Target.transform.position - this.transform.position).normalized;
             instance.transform.position = this.transform.position + dirToPlayer + dirToPlayer + dirToPlayer;
-            instance.Launch(dirToPlayer, Damage);
+            instance.Launch(dirToPlayer, Damage, LayerMask.GetMask("Damagable"));
         
             lastAttackTime = 0;
             dynamicAttackCooldown = attackCooldown * UnityEngine.Random.Range(1f, 1.8f);

@@ -19,7 +19,7 @@ public class BoonDatabase : SerializedMonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
     
-    public BoonBase GetWeaponByRarity(RarityType rarity)
+    public BoonBase GetBoonByRarity(RarityType rarity)
     {
         
         List<BoonBase> candidates = new();

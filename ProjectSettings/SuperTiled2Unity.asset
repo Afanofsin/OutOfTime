@@ -66,6 +66,54 @@ MonoBehaviour:
     - m_Name: SetDirection
       m_Type: string
       m_Value: North
+  - m_Name: 02_BoonSpawn
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetBoon
+      m_Type: string
+      m_Value: 
+  - m_Name: 02_Door_Side
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetDirection
+      m_Type: string
+      m_Value: East
+  - m_Name: 02_Door_Top
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetDirection
+      m_Type: string
+      m_Value: North
+  - m_Name: 02_LootSpawn
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetLoot
+      m_Type: string
+      m_Value: 
+  - m_Name: 03_BoonSpawn
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetBoon
+      m_Type: string
+      m_Value: 
+  - m_Name: 03_Door_Side
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetDirection
+      m_Type: string
+      m_Value: East
+  - m_Name: 03_Door_Top
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetDirection
+      m_Type: string
+      m_Value: North
+  - m_Name: 03_LootSpawn
+    m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
+    m_CustomProperties:
+    - m_Name: SetLoot
+      m_Type: string
+      m_Value: 
   - m_Name: BoonSpawn
     m_Color: {r: 0.627451, g: 0.627451, b: 0.6431373, a: 1}
     m_CustomProperties:
@@ -92,6 +140,22 @@ MonoBehaviour:
   - m_TypeName: Spawner
     m_Prefab: {fileID: 7664460637648515451, guid: 883be9c5cff357847b7df03d261f23b7, type: 3}
   - m_TypeName: BoonSpawn
-    m_Prefab: {fileID: 0}
+    m_Prefab: {fileID: 2422409825535802689, guid: 4c14f50e3631c0e4695e0d2cc6cae977, type: 3}
   - m_TypeName: LootSpawn
+    m_Prefab: {fileID: 2330084649444448319, guid: 68708bd347b333f48b3f42e36593a42a, type: 3}
+  - m_TypeName: 02_BoonSpawn
+    m_Prefab: {fileID: 0}
+  - m_TypeName: 02_Door_Side
+    m_Prefab: {fileID: 2859588936301794391, guid: 70dfe1c36fc416a4b996c9ed06f1aee1, type: 3}
+  - m_TypeName: 02_Door_Top
+    m_Prefab: {fileID: 2727259067654916596, guid: f1968d68e93d1cb4ca736d6140993e35, type: 3}
+  - m_TypeName: 02_LootSpawn
+    m_Prefab: {fileID: 0}
+  - m_TypeName: 03_BoonSpawn
+    m_Prefab: {fileID: 0}
+  - m_TypeName: 03_Door_Side
+    m_Prefab: {fileID: 331830284963087574, guid: 89a888ac19251b84d9218adf0714fe78, type: 3}
+  - m_TypeName: 03_Door_Top
+    m_Prefab: {fileID: 4374759666959205997, guid: 5902e94163ae8e947a3d41c061f23f41, type: 3}
+  - m_TypeName: 03_LootSpawn
     m_Prefab: {fileID: 0}
