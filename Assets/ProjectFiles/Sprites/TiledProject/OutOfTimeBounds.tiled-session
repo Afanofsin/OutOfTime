@@ -38,11 +38,11 @@
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 8,
-            "selectedLayer": 10,
+            "scale": 2,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 215.25,
-                "y": 209.5625
+                "x": 217.5,
+                "y": 192.75
             }
         },
         "Maps/Castle/02_LootRoom.tmx": {
