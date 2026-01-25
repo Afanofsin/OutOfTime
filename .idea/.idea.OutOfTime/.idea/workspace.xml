@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/Castle/02_BoonRoom.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/Maps/Castle/02_BoonRoom.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-session" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-session" afterDir="false" />
-    </list>
+    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -215,7 +212,7 @@
       <workItem from="1769174849326" duration="4457000" />
       <workItem from="1769244704977" duration="13156000" />
       <workItem from="1769273434267" duration="17316000" />
-      <workItem from="1769324455456" duration="15643000" />
+      <workItem from="1769324455456" duration="16246000" />
     </task>
     <servers />
   </component>
