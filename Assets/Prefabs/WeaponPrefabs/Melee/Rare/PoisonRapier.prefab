@@ -181,8 +181,9 @@ MonoBehaviour:
       Entry: 8
       Data: 
   interactCollider: {fileID: 818833473054718792}
-  speedValue: 1.25
+  speedValue: 0.5
   attackSpeedValue: 0.6
+  minAttackTime: 0.15
 --- !u!58 &818833473054718792
 CircleCollider2D:
   m_ObjectHideFlags: 0

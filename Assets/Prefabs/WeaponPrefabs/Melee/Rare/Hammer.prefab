@@ -194,7 +194,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 35
+      Data: 25
     - Name: 
       Entry: 8
       Data: 
@@ -205,8 +205,9 @@ MonoBehaviour:
       Entry: 8
       Data: 
   interactCollider: {fileID: 818833473054718792}
-  speedValue: -2.25
-  attackSpeedValue: 1.5
+  speedValue: -1.25
+  attackSpeedValue: 1.7
+  minAttackTime: 0.45
 --- !u!1 &2470831564890529630
 GameObject:
   m_ObjectHideFlags: 0

@@ -170,7 +170,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 18
+      Data: 8
     - Name: 
       Entry: 8
       Data: 
@@ -183,6 +183,7 @@ MonoBehaviour:
   interactCollider: {fileID: 818833473054718792}
   speedValue: -0.25
   attackSpeedValue: 1.35
+  minAttackTime: 0.2
 --- !u!58 &818833473054718792
 CircleCollider2D:
   m_ObjectHideFlags: 0

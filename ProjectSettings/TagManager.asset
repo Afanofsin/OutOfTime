@@ -19,7 +19,7 @@ TagManager:
   - Damagable
   - IgnorePlayer
   - IgnoreProjectile
-  - 
+  - Player
   - 
   - 
   - ZoneCollider

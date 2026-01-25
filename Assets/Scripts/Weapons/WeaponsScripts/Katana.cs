@@ -7,6 +7,6 @@ public class Katana : MeleeWeaponBase
         if (swing.IsRunning) return;
         
         weaponSprite.flipX = transform.localRotation.eulerAngles.z is > 90f and < 270f;
-        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 20f and < 160 ? 8 : 11;
+        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 45f and < 135f ? 8 : 11;
     }
 }

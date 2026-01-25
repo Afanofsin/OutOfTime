@@ -44,7 +44,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356622577720386282}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -81,7 +81,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 0.1}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &3867275118730904671
 MonoBehaviour:
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponArcSwing
   startAngle: 70
-  endAngle: 60
-  ease: 13
+  endAngle: 70
+  ease: 16
   trail: {fileID: 1312163831467210426}
 --- !u!58 &818833473054718792
 CircleCollider2D:
@@ -148,18 +148,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseballBat
   serializationData:
-    SerializedFormat: 0
-    SerializedBytes: 17010200000069006400100000001d010600000072006100720069007400790004000000000000000b01050000007300770069006e0067000000000001010b0000005f006200610073006500440061006d006100670065002f00000000016a000000530079007300740065006d002e0043006f006c006c0065006300740069006f006e0073002e00470065006e0065007200690063002e00440069006300740069006f006e00610072007900600032005b005b00440061006d0061006700650054007900700065002c00200041007300730065006d0062006c0079002d004300530068006100720070005d002c005b00530079007300740065006d002e00530069006e0067006c0065002c0020006d00730063006f0072006c00690062005d005d002c0020006d00730063006f0072006c00690062000000000001010800000063006f006d00700061007200650072002f01000000015a000000530079007300740065006d002e0043006f006c006c0065006300740069006f006e0073002e00470065006e0065007200690063002e0045006e0075006d0045007100750061006c0069007400790043006f006d0070006100720065007200600031005b005b00440061006d0061006700650054007900700065002c00200041007300730065006d0062006c0079002d004300530068006100720070005d005d002c0020006d00730063006f0072006c0069006200010000000600000000000000000705060100000000000000042e1d010200000024006b0003000000000000001f01020000002400760000007042050705
+    SerializedFormat: 2
+    SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 3867275118730904671}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: id
+      Entry: 3
+      Data: 16
+    - Name: rarity
+      Entry: 3
+      Data: 4
+    - Name: swing
+      Entry: 10
+      Data: 0
+    - Name: _baseDamage
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[DamageType, Assembly-CSharp],[System.Single,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[DamageType, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 4
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 4
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   interactCollider: {fileID: 818833473054718792}
-  speedValue: 1
-  attackSpeedValue: 0.8
+  speedValue: 0.5
+  attackSpeedValue: 0.75
+  minAttackTime: 0.25
 --- !u!1 &2470831564890529630
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +246,7 @@ Transform:
   m_GameObject: {fileID: 2470831564890529630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.85, y: 0, z: 0}
+  m_LocalPosition: {x: 3.0833335, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -245,7 +305,7 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1.5
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -259,23 +319,14 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.077956274
-        value: 0.9997897
+        time: 0.5
+        value: 1
         inSlope: -0.01775545
         outSlope: -0.01775545
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.41759455
-        value: 0.87349254
-        inSlope: -0.9606004
-        outSlope: -0.9606004
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 1
-        outWeight: 0.21241044
       - serializedVersion: 3
         time: 1
         value: 0

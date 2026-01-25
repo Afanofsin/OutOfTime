@@ -13,12 +13,14 @@ public class Projectile : SerializedMonoBehaviour
     private Vector2 _direction;
     private Dictionary<DamageType, float> _damage;
     private Rigidbody2D _rb;
+    private Collider2D _collider2D;
     private float _timer;
     private ProjectilePool _pool;
-
+    private LayerMask _mask;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _collider2D = GetComponent<Collider2D>();
     }
     
     private void Start()
@@ -31,8 +33,10 @@ public class Projectile : SerializedMonoBehaviour
         _pool = owner;
     }
 
-    public void Launch(Vector2 direction, Dictionary<DamageType, float> damage)
+    public void Launch(Vector2 direction, Dictionary<DamageType, float> damage, LayerMask mask)
     {
+        _mask = mask;
+        _collider2D.excludeLayers += _mask;
         _damage = damage;
         _timer = 0f;
         trail.Clear();
@@ -56,7 +60,7 @@ public class Projectile : SerializedMonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<IEnemy>(out var enemy) && enemy is IDamageable damageable)
+        if (other.TryGetComponent<IDamageable>(out var damageable))
         {
             damageable.TakeDamage(_damage);
         } 
@@ -67,6 +71,7 @@ public class Projectile : SerializedMonoBehaviour
     {
         _rb.linearVelocity = Vector2.zero;
         gameObject.SetActive(false);
+        _collider2D.excludeLayers -= _mask;
         _pool.Release(this);
     }
 }

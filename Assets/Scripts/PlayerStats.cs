@@ -48,12 +48,22 @@ public class PlayerStats
     
     public float DashRange
     {
-        get;
+        get
+        {
+            var q = new Query(StatType.DashRange, _baseStats.dashRange);
+            _mediator.PerformQuery(this, q);
+            return q.Value;
+        }
     }
 
-    public Dictionary<DamageType, float> Resists
+    public float DashCooldown
     {
-        get;
+        get
+        {
+            var q = new Query(StatType.DashCooldown, _baseStats.dashCooldown);
+            _mediator.PerformQuery(this, q);
+            return q.Value;
+        }
     }
 
     public PlayerStats(BaseStats baseStats, StatsMediator mediator)

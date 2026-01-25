@@ -209,5 +209,6 @@ MonoBehaviour:
       Data: 
   attackSpeed: 100
   health: 0
-  speed: 4
-  dashRange: 0
+  speed: 3.25
+  dashRange: 10
+  dashCooldown: 1

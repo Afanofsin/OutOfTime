@@ -13,6 +13,7 @@ public class BaseStats : SerializedScriptableObject
     public float health;
     public float speed;
     public float dashRange;
+    public float dashCooldown;
 }
 
 public enum StatType
@@ -21,5 +22,5 @@ public enum StatType
     AttackSpeed,
     Speed,
     DashRange,
-    Resist
+    DashCooldown
 }

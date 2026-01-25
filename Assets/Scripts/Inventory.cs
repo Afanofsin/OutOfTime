@@ -1,9 +1,8 @@
 using UnityEngine;
-using Interfaces;
 
-public class Inventory : MonoBehaviour, IKeyHolder
+public class Inventory : MonoBehaviour
 {
-    [SerializeField] private int keys;
+    [SerializeField] private uint bandages;
     [SerializeField] private int debt;
     [SerializeField] private InventorySlot[] inventorySlots;
     private int ItemCount
@@ -22,16 +21,16 @@ public class Inventory : MonoBehaviour, IKeyHolder
         }
     }
 
-    public bool Keys => keys > 0;
+    public bool Bandages => bandages > 0;
 
     private int _currentSlot;
-
     public int CurrentSlot => _currentSlot;
     public WeaponBase CurrentItem => GetSlotItem(_currentSlot);
 
     private void Awake()
     {
         _currentSlot = 0;
+        bandages = 0;
     }
     
     public WeaponBase Next()
@@ -107,10 +106,12 @@ public class Inventory : MonoBehaviour, IKeyHolder
 
         var droppedItem = inventorySlots[_currentSlot].HeldItem;
         inventorySlots[_currentSlot].SetItem(null);
-
-        // Select next valid weapon
+        
         Next();
 
         return droppedItem;
     }
+
+    public void AddBandage(uint amount) => bandages += amount;
+    public void SubtractBandage() => bandages--;
 }

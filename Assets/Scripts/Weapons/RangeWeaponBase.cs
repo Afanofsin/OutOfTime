@@ -29,8 +29,9 @@ public abstract class RangeWeaponBase : WeaponBase, IPickable
     
     public virtual void Update()
     {
+        if (_recoilTween.isAlive) return;
         weaponSprite.flipY = transform.localRotation.eulerAngles.z is > 90f and < 270f;
-        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 0f and < 180f ? 8 : 10;
+        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 45f and < 135f ? 8 : 11;
     }
     
     public override void PerformAttack(Dictionary<DamageType, float> damageType, float durationModifier)
@@ -46,13 +47,13 @@ public abstract class RangeWeaponBase : WeaponBase, IPickable
         projectile.transform.position = spawnPos;
         projectile.transform.rotation = PlayerController.Instance.GetQuaternion();
         var merged = DictionaryUtils.MergeIntersection(_baseDamage, damageType, (x, y) => x + x * y / 100);
-        projectile.Launch(dir, merged); 
+        projectile.Launch(dir, merged, LayerMask.GetMask("Player")); 
         var flipAngle = weaponSprite.flipY || weaponSprite.flipX ? -recoilAngle : recoilAngle;
         
         _recoilTween = Tween.Custom(
             PlayerController.Instance.GetAngle() + flipAngle,
             PlayerController.Instance.GetAngle(),
-            Mathf.Max(0.1f, AttackSpeed * 0.25f),
+            Mathf.Max(0.1f, AttackSpeed),
             angle =>
             {
                 transform.localRotation = Quaternion.Euler(0f, 0f, angle);
@@ -62,12 +63,5 @@ public abstract class RangeWeaponBase : WeaponBase, IPickable
     }
     
     public override StatModifier GetStatModifier() => _speedMod;
-
-    public void PickUp(Inventory context)
-    {
-        if (context.TryAdd(WeaponDatabase.Instance.GetWeaponByID(id)))
-        {
-            Destroy(gameObject);
-        }
-    }
+    
 }

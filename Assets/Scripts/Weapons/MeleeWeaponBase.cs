@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;
 
-public abstract class WeaponBase : SerializedMonoBehaviour, IWeapon, IEquipable
+public abstract class WeaponBase : SerializedMonoBehaviour, IWeapon, IEquipable, IPickable
 {
     public abstract IReadOnlyDictionary<DamageType, float> BaseDamage { get; }
     public abstract float AttackSpeed { get; }
@@ -12,12 +12,20 @@ public abstract class WeaponBase : SerializedMonoBehaviour, IWeapon, IEquipable
     [SerializeField] public readonly int id;
     [SerializeField] public Collider2D interactCollider;
     public readonly RarityType rarity;
+    public virtual void PickUp(Inventory context)
+    {
+        if (context.TryAdd(WeaponDatabase.Instance.GetWeaponByID(id)))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
 
-public abstract class MeleeWeaponBase : WeaponBase, IPickable
+public abstract class MeleeWeaponBase : WeaponBase
 {
     [SerializeField] private float speedValue;
     [SerializeField] private float attackSpeedValue;
+    [SerializeField] private float minAttackTime;
     
     [OdinSerialize] protected ISwing swing;
     protected SpriteRenderer weaponSprite;
@@ -36,24 +44,16 @@ public abstract class MeleeWeaponBase : WeaponBase, IPickable
         if (swing.IsRunning) return;
         
         weaponSprite.flipX = transform.localRotation.eulerAngles.z is > 90f and < 270f;
-        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 0f and < 180f ? 8 : 11;
+        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 35f and < 145 ? 8 : 11;
     }
     
     public override void PerformAttack(Dictionary<DamageType, float> damageType, float durationModifier)
     {
         var merged = DictionaryUtils.MergeIntersection(_baseDamage, damageType, (x, y) => x + x * y / 100);
-        var duration = Mathf.Max(0.1f, attackSpeedValue * durationModifier / 100);
+        var duration = Mathf.Max(minAttackTime, attackSpeedValue * durationModifier / 100);
         swing.StartSwing(PlayerController.Instance.GetAngle(), merged, duration);
     }
     
     public override StatModifier GetStatModifier() => _speedMod;
-
-    public void PickUp(Inventory context)
-    {
-        if (context.TryAdd(WeaponDatabase.Instance.GetWeaponByID(id)))
-        {
-            Destroy(gameObject);
-        }
-    }
 }
 
