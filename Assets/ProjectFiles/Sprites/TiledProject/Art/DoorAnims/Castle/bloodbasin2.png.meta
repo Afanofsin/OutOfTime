@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3d90808a50145da4d8f78e91c91d1c22
+guid: f51db008003b91644829e589825c5d6a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4970548355547594661
-    second: Doors-Sheet6_0
+      213: 962532427981834445
+    second: bloodbasin2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Doors-Sheet6_0
+      name: bloodbasin2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 58
+        width: 96
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b500fa01b90150bb0800000000000000
-      internalID: -4970548355547594661
+      spriteID: dc8c6aeb42a9b5d00800000000000000
+      internalID: 962532427981834445
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Doors-Sheet6_0: -4970548355547594661
+      bloodbasin2_0: 962532427981834445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

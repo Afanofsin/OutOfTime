@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f51db008003b91644829e589825c5d6a
+guid: b9c86afce00d2e74ab7ab0f71ef7567f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 962532427981834445
-    second: bloodbasin2_0
+      213: -1837709945037130264
+    second: bloodbasin3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bloodbasin2_0
+      name: bloodbasin3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc8c6aeb42a9b5d00800000000000000
-      internalID: 962532427981834445
+      spriteID: 8e5fbd5aa842f76e0800000000000000
+      internalID: -1837709945037130264
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bloodbasin2_0: 962532427981834445
+      bloodbasin3_0: -1837709945037130264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../Tilesets/SpriteSheetGeneral.tsx"/>
+ <object name="02_Door_Side" type="02_Door_Side" gid="29" width="16" height="16"/>
+</template>

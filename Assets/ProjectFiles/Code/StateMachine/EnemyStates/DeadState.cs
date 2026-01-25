@@ -5,11 +5,11 @@ namespace FSM.EnemyStates
 {
     public class DeadState : BaseState
     {
-        private IRangedEnemy enemy;
+        private EnemyEntityBase enemy;
         
         public override void OnEnter()
         {
-            enemy.OnDeath();
+            enemy.Die();
         }
 
         public override void OnUpdate()
@@ -27,7 +27,7 @@ namespace FSM.EnemyStates
             base.OnExit();
         }
 
-        public DeadState(IRangedEnemy Enemy)
+        public DeadState(EnemyEntityBase Enemy)
         {
             enemy = Enemy;
         }

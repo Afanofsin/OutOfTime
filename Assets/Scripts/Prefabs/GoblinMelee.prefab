@@ -620,9 +620,9 @@ MonoBehaviour:
   attackDelayMin: 0.5
   attackDelayMax: 1.2
   windupDuration: 0.3
-  recoveryDuration: 0.5
+  recoveryDuration: 2
   attackDuration: 0.5
-  personalSpaceRadius: 1.5
+  personalSpaceRadius: 2.5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512

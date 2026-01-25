@@ -17,6 +17,7 @@ namespace FSM.EnemyStates
         public override void OnUpdate()
         {
             timer += Time.deltaTime;
+            enemy.StopMovement();
             enemy.FaceTarget();
             enemy.IncrementAttackTimer(Time.deltaTime);
         }

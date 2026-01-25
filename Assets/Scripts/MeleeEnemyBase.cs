@@ -31,14 +31,15 @@ namespace DefaultNamespace
         protected StateMachine stateMachine;
         protected IState CurrentState => stateMachine.GetState();
         protected bool isInitialized = false;
-        
-        private float attackTimer = 0f;
-        private float requiredAttackDelay;
+
+        private float windupTimer = 0f;
+        private float requiredAttackDelay = 0.5f;
     
         // Public properties for predicates
         public float MeleeRange => meleeRange;
         public float WindupDuration => windupDuration;
         public float RecoveryDuration => recoveryDuration;
+        public float AttackDelay => attackDuration * 2;
 
         public override void Awake()
         {
@@ -168,18 +169,18 @@ namespace DefaultNamespace
         
         public void ResetAttackTimer()
         {
-            attackTimer = 0f;
+            windupTimer = 0f;
             requiredAttackDelay = Random.Range(attackDelayMin, attackDelayMax);
         }
 
         public void IncrementAttackTimer(float deltaTime)
         {
-            attackTimer += deltaTime;
+            windupTimer += deltaTime;
         }
 
         public bool CanAttack()
         {
-            return attackTimer >= requiredAttackDelay;
+            return windupTimer >= requiredAttackDelay;
         }
 
         public virtual void OnDeath()
