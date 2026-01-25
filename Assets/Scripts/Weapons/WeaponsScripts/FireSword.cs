@@ -32,6 +32,6 @@ public class FireSword : MeleeWeaponBase
             _shape.position = _posOffsetNew;
             _shape.rotation = _rotOffsetNew;
         }
-        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 20f and < 160f ? 8 : 11;
+        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 45f and < 135f ? 8 : 11;
     }
 }

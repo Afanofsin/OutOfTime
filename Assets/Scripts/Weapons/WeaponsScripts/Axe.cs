@@ -7,6 +7,6 @@ public class Axe : MeleeWeaponBase
         if (swing.IsRunning) return;
         
         weaponSprite.flipX = transform.localRotation.eulerAngles.z is <= 90f or >= 270f;
-        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 30f and < 150f ? 8 : 11;
+        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 45f and < 135f ? 8 : 11;
     }
 }

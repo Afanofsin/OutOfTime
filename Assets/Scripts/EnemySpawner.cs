@@ -15,7 +15,6 @@ public class EnemySpawner : MonoBehaviour
     {
         room = GetComponentInParent<Room>();
         room.OnPlayerEnteredRoom += Spawn;
-        //Spawn();
     }
 
     public void SetEnemy(string name)
@@ -42,6 +41,7 @@ public class EnemySpawner : MonoBehaviour
         enemyInstance.SetTarget(GameController.Instance.GetPlayerReference);
         room.SubscribeEnemyToRoom();
         enemyInstance.onEntityDeath += room.HandleEnemyDeath;
+        enemyInstance.onEntityDeath += BloodManager.Instance.HealPlayer;
         room.OnPlayerEnteredRoom -= Spawn;
         Destroy(gameObject);
     }

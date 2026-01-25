@@ -315,6 +315,7 @@ MonoBehaviour:
   interactCollider: {fileID: 3915492607595472199}
   speedValue: 0.5
   attackSpeedValue: 0.8
+  minAttackTime: 0.15
 --- !u!114 &4861233883727033776
 MonoBehaviour:
   m_ObjectHideFlags: 0

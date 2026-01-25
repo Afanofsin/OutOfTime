@@ -11,22 +11,28 @@ public class PlayerController : MonoBehaviour
     private Vector2 _moveInput;
     [SerializeField] private LayerMask interactableMask;
     [SerializeField] private Player player;
+    [SerializeField] private TrailRenderer dashTrail;
     
     public static Vector2 WorldMousePos => Camera.main!.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+    public static float DashTime = 0.25f;
+    public Player CurrentPlayer => player;
     private Rigidbody2D PlayerRb => gameObject.GetOrAddComponent<Rigidbody2D>();
-    private bool IsMoving => _moveInput.sqrMagnitude != 0;
+    public bool IsMoving => _moveInput.sqrMagnitude != 0;
     private bool _isDashing;
     private bool _isAttacking;
     public IState CurrentState => _stateMachine.GetState();
     private StateMachine _stateMachine;
-        
+    private Collider2D _playerCollider;
+    
     private PlayerIdleState _idleState;
     private PlayerMovingState _movingState;
     private PlayerAttackingState _attackingState;
     private PlayerInteractingState _interactingState;
     private PlayerDashingState _dashingState;
 
-    public static PlayerController Instance; 
+    public static PlayerController Instance;
+    private float _elapsedTime = 1f;
+    private bool _canDash => _elapsedTime >= (player.PlayerStats.DashCooldown + DashTime);
     
     private void InitializeStateMachine()
     {
@@ -85,6 +91,7 @@ public class PlayerController : MonoBehaviour
         Instance = this;
         
         InitializeStateMachine();
+        _playerCollider = player.GetComponent<Collider2D>();
     }
 
     private void Start()
@@ -94,8 +101,21 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        _stateMachine.Update();
+        _elapsedTime += Time.deltaTime;
+        
+        if (_isDashing && _elapsedTime >= DashTime)
+        {
+            EndDash();
+        }
+        
+        if (_attackingState.IsComplete)
+        {
+            _isAttacking = false;
+        }
+
         Move(_moveInput);
+        
+        _stateMachine.Update();
         if (CurrentState != _attackingState && player.HeldWeapon != null)
         {
             player.HeldWeapon.transform.localRotation =
@@ -107,29 +127,42 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
-    {
-        moveSpeed = player.PlayerStats.Speed;
-    }
+    private void LateUpdate() => moveSpeed = player.PlayerStats.Speed;
+    
+    public void Move(InputAction.CallbackContext context) => _moveInput = context.ReadValue<Vector2>();
+    
 
-
-    public void Move(InputAction.CallbackContext context)
+    public void UseSkill(InputAction.CallbackContext context)
     {
-        _moveInput = context.ReadValue<Vector2>();
+        if (context.started)
+        {
+            player.UseSkill();
+        }
     }
 
     public void Dash(InputAction.CallbackContext context)
     {
-        if (context.action.WasPressedThisFrame())
-        {
-            _isDashing = true;
-        }
-        
-        if (context.action.WasReleasedThisFrame())
-        {
-            _isDashing = false;
-        }
+        if (!context.performed || !_canDash) return;
+
+        StartDash();
     }
+
+    private void StartDash()
+    {
+        _isDashing = true;
+        _playerCollider.enabled = false;
+        dashTrail.emitting = true;
+        _elapsedTime = 0f;
+    }
+
+    private void EndDash()
+    {
+        _isDashing = false;
+        _playerCollider.enabled = true;
+        dashTrail.emitting = false;
+    }
+    
+    
     
     public void Interact(InputAction.CallbackContext context)
     {
@@ -141,17 +174,13 @@ public class PlayerController : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if(CurrentState == _dashingState) return;
-        
-        if (context.action.WasPressedThisFrame())
-        {
-            _isAttacking = true;
-        }
-        
-        if (context.action.WasReleasedThisFrame())
-        {
-            _isAttacking = false;
-        }
+        if (CurrentState == _dashingState)
+            return;
+
+        if (!context.performed)
+            return;
+
+        _isAttacking = true;
     }
 
     public void Previous(InputAction.CallbackContext context)
@@ -161,6 +190,14 @@ public class PlayerController : MonoBehaviour
         if (context.action.WasReleasedThisFrame())
         {
             player.Previous();
+        }
+    }
+
+    public void UseBandage(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            player.UseBandage();
         }
     }
     
@@ -176,7 +213,7 @@ public class PlayerController : MonoBehaviour
 
     public void Drop(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && CurrentState != _attackingState)
         {
             player.Drop();
         }

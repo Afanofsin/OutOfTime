@@ -9,8 +9,7 @@ namespace FSM.PlayerStates
 
         private readonly Rigidbody2D _targs;
         private readonly System.Func<Vector2> _getDirection;
-
-        private float dashTime = 0.25f;
+        
         private float _elapsedTime;
         private Vector2 _dashDir;
 
@@ -23,10 +22,10 @@ namespace FSM.PlayerStates
 
         public override void OnUpdate()
         {
-            _targs.linearVelocity = _dashDir * 20f;
+            _targs.linearVelocity = _dashDir * PlayerController.Instance.CurrentPlayer.PlayerStats.DashRange;
             
             _elapsedTime += Time.deltaTime;
-            if (_elapsedTime >= dashTime)
+            if (_elapsedTime >= PlayerController.DashTime)
                 IsComplete = true;
         }
 
