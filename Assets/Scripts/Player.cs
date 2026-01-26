@@ -187,6 +187,12 @@ public class Player : EntityBase, IDamageable
         
         onBandageChange?.Invoke(inventory.BandagesAmount);
     }
+
+    public void AddBandages(int amount)
+    {
+        inventory.AddBandage(amount);
+        onBandageChange?.Invoke(inventory.BandagesAmount);
+    }
     
     private void SpawnDropped(IPickable item)
     {

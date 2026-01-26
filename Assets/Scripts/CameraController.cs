@@ -106,8 +106,9 @@ public class CameraController : MonoBehaviour
         transform.position = targetPos;
     }
     
-    private void GainPlayerReference(Transform player)
+    private void GainPlayerReference(GameObject Player)
     {
+        var player = Player.transform;
         float zPos = this.transform.position.z;
         _playerPos = player;
         Vector3 moveTo = _playerPos.position;

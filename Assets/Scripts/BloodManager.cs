@@ -1,6 +1,7 @@
 using System;
 using FSM;
 using FSM.PlayerStates;
+using ProjectFiles.Code.Events;
 using UnityEngine;
 
 public class BloodManager : MonoBehaviour
@@ -11,6 +12,12 @@ public class BloodManager : MonoBehaviour
     private float _tickAmount;
     private const float TickCooldown = 1f;
     private float _elapsedTime;
+    private bool isInitialized;
+
+    private void OnEnable()
+    {
+        GameEvents.OnPlayerCreated += TurnOn;
+    }
 
     private void Awake()
     {
@@ -21,10 +28,12 @@ public class BloodManager : MonoBehaviour
         Instance = this;
         
         _elapsedTime = 0;
+        isInitialized = false;
     }
 
     private void Update()
     {
+        if (!isInitialized) return;
         _elapsedTime += Time.deltaTime;
         
         if (PlayerController.CurrentState is PlayerIdleState)
@@ -44,4 +53,10 @@ public class BloodManager : MonoBehaviour
     }
 
     public void HealPlayer() => PlayerController.Instance.CurrentPlayer.TickAdd(25);
+    public void TurnOn(GameObject playerReference) => isInitialized = true;
+
+    private void OnDisable()
+    {
+        GameEvents.OnPlayerCreated -= TurnOn;
+    }
 }

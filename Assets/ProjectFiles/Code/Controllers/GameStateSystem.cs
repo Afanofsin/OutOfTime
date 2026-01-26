@@ -33,8 +33,8 @@ namespace ProjectFiles.Code.Controllers
         private void InitializeStateMachine()
         {
             stateMachine = new FSM.StateMachine();
-            initialMenuState = new MainMenuState(true);
-            mainMenuState = new MainMenuState(false);
+            initialMenuState = new MainMenuState();
+            mainMenuState = new MainMenuState();
             firstLevelState = new FirstLevelState();
             secondLevelState = new SecondLevelState();
             tutorialState = new TutorialState();
@@ -60,10 +60,10 @@ namespace ProjectFiles.Code.Controllers
             stateMachine.AddTransition(secondLevelState, mainMenuState, new FuncPredicate(
                 () => secondLevelState.MoveToPlay
             ));
-            
-            /*stateMachine.AddAnyTransition(mainMenuState, new FuncPredicate(
-                () => true
-            ));*/
+
+            stateMachine.AddAnyTransition(mainMenuState, new FuncPredicate(
+                () => CoreManager.Instance.GoToMenu
+            ));
             
             stateMachine.SetState(initialState);
         }

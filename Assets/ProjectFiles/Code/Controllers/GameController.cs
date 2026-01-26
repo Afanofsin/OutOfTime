@@ -28,8 +28,6 @@ namespace ProjectFiles.Code.Controllers
             Instance = this;
             ControllerTransform = transform;
             InstantiatePlayer();
-            SpawnPlayer(new Vector3(21,13,0));
-            Debug.Log($"GameController.Awake() END - playerReference is {(playerReference != null ? playerReference.name : "NULL")}");
         }
 
         private void Start()
@@ -40,7 +38,7 @@ namespace ProjectFiles.Code.Controllers
         public async UniTask GenerateLevel()
         {
             Vector3 spawnPoint;
-            int maxAttemps = 10;
+            int maxAttemps = 1000;
             int attempts = 0;
 
             do
@@ -76,7 +74,7 @@ namespace ProjectFiles.Code.Controllers
             }
             playerReference.transform.position = spawn;
             playerReference.SetActive(true);
-            GameEvents.OnPlayerCreated?.Invoke(playerReference.transform);
+            GameEvents.OnPlayerCreated?.Invoke(playerReference);
         }
     }
 }

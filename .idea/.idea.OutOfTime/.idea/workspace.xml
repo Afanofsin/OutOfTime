@@ -4,7 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="" />
+    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/InitialMainMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/InitialMainMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/UIScripts/GoToMenuButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/UIScripts/GoToMenuButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/UIScripts/ResumeButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/UIScripts/ResumeButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/Arrow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/BlasterProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/BlasterProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/Bullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/CardProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/CardProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/Fireball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/Fireball.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/IcicleProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/IcicleProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/KunaiProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/KunaiProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/PotionProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/PotionProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/Syringe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/XX_Projectiles/Syringe.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/CoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/CoreManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Events/GameEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Events/GameEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Events/UIEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Events/UIEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/LevelGeneration/Room.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Other/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Other/CameraFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/FirstLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/FirstLevelState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/MainMenuState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/MainMenuState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/StateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Doors/Door_East.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Doors/Door_East.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Enemies/HobGoblin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Enemies/HobGoblin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/SandRooms/Room_2Way_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/SandRooms/Room_2Way_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/SandRooms/Room_2Way_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/SandRooms/Room_2Way_02.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/SandRooms/Room_2Way_03.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/SandRooms/Room_2Way_03.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/SandRooms/Room_2Way_04.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Rooms/SandRooms/Room_2Way_04.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-session" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-session" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Final/Core.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Final/Core.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Final/Session.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Final/Session.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestGoblinScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestGoblinScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BloodManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BloodManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FlashEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FlashEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/GoblinMelee.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prefabs/GoblinMelee.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/GoblinRanged.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prefabs/GoblinRanged.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RangedEnemyBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RangedEnemyBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HealthBarTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HealthBarTest.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +111,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/WindupState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/FuncPredicate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/FirstLevelState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/InitialMainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/InitialState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/MainMenuState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/GameStates/SecondLevelState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,7 +127,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/Transition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/UIScripts/BlackScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/UIScripts/GoToMenuButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/UIScripts/LoadingOverlay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/UIScripts/ResumeButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/UIScripts/UIContoller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/GoblinNav.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/GoblinRanged.cs" root0="FORCE_HIGHLIGHTING" />

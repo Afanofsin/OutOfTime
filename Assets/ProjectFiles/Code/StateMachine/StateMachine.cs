@@ -67,6 +67,7 @@ namespace FSM
 
         public void AddAnyTransition(IState toState, IPredicate condition)
         {
+            GetOrAddNode(toState);
             anyTransitions.Add(new Transition(toState, condition));
         }
 

@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 950dd3c38a0185a44851da4f83d37c34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -389,13 +389,73 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 6
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 3
       Data: 0
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
     - Name: $v
       Entry: 4
       Data: 0
@@ -436,7 +496,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 15
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -446,22 +506,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  maxHealth: 200
+  maxHealth: 125
   currentHealth: 0
   target: {fileID: 0}
   attackRange: 8
   retreatDistance: 4
   strafeRadius: 2
   moveSpeed: 3
-  attackCooldown: 0.25
+  attackCooldown: 0.5
   bulletType: 0
   animator: {fileID: 6178682486478418140}
-  ridingSpeed: 6
-  ridingShootInterval: 0.1
-  vulnerableStateDuration: 3
+  ridingSpeed: 12
+  ridingShootInterval: 0.25
+  vulnerableStateDuration: 4
   lazyChaseSpeed: 2
   lazyChaseDistance: 6
   lazyChaseShootInterval: 1
-  lazyChaseStateDuration: 8
+  lazyChaseStateDuration: 5
   arenaWidth: 20
   spawnPoint: {x: 0, y: 0, z: 0}

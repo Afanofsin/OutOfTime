@@ -2,6 +2,7 @@ using System;
 using FSM;
 using FSM.PlayerStates;
 using Interfaces;
+using ProjectFiles.Code.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -101,6 +102,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         moveSpeed = player.PlayerStats.Speed;
+        if (CurrentPlayer != null) onPlayerSpawned?.Invoke(CurrentPlayer);
+        player.Inventory.AddBandage(2);
     }
     
     private void Update()
@@ -110,10 +113,8 @@ public class PlayerController : MonoBehaviour
         CurrentPlayer.PlayerSprite.flipX = GetAngle() is > 90f and < 270f;
         
         AnimAngle(GetAngle());
-        
-        animator.SetBool("IsMoving", CurrentState == _movingState);
-        
-        Debug.Log(GetAngle());
+
+        animator.SetBool("IsMoving", _moveInput.sqrMagnitude != 0);
         
         if (_isDashing && _elapsedTime >= DashTime)
         {
@@ -142,8 +143,15 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate() => moveSpeed = player.PlayerStats.Speed;
     
     public void Move(InputAction.CallbackContext context) => _moveInput = context.ReadValue<Vector2>();
-    
 
+    public void Pause(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            UIEvents.OnPause?.Invoke();
+        }
+    }
+    
     public void UseSkill(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -157,7 +165,6 @@ public class PlayerController : MonoBehaviour
         if (!context.performed || !_canDash) return;
 
         StartDash();
-        if (CurrentPlayer != null) onPlayerSpawned?.Invoke(CurrentPlayer);
     }
 
     private void StartDash()
@@ -174,8 +181,6 @@ public class PlayerController : MonoBehaviour
         _playerCollider.enabled = true;
         dashTrail.emitting = false;
     }
-    
-    
     
     public void Interact(InputAction.CallbackContext context)
     {
