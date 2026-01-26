@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using ProjectFiles.Code.Controllers;
 using ProjectFiles.Code.LevelGeneration;
 using UnityEngine;
@@ -8,24 +9,31 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private EnemyDatabase enemyDb;
     [SerializeField] private EnemyEntityBase enemyToSpawn;
+    [SerializeField] private float maxSpawnTime = 3f;
 
+    private bool isSpawningEngaged = false;
+    private float spawnRandomize;
     private Room room;
     
     private void Start()
     {
         room = GetComponentInParent<Room>();
         room.OnPlayerEnteredRoom += Spawn;
+        isSpawningEngaged = false;
+        
     }
 
     public void SetEnemy(string name)
     {
         enemyToSpawn = enemyDb.GetEnemyByName(name);
     }
-    
+
     private void Spawn()
     {
-        if(!enemyToSpawn) enemyToSpawn = enemyDb.GetEnemyByName(name);
+        room.OnPlayerEnteredRoom -= Spawn;
         
+        if(!enemyToSpawn) enemyToSpawn = enemyDb.GetEnemyByName(name);
+        isSpawningEngaged = true;
         var playerRef = GameController.Instance.GetPlayerReference;
         Vector3 position;
         if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 1f, NavMesh.AllAreas))
@@ -36,13 +44,25 @@ public class EnemySpawner : MonoBehaviour
         {
             position = transform.position;
         }
+        spawnRandomize = UnityEngine.Random.Range(0f, maxSpawnTime);
+        AsyncSpawn(position).Forget();
         
-        var enemyInstance = Instantiate(enemyToSpawn, position, Quaternion.identity, transform.parent);
-        enemyInstance.SetTarget(GameController.Instance.GetPlayerReference);
+    }
+
+    private async UniTask AsyncSpawn(Vector3 position)
+    {
+        await UniTask.Delay(
+            TimeSpan.FromSeconds(spawnRandomize),
+            cancellationToken: this.GetCancellationTokenOnDestroy()
+        );
+
+        var enemy = Instantiate(enemyToSpawn, position, Quaternion.identity, transform.parent);
+        enemy.SetTarget(GameController.Instance.GetPlayerReference);
+
         room.SubscribeEnemyToRoom();
-        enemyInstance.onEntityDeath += room.HandleEnemyDeath;
-        enemyInstance.onEntityDeath += BloodManager.Instance.HealPlayer;
-        room.OnPlayerEnteredRoom -= Spawn;
+        enemy.onEntityDeath += room.HandleEnemyDeath;
+        enemy.onEntityDeath += BloodManager.Instance.HealPlayer;
+
         Destroy(gameObject);
     }
 }

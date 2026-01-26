@@ -221,7 +221,7 @@ namespace Enemies
 
             if (rb.Cast(chargeDirection, chargeFilter, castResults, distance) > 0)
             {
-                rb.velocity = Vector2.zero;
+                rb.linearVelocity = Vector2.zero;
                 rb.MovePosition(rb.position + chargeDirection * (castResults[0].distance - 0.01f));
                 isCharging = false;
             }

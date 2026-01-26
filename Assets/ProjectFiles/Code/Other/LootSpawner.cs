@@ -42,8 +42,9 @@ namespace ProjectFiles.Code.Other
             var rand = UnityEngine.Random.Range(0f, 1f);
             RarityType rarity = WeaponDatabase.Instance.rarityWeight.First(kvp => kvp.Value <= rand).Key;
             WeaponBase weapon = WeaponDatabase.Instance.GetWeaponByRarity(rarity);
-            
-            Instantiate(weapon, this.transform.position, Quaternion.identity, transform.parent);
+
+            var posToSpawn = this.transform.position + new Vector3(-0.35f, 0.5f, 0f);
+            Instantiate(weapon, posToSpawn, Quaternion.identity, transform.parent);
             room.OnPlayerEnteredRoom -= SpawnWeapon;
         }
     }

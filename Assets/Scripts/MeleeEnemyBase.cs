@@ -25,6 +25,8 @@ namespace DefaultNamespace
         [SerializeField] protected float personalSpaceRadius = 1.5f;
         [SerializeField] protected LayerMask enemyLayer;
         
+        [SerializeField] public Animator animator;
+        
         protected NavMeshAgent agent;
         protected SpriteRenderer sprite;
         protected Rigidbody2D rb;
@@ -35,7 +37,7 @@ namespace DefaultNamespace
         private float windupTimer = 0f;
         private float requiredAttackDelay = 0.5f;
     
-        // Public properties for predicates
+        // Public properties for prwedicates
         public float MeleeRange => meleeRange;
         public float WindupDuration => windupDuration;
         public float RecoveryDuration => recoveryDuration;
@@ -47,7 +49,7 @@ namespace DefaultNamespace
         
             rb = GetComponent<Rigidbody2D>();
             agent = GetComponent<NavMeshAgent>();
-            sprite = GetComponent<SpriteRenderer>();
+            sprite = GetComponentInChildren<SpriteRenderer>();
         
             // Configure NavMeshAgent for 2D
             agent.updateRotation = false;
@@ -62,8 +64,19 @@ namespace DefaultNamespace
 
         protected virtual void Update()
         {
-            Debug.Log(CurrentState);
             if (Target == null || !isInitialized) return;
+
+            if (animator != null)
+            {
+                if (agent.desiredVelocity.sqrMagnitude > 0.01f)
+                {
+                    animator.SetBool("IsRunning", true);
+                }
+                else
+                {
+                    animator.SetBool("IsRunning", false);
+                }
+            }
             stateMachine.Update();
         }
 
@@ -113,7 +126,16 @@ namespace DefaultNamespace
             if (Target == null || sprite == null) return;
         
             // Flip sprite based on target direction
-            sprite.flipX = transform.position.x < Target.transform.position.x;
+            // sprite.flipX = transform.position.x < Target.transform.position.x;
+
+            if (transform.position.x < Target.transform.position.x)
+            {
+                animator.SetBool("ShouldFlip", true);
+            }
+            else
+            {
+                animator.SetBool("ShouldFlip", false);
+            }
         }
 
         // Personal space system to prevent enemies from stacking

@@ -42,8 +42,9 @@ namespace ProjectFiles.Code.Other
             var rand = UnityEngine.Random.Range(0f, 1f);
             RarityType rarity = BoonDatabase.Instance.rarityWeight.First(kvp => kvp.Value <= rand).Key;
             BoonBase boon = BoonDatabase.Instance.GetBoonByRarity(rarity);
+            var posToSpawn = this.transform.position + new Vector3(0.15f, 0.90f, 0f);
             
-            Instantiate(boon, this.transform.position, Quaternion.identity, transform.parent);
+            Instantiate(boon, posToSpawn, Quaternion.identity, transform.parent);
             room.OnPlayerEnteredRoom -= SpawnBoon;
         }
     }
