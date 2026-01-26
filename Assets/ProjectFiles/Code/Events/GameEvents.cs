@@ -5,6 +5,6 @@ namespace ProjectFiles.Code.Events
 {
     public static class GameEvents
     {
-        public static Action<Transform> OnPlayerCreated;
+        public static Action<GameObject> OnPlayerCreated;
     }
 }

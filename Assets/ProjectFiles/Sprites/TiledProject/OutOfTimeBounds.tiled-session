@@ -3,13 +3,13 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Maps/01_BoonRoom.tmx",
+    "activeFile": "Maps/Sand_Spawn_Room.tmx",
     "expandedProjectPaths": [
-        ".",
-        "Tilesets",
         "Templates",
-        "Maps",
-        "Maps/Castle"
+        "Maps/Castle",
+        "Tilesets",
+        ".",
+        "Maps"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -33,6 +33,17 @@
             "viewCenter": {
                 "x": 168,
                 "y": 168.16666666666666
+            }
+        },
+        "Maps/BOSS_GOBLIN.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 477.5,
+                "y": 485.5
             }
         },
         "Maps/Castle/02_BoonRoom.tmx": {
@@ -350,6 +361,14 @@
                 "y": 240.16666666666663
             }
         },
+        "Maps/Sand_Spawn_Room.tmx": {
+            "scale": 2,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 154.25,
+                "y": 173.75
+            }
+        },
         "Maps/TestMap.tmx": {
             "scale": 2,
             "selectedLayer": 3,
@@ -416,7 +435,9 @@
         "Maps/Castle/02_LootRoom.tmx",
         "Maps/Castle/02_BoonRoom.tmx",
         "Maps/01_LootRoom.tmx",
-        "Maps/01_BoonRoom.tmx"
+        "Maps/01_BoonRoom.tmx",
+        "Maps/BOSS_GOBLIN.tmx",
+        "Maps/Sand_Spawn_Room.tmx"
     ],
     "project": "OutOfTimeBounds.tiled-project",
     "property.type": "string",
@@ -427,12 +448,12 @@
         "Maps/Castle/02_BoonRoom.tmx",
         "Maps/01_LootRoom.tmx",
         "Maps/01_BoonRoom.tmx",
+        "Maps/BOSS_GOBLIN.tmx",
+        "Maps/Sand_Spawn_Room.tmx",
         "Maps/Castle/02_Room_2Way_4.tmx",
         "Maps/Castle/02_Room_2Way_3.tmx",
         "Maps/Castle/02_Room_2Way_2.tmx",
-        "Maps/Castle/02_Room_2Way_1.tmx",
-        "Maps/Castle/template - Copy (8).tmx",
-        "Maps/Castle/02_Room_4Way_2.tmx"
+        "Maps/Castle/02_Room_2Way_1.tmx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",

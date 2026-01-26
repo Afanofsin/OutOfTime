@@ -35,7 +35,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ilde
+  m_Name: GoblinMeleeIdle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -50,7 +50,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b94b78e524435564fb9f2e5e4b5c50a7, type: 2}
+  m_Motion: {fileID: 7400000, guid: c763675254aed604faf64063bd2c9782, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -63,7 +63,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Run
+  m_Name: GoblinMeleeRun
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -78,7 +78,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7e401a7ad9963fc458cfc391e697fd62, type: 2}
+  m_Motion: {fileID: 7400000, guid: a8fd1e5331bc9e74cb6e90853460a912, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -249,7 +249,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: db257bd14ef35804ebb7a3424d65060d, type: 2}
+  m_Motion: {fileID: 7400000, guid: f680d2d058f6deb459f74d727ac51eff, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -277,7 +277,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a2666a283f654e8479aa5a4758397e06, type: 2}
+  m_Motion: {fileID: 7400000, guid: f0700cdfa9e42bc4f8309a72416af99c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

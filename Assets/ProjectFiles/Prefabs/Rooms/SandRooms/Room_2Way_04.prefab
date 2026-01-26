@@ -111,6 +111,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2891657220717915011, guid: 231bb9737f682454883cf3c47d358c46, type: 3}
+      propertyPath: enemyToSpawn
+      value: 
+      objectReference: {fileID: -2749463286383384188, guid: 9d46e9fa93869594f9ce245b03a3103f, type: 3}
+    - target: {fileID: -2778923647043226634, guid: 231bb9737f682454883cf3c47d358c46, type: 3}
+      propertyPath: enemyToSpawn
+      value: 
+      objectReference: {fileID: -2749463286383384188, guid: 9d46e9fa93869594f9ce245b03a3103f, type: 3}
     - target: {fileID: 2026482093131817428, guid: 231bb9737f682454883cf3c47d358c46, type: 3}
       propertyPath: m_Name
       value: Room_2Way_04
@@ -123,6 +131,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9190820194553055566, guid: 231bb9737f682454883cf3c47d358c46, type: 3}
+      propertyPath: enemyToSpawn
+      value: 
+      objectReference: {fileID: -2749463286383384188, guid: 9d46e9fa93869594f9ce245b03a3103f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

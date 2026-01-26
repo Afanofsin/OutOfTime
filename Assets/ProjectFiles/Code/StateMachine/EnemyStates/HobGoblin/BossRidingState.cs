@@ -8,76 +8,207 @@ namespace FSM.EnemyStates.HobGoblin
     {
         private BossRangedEnemy boss;
         private float shootTimer = 0f;
-        private float ridingShootInterval = 0.5f;
-        private bool movingRight = true;
-        private Vector3 startPosition;
+        private NavMeshAgent agent;
+
+        // Arena corner points
+        private Vector3 topLeft;
+        private Vector3 topRight;
+        private Vector3 bottomLeft;
+        private Vector3 bottomRight;
+
+        // Current riding state
+        private enum Lane
+        {
+            Top,
+            Bottom
+        }
+
+        private Lane currentLane;
+        private bool movingRight;
+        private Vector3 currentDestination;
+        private bool isMovingToStartPosition;
 
         public BossRidingState(BossRangedEnemy boss)
         {
             this.boss = boss;
         }
 
-        public void OnEnter()
+        public override void OnEnter()
         {
             Debug.Log("Boss Riding State - Starting passes");
             boss.ResetRidingPass();
             boss.ResetStateTimer();
-            startPosition = boss.transform.position;
-            movingRight = true;
             shootTimer = 0f;
-            
-            // Set higher speed for riding
-            boss.GetComponent<NavMeshAgent>().speed = boss.RidingSpeed;
-            
-            SetNextRidingDestination();
+
+            agent = boss.GetComponent<NavMeshAgent>();
+            agent.isStopped = false;
+            agent.speed = boss.RidingSpeed;
+
+            InitializeArenaPoints();
+            DetermineStartingLaneAndDirection();
+
+            // First move to the starting corner
+            isMovingToStartPosition = true;
+            MoveToStartingCorner();
         }
 
-        public void Update()
+        private void InitializeArenaPoints()
         {
-            boss.FaceTarget();
-            
-            shootTimer += Time.deltaTime;
-            
-            // Shoot while riding
-            if (shootTimer >= ridingShootInterval)
+            // Option 1: Calculate from arena center and dimensions
+            Vector3 arenaCenter = boss.spawnPoint;
+            float halfWidth = boss.ArenaWidth / 1.85f;
+            float halfDepth = boss.ArenaWidth / 1.85f;
+
+            topLeft = arenaCenter + new Vector3(-halfWidth, halfDepth, 0);
+            topRight = arenaCenter + new Vector3(halfWidth, halfDepth, 0);
+            bottomLeft = arenaCenter + new Vector3(-halfWidth, -halfDepth, 0 );
+            bottomRight = arenaCenter + new Vector3(halfWidth, -halfDepth, 0);
+
+            Debug.Log($"Arena Points - TL: {topLeft}, TR: {topRight}, BL: {bottomLeft}, BR: {bottomRight}");
+        }
+
+        private void DetermineStartingLaneAndDirection()
+        {
+            Vector3 currentPos = boss.transform.position;
+
+            // Find closest corner
+            Vector3[] corners = { topLeft, topRight, bottomLeft, bottomRight };
+            float minDistance = float.MaxValue;
+            int closestIndex = 0;
+
+            for (int i = 0; i < corners.Length; i++)
             {
-                boss.Action();
-                shootTimer = 0f;
+                float dist = Vector3.Distance(currentPos, corners[i]);
+                if (dist < minDistance)
+                {
+                    minDistance = dist;
+                    closestIndex = i;
+                }
             }
 
-            // Check if reached destination
-            if (boss.GetComponent<NavMeshAgent>().remainingDistance < 0.5f)
+            // Set lane and direction based on closest corner
+            switch (closestIndex)
             {
-                movingRight = !movingRight;
-                boss.IncrementRidingPass();
-                
-                if (boss.CurrentRidingPass < 3)
+                case 0:
+                    currentLane = Lane.Top;
+                    movingRight = true;
+                    break;
+                case 1: 
+                    currentLane = Lane.Top;
+                    movingRight = false;
+                    break;
+                case 2: 
+                    currentLane = Lane.Bottom;
+                    movingRight = true;
+                    break;
+                case 3:
+                    currentLane = Lane.Bottom;
+                    movingRight = false;
+                    break;
+            }
+
+            Debug.Log($"Starting Lane: {currentLane}, Moving Right: {movingRight}");
+        }
+
+        private void MoveToStartingCorner()
+        {
+            // Move to the corner we're starting from
+            currentDestination = GetCurrentCorner();
+            agent.SetDestination(currentDestination);
+            Debug.Log($"Moving to starting corner: {currentDestination}");
+        }
+
+        private Vector3 GetCurrentCorner()
+        {
+            if (currentLane == Lane.Top)
+                return movingRight ? topLeft : topRight;
+            else
+                return movingRight ? bottomLeft : bottomRight;
+        }
+
+        private Vector3 GetTargetCorner()
+        {
+            if (currentLane == Lane.Top)
+                return movingRight ? topRight : topLeft;
+            else
+                return movingRight ? bottomRight : bottomLeft;
+        }
+
+        public override void OnUpdate()
+        {
+            boss.FaceTarget();
+
+            // Only shoot while actively riding (not moving to start position)
+            if (!isMovingToStartPosition)
+            {
+                shootTimer += Time.deltaTime;
+                boss.animator.SetBool("IsStrafing", true);
+
+                if (shootTimer >= boss.ridingShootInterval)
                 {
+                    boss.ShootWhileRiding();
+                    shootTimer -= boss.ridingShootInterval;
+                }
+            }
+
+            if (HasReachedDestination())
+            {
+                boss.animator.SetBool("IsStrafing", false);
+                if (isMovingToStartPosition)
+                {
+                    // Reached starting corner, begin actual riding
+                    isMovingToStartPosition = false;
                     SetNextRidingDestination();
+                    Debug.Log("Reached starting corner, beginning ride!");
+                }
+                else
+                {
+                    // Completed a pass
+                    boss.IncrementRidingPass();
+                    Debug.Log($"Completed pass {boss.CurrentRidingPass}/3");
+
+                    if (boss.CurrentRidingPass < 3)
+                    {
+                        // Reverse direction for next pass
+                        movingRight = !movingRight;
+                        SetNextRidingDestination();
+                    }
                 }
             }
         }
 
+        private bool HasReachedDestination()
+        {
+            if (agent.pathPending) return false;
+            return agent.remainingDistance <= agent.stoppingDistance + 0.1f;
+        }
+
         private void SetNextRidingDestination()
         {
-            Vector3 destination;
-            if (movingRight)
+            currentDestination = GetTargetCorner();
+
+            // Validate destination is on NavMesh
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(currentDestination, out hit, 2f, NavMesh.AllAreas))
             {
-                destination = startPosition + new Vector3(boss.ArenaWidth / 2, 0, 0);
+                agent.SetDestination(hit.position);
+                Debug.Log(
+                    $"Riding to: {hit.position} (Lane: {currentLane}, Direction: {(movingRight ? "Right" : "Left")})");
             }
             else
             {
-                destination = startPosition + new Vector3(-boss.ArenaWidth / 2, 0, 0);
+                Debug.LogError($"Destination {currentDestination} is not on NavMesh!");
             }
-            
-            boss.GetComponent<NavMeshAgent>().SetDestination(destination);
         }
 
-        public void FixedUpdate() { }
+        public override void OnFixedUpdate()
+        {
+        }
 
-        public void OnExit()
+        public override void OnExit()
         {
             Debug.Log($"Boss Riding State Complete - {boss.CurrentRidingPass} passes");
         }
+
     }
 }

@@ -1,11 +1,17 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using PrimeTween;
+using ProjectFiles.Code.Events;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
+    public bool IsInitialized { get; private set; }
+    
     [SerializeField] private Image healthFill;
     [SerializeField] private Image healthTop;
     [SerializeField] private Image skillImage;
@@ -21,15 +27,27 @@ public class UIManager : MonoBehaviour
 
     private Tween _costTweenMove;
     
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        GameEvents.OnPlayerCreated += BindPlayer;
+    }
+    
     private void Start()
     {
-        PlayerController.Instance.onPlayerSpawned += BindPlayer;
+        //PlayerController.Instance.onPlayerSpawned += BindPlayer;
+        IsInitialized = true;
     }
     
     private void OnDisable()
     {
-        PlayerController.Instance.onPlayerSpawned -= BindPlayer;
-
+        //PlayerController.Instance.onPlayerSpawned -= BindPlayer;
+        GameEvents.OnPlayerCreated -= BindPlayer;
         if (_player != null)
         {
             _player.onHealthChanged -= OnHealthChanged;
@@ -39,10 +57,38 @@ public class UIManager : MonoBehaviour
         }
     }
     
+    private void OnDestroy()
+    {
+        //PlayerController.Instance.onPlayerSpawned -= BindPlayer;
+
+        GameEvents.OnPlayerCreated -= BindPlayer;
+    
+        // Clear instance reference if we're the current instance
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    
+        // Unsubscribe from player events
+        if (_player != null)
+        {
+            _player.onHealthChanged -= OnHealthChanged;
+            _player.onSkillChanged -= OnSkillChanged;
+            _player.onBandageChange -= OnBandagesChanged;
+            _player.onBandageUsed -= OnBandageUsed;
+        }
+    
+        if (_inventory != null)
+        {
+            _inventory.OnInventoryChanged -= RefreshWeaponsUI;
+        }
+    }
+    
     private Inventory _inventory;
 
-    private void BindPlayer(Player player)
+    private void BindPlayer(GameObject Player)
     {
+        Player player = Player.GetComponent<PlayerController>().CurrentPlayer;
         if (_player != null)
         {
             _player.onHealthChanged -= OnHealthChanged;
@@ -64,12 +110,22 @@ public class UIManager : MonoBehaviour
 
         _inventory.OnInventoryChanged += RefreshWeaponsUI;
 
-        OnHealthChanged(_player.CurrentHealth);
-        RefreshWeaponsUI();
+        StartCoroutine(InitializeUINextFrame());
+    }
+
+    private IEnumerator InitializeUINextFrame()
+    {
+        yield return null; // Wait one frame
+        if (_player != null)
+        {
+            OnHealthChanged(_player.CurrentHealth);
+            RefreshWeaponsUI();
+        }
     }
 
     private void OnHealthChanged(float health)
     {
+        Debug.Log(_player);
         var normalized = health / _player.MaxHealth;
         healthFill.fillAmount = normalized;
 

@@ -15,17 +15,17 @@ namespace ProjectFiles.Code.Boss
     {
         [Header("Boss Specific Settings")]
         [SerializeField] private float ridingSpeed = 6f;
-        [SerializeField] private float ridingShootInterval = 0.5f;
+        [SerializeField] public float ridingShootInterval = 0.5f;
         [SerializeField] private float vulnerableStateDuration = 3f;
         [SerializeField] private float lazyChaseSpeed = 2f;
         [SerializeField] private float lazyChaseDistance = 6f; // Won't get closer than this
         [SerializeField] private float lazyChaseShootInterval = 1f;
         [SerializeField] private float lazyChaseStateDuration = 8f;
-        [SerializeField] private float arenaWidth = 20f; // Placeholder - set this based on your arena
-        
+        [SerializeField] private float arenaWidth = 30f; // Placeholder - set this based on your arena
+
         [SerializeField] private Dictionary<DamageType, float> Damage = new Dictionary<DamageType, float>()
             { { DamageType.Physical, 15f } };
-
+        
         // State references
         private BossInitState initState;
         private BossRidingState ridingState;
@@ -45,9 +45,12 @@ namespace ProjectFiles.Code.Boss
         public float LazyChaseDistance => lazyChaseDistance;
         public float StateTimer => stateTimer;
 
+        public Vector3 spawnPoint;
+
         public override void Awake()
         {
             base.Awake();
+            spawnPoint = this.transform.position;
         }
 
         public override void InitializeStateMachine()
@@ -105,7 +108,6 @@ namespace ProjectFiles.Code.Boss
             }
 
             stateTimer += Time.deltaTime;
-            Debug.Log($"Boss State: {CurrentState}, Timer: {stateTimer}");
             stateMachine.Update();
         }
 
@@ -136,7 +138,25 @@ namespace ProjectFiles.Code.Boss
 
             lastAttackTime = Time.time;
         }
+        
+        public void ShootWhileRiding()
+        {
+            var instance = PoolManager.Instance.projectilePools[bulletType].Get();
+            var dirToPlayer = (Target.transform.position - this.transform.position).normalized;
+            if (!IsPlayerCloseToCenter()) dirToPlayer.x = 0;
+            instance.transform.position = this.transform.position;
+            instance.SetSpeed(10f);
+            instance.Launch(dirToPlayer, Damage, LayerMask.GetMask("Damagable"));
 
+            lastAttackTime = Time.time;
+        }
+
+        private bool IsPlayerCloseToCenter()
+        {
+            Vector3 localPos = transform.InverseTransformPoint(Target.transform.position);
+            return (Mathf.Abs(localPos.y) < 4f);
+        }
+        
         public void TakeDamage(IReadOnlyDictionary<DamageType, float> damage)
         {
             foreach (var damageKvp in damage)

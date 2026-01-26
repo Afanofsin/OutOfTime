@@ -13,6 +13,7 @@ public class FlashEffect : MonoBehaviour
     
     private IEnumerator FLashRoutine()
     {
+        if (_spriteRender == null) _spriteRender = GetComponentInChildren<SpriteRenderer>();
         _spriteRender.material.SetInt("_Flash", 1);
         yield return _time;
         _spriteRender.material.SetInt("_Flash", 0);

@@ -123,6 +123,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room_2Way_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1427863883950341836, guid: 6fd3495ad8b08aa46baf67518e7a3509, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593814320849026633, guid: 6fd3495ad8b08aa46baf67518e7a3509, type: 3}
+      propertyPath: enemyToSpawn
+      value: 
+      objectReference: {fileID: -2749463286383384188, guid: 9d46e9fa93869594f9ce245b03a3103f, type: 3}
     - target: {fileID: 6718420964773183017, guid: 6fd3495ad8b08aa46baf67518e7a3509, type: 3}
       propertyPath: m_IsTrigger
       value: 1
