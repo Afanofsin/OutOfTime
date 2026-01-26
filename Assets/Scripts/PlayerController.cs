@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
     private float _elapsedTime = 1f;
     public Action<Player> onPlayerSpawned;
+
+    [SerializeField] private Animator animator;
     
     private bool _canDash => _elapsedTime >= (player.PlayerStats.DashCooldown + DashTime);
     
@@ -99,12 +101,19 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         moveSpeed = player.PlayerStats.Speed;
-        
     }
     
     private void Update()
     {
         _elapsedTime += Time.deltaTime;
+
+        CurrentPlayer.PlayerSprite.flipX = GetAngle() is > 90f and < 270f;
+        
+        AnimAngle(GetAngle());
+        
+        animator.SetBool("IsMoving", CurrentState == _movingState);
+        
+        Debug.Log(GetAngle());
         
         if (_isDashing && _elapsedTime >= DashTime)
         {
@@ -271,5 +280,13 @@ public class PlayerController : MonoBehaviour
     public Vector3 GetPlayerPos()
     {
         return player.transform.position;
+    }
+
+    private void AnimAngle(float angle)
+    {
+        animator.SetBool("FaceRight", angle is > 315 or < 45);
+        animator.SetBool("FaceUp", angle is >= 45 and < 135);
+        animator.SetBool("FaceLeft", angle is >= 135 and < 225);
+        animator.SetBool("FaceDown", angle is >= 225 and < 315);
     }
 }

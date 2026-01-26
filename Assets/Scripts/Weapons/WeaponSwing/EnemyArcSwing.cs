@@ -66,33 +66,11 @@ namespace DefaultNamespace.Weapons.WeaponSwing
     
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.TryGetComponent<IDamageable>(out var damageable) || damageable is Player) return;
+            if (!other.TryGetComponent<IDamageable>(out var damageable)) return;
 
             if (!_hitTargets.Add(other)) return;
-
-            var playerPos = (Vector2)PlayerController.Instance.GetPlayerPos();
-            var targetPoint = other.ClosestPoint(other.transform.position);
-            var direction = (targetPoint - playerPos).normalized;
-
-            var size = Physics2D.RaycastNonAlloc(playerPos, direction, hits, Mathf.Infinity, weaponCollider.includeLayers);
-        
-            RaycastHit2D closestHit = default;
-            var closestDistance = float.MaxValue;
-        
-            foreach (var hit in hits)
-            {
-                if (hit.collider == null) continue;
-
-                if (hit.distance < closestDistance)
-                {
-                    closestDistance = hit.distance;
-                    closestHit = hit;
-                }
-            }
-
-            if (closestHit.collider == null) return;
-        
-            if (closestHit.collider == other)
+            
+            if (damageable is Player)
             {
                 damageable.TakeDamage(_damage);
             }

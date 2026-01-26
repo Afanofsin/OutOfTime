@@ -14,8 +14,10 @@ public class Player : EntityBase, IDamageable
     [SerializeField] private PlayerController controller;
     [SerializeField] private Inventory inventory;
     public PlayerStats PlayerStats { get; private set; }
+    
     public ParticleSystem playerParticles;
-
+    public SpriteRenderer PlayerSprite;
+    
     public Inventory Inventory => inventory;
     [SerializeField] private float invulnerabilityDuration;
     private float _invulnerableUntil;
@@ -34,6 +36,7 @@ public class Player : EntityBase, IDamageable
     public Action<SkillBase> onSkillChanged;
     public Action<int> onBandageChange;
     public Action<bool> onBandageUsed;
+    
     public override void Awake()
     {
         base.Awake();
@@ -42,13 +45,14 @@ public class Player : EntityBase, IDamageable
 
     public void Start()
     {
-        //Equip(inventory.GetSlotItem(0));
+        Equip(inventory.GetSlotItem(0));
     }
     
     public void Attack()
     {
         HeldWeapon.PerformAttack(PlayerStats.Attack, PlayerStats.AttackSpeed);
-
+        
+        
         if (HeldWeapon is RangeWeaponBase)
         {
             SoundManager.Instance.Play(SoundId.Shoot);
