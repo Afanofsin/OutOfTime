@@ -22,6 +22,7 @@ namespace FSM.GameStates
 
             await UniTask.WaitUntil(() => UIManager.Instance != null && UIManager.Instance.IsInitialized);
             await GameController.Instance.GenerateLevel();
+            SoundManager.Instance.PlayFirstLevelMusic();
         }
 
         public override void OnUpdate()

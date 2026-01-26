@@ -12,7 +12,7 @@ namespace ProjectFiles.Code.Controllers
         private FSM.StateMachine stateMachine;
         
         private MainMenuState mainMenuState;
-        private MainMenuState initialMenuState;
+        private InitialMainMenu initialMenuState;
         private FirstLevelState firstLevelState;
         private SecondLevelState secondLevelState;
         private TutorialState tutorialState;
@@ -33,7 +33,7 @@ namespace ProjectFiles.Code.Controllers
         private void InitializeStateMachine()
         {
             stateMachine = new FSM.StateMachine();
-            initialMenuState = new MainMenuState();
+            initialMenuState = new InitialMainMenu();
             mainMenuState = new MainMenuState();
             firstLevelState = new FirstLevelState();
             secondLevelState = new SecondLevelState();

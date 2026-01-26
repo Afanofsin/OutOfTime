@@ -1,7 +1,9 @@
 using System;
+using Cysharp.Threading.Tasks;
 using FSM;
 using FSM.PlayerStates;
 using Interfaces;
+using ProjectFiles.Code.Controllers;
 using ProjectFiles.Code.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -103,7 +105,7 @@ public class PlayerController : MonoBehaviour
     {
         moveSpeed = player.PlayerStats.Speed;
         if (CurrentPlayer != null) onPlayerSpawned?.Invoke(CurrentPlayer);
-        player.Inventory.AddBandage(2);
+        player.AddBandages(2);
         CurrentPlayer.onEntityDeath += OnPlayerDeath;
     }
     
@@ -300,9 +302,15 @@ public class PlayerController : MonoBehaviour
         Destroy(CurrentPlayer.HeldWeapon.gameObject);
         Destroy(CurrentPlayer.Inventory);
         Destroy(CurrentPlayer);
+        DeathAsync().Forget();
+    }
+
+    private async UniTaskVoid DeathAsync()
+    {
+        await UniTask.Delay(6000);
+        CoreManager.Instance.GoToMenu = true;
         Destroy(this);
     }
-  
     
     private void AnimAngle(float angle)
     {

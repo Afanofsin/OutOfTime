@@ -35,7 +35,7 @@ namespace ProjectFiles.Code.Boss
 
         // Boss state tracking
         private int currentRidingPass = 0;
-        private const int MAX_RIDING_PASSES = 3;
+        private const int MAX_RIDING_PASSES = 2;
         private float stateTimer = 0f;
 
         public int CurrentRidingPass => currentRidingPass;

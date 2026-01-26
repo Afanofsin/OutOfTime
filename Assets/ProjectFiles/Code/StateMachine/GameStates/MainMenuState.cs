@@ -22,6 +22,8 @@ namespace FSM.GameStates
                     .Unload(SceneDatabase.Slots.Session)
                     .WithOverlay()
                     .Perform();
+                
+            SoundManager.Instance.PlayMainMenuMusic();
         }
 
         public override void OnUpdate()

@@ -506,7 +506,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  maxHealth: 125
+  maxHealth: 80
   currentHealth: 0
   target: {fileID: 0}
   attackRange: 8
@@ -517,8 +517,8 @@ MonoBehaviour:
   bulletType: 0
   animator: {fileID: 6178682486478418140}
   ridingSpeed: 12
-  ridingShootInterval: 0.25
-  vulnerableStateDuration: 4
+  ridingShootInterval: 0.35
+  vulnerableStateDuration: 8
   lazyChaseSpeed: 2
   lazyChaseDistance: 6
   lazyChaseShootInterval: 1

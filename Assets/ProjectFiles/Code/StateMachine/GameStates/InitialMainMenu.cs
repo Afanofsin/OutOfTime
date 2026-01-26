@@ -15,6 +15,7 @@ namespace FSM.GameStates
             CoreManager.Instance.GoToMenu = false;
             MoveToPlay = false;
             Debug.Log("Initial Menu");
+            SoundManager.Instance.PlayMainMenuMusic();
         }
 
         public override void OnUpdate()
