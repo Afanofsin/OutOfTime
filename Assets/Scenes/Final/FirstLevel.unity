@@ -241,7 +241,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
       propertyPath: size
-      value: 400
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
       propertyPath: surface
@@ -251,6 +251,10 @@ PrefabInstance:
       propertyPath: roomCount
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: startRoom
+      value: 
+      objectReference: {fileID: 5913117781879186039, guid: f813f1b61dc5f10418af99f53f401d61, type: 3}
     - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
       propertyPath: rooms.Array.size
       value: 13
@@ -307,6 +311,10 @@ PrefabInstance:
       propertyPath: 'rooms.Array.data[12]'
       value: 
       objectReference: {fileID: 2306812566989899125, guid: 452f0e76db6e1bf4ea8f22b5550f571f, type: 3}
+    - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
+      propertyPath: 'bossRoom.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2031179004393062430, guid: 04f479d86e3221840855a71d9d4c1860, type: 3}
     - target: {fileID: 7339348037979775228, guid: 493a439c1f9142348bb63aa9bcbe2640, type: 3}
       propertyPath: specialRooms.Array.size
       value: 2
