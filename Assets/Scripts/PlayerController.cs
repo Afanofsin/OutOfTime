@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
         moveSpeed = player.PlayerStats.Speed;
         if (CurrentPlayer != null) onPlayerSpawned?.Invoke(CurrentPlayer);
         player.Inventory.AddBandage(2);
+        CurrentPlayer.onEntityDeath += OnPlayerDeath;
     }
     
     private void Update()
@@ -114,6 +115,7 @@ public class PlayerController : MonoBehaviour
         
         AnimAngle(GetAngle());
 
+        
         animator.SetBool("IsMoving", _moveInput.sqrMagnitude != 0);
         
         if (_isDashing && _elapsedTime >= DashTime)
@@ -287,6 +289,21 @@ public class PlayerController : MonoBehaviour
         return player.transform.position;
     }
 
+    private void OnPlayerDeath()
+    {
+        gameObject.transform.localPosition += new Vector3(1.5f, 0f, 0f);
+        _moveInput = Vector2.zero;
+        PlayerRb.linearVelocity = Vector2.zero;
+        animator.SetBool("IsDead", true);
+        CurrentPlayer.enabled = false;
+        CurrentPlayer.Drop();
+        Destroy(CurrentPlayer.HeldWeapon.gameObject);
+        Destroy(CurrentPlayer.Inventory);
+        Destroy(CurrentPlayer);
+        Destroy(this);
+    }
+  
+    
     private void AnimAngle(float angle)
     {
         animator.SetBool("FaceRight", angle is > 315 or < 45);
