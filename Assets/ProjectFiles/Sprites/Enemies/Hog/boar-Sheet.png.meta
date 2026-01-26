@@ -149,11 +149,11 @@ TextureImporter:
       name: boar-Sheet_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 162
-        width: 31
-        height: 17
-      alignment: 0
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -172,10 +172,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 162
-        width: 31
-        height: 17
-      alignment: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -193,11 +193,11 @@ TextureImporter:
       name: boar-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 132
-        width: 31
-        height: 17
-      alignment: 0
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -216,10 +216,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 132
-        width: 31
-        height: 17
-      alignment: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -237,11 +237,11 @@ TextureImporter:
       name: boar-Sheet_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 100
-        width: 31
-        height: 17
-      alignment: 0
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -260,10 +260,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 100
-        width: 31
-        height: 17
-      alignment: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -281,11 +281,11 @@ TextureImporter:
       name: boar-Sheet_6
       rect:
         serializedVersion: 2
-        x: 1
-        y: 66
-        width: 31
-        height: 19
-      alignment: 0
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -304,10 +304,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 66
-        width: 31
-        height: 19
-      alignment: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -325,11 +325,11 @@ TextureImporter:
       name: boar-Sheet_8
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 32
-        width: 30
-        height: 19
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -347,11 +347,11 @@ TextureImporter:
       name: boar-Sheet_9
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 32
-        width: 30
-        height: 19
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -369,11 +369,11 @@ TextureImporter:
       name: boar-Sheet_10
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 31
-        height: 18
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -393,9 +393,9 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 31
-        height: 18
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -413,7 +413,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 166a1c33687acbe4e8cbe71fae42f2aa
     internalID: 0
     vertices: []
     indices: 
@@ -421,7 +421,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":6,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       boar-Sheet_0: -4551851203842936293
       boar-Sheet_1: -1468007246810006143

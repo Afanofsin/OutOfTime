@@ -10,7 +10,7 @@ namespace DefaultNamespace
 {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Rigidbody2D))]
-    public class RangedEnemyBase : EnemyEntityBase, IDamageable
+    public abstract class RangedEnemyBase : EnemyEntityBase, IDamageable
     {
         [Header("AI Settings")]
         [SerializeField] protected float attackRange = 8f;
@@ -22,6 +22,8 @@ namespace DefaultNamespace
         public float attackCooldown = 1.5f;
         [SerializeField] protected BulletType bulletType;
     
+        [SerializeField] public Animator animator;
+        
         protected NavMeshAgent agent;
         protected SpriteRenderer sprite;
         protected Rigidbody2D rb;
@@ -32,6 +34,8 @@ namespace DefaultNamespace
         // Public properties for predicates
         public float AttackRange => attackRange;
         public float RetreatDistance => retreatDistance;
+
+        public IState CurrentState => stateMachine.GetState();
         
         /*protected EnemyInitState initState;
         protected EngageState engageState;
@@ -46,7 +50,7 @@ namespace DefaultNamespace
             // Setup components
             rb = GetComponent<Rigidbody2D>();
             agent = GetComponent<NavMeshAgent>();
-            sprite = GetComponent<SpriteRenderer>();
+            sprite = GetComponentInChildren<SpriteRenderer>();
         
             // Configure NavMeshAgent for 2D
             agent.updateRotation = false;
@@ -57,49 +61,62 @@ namespace DefaultNamespace
             InitializeStateMachine();
         }
 
-        public virtual void InitializeStateMachine()
-        {
-            /*stateMachine = new StateMachine();
+        public abstract void InitializeStateMachine();
+        
+        /*stateMachine = new StateMachine();
 
             initState = new EnemyInitState();
             engageState = new EngageState(this);
             attackState = new AttackState(this);
             retreatState = new RetreatState(this);
             deadState = new DeadState(this);
-            
+
             var isDead = new IsDeadPredicate(this);
             var isTooClose = new IsTooClosePredicate(this);
             var isInAttackRange = new IsInAttackRangePredicate(this);
             var isTooFar = new IsTooFarPredicate(this);
-            
+
             stateMachine.AddAnyTransition(deadState, isDead);
-        
+
             stateMachine.AddTransition(initState, engageState, new FuncPredicate(
                     () => Target != null
                 ));
-            
+
             // Engage -> Attack (when in range)
             stateMachine.AddTransition(engageState, attackState, isInAttackRange);
-        
+
             // Attack -> Retreat (when too close)
             stateMachine.AddTransition(attackState, retreatState, isTooClose);
-        
+
             // Attack -> Engage (when too far)
             stateMachine.AddTransition(attackState, engageState, isTooFar);
-        
+
             // Retreat -> Attack (when back in attack range)
             stateMachine.AddTransition(retreatState, attackState, isInAttackRange);
-        
+
             // Retreat -> Engage (when far enough after retreating)
             stateMachine.AddTransition(retreatState, engageState, isTooFar);
-        
+
             // Start in Engage state (enemies are immediately aggroed)
             stateMachine.SetState(initState);*/
-        }
         
         protected virtual void Update()
         {
             if (Target == null || !isInitialized) return;
+            
+            if (animator != null)
+            {
+                if (agent.desiredVelocity.sqrMagnitude > 0.01f)
+                {
+                    animator.SetBool("IsRunning", true);
+                }
+                else
+                {
+                    animator.SetBool("IsRunning", false);
+                }
+            }
+            
+            Debug.Log(CurrentState);
             stateMachine.Update();
         }
 
@@ -150,13 +167,13 @@ namespace DefaultNamespace
         public virtual void FaceTarget()
         {
             // To the Right
-            if (this.transform.position.x < Target.transform.position.x)
+            if (transform.position.x < Target.transform.position.x)
             {
-                sprite.flipX = true;
+                animator.SetBool("ShouldFlip", true);
             }
             else
             {
-                sprite.flipX = false;
+                animator.SetBool("ShouldFlip", false);
             }
         }
 

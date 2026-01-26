@@ -518,11 +518,11 @@ MonoBehaviour:
       Entry: 6
       Data: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   baseStats: {fileID: 11400000, guid: 268a8b9c1878ee942aafbb694ff3a72d, type: 2}
   controller: {fileID: 4952366348338342014}
   inventory: {fileID: 1533477935390475021}
-  playerParticles: {fileID: 0}
+  playerParticles: {fileID: 4193279612838063512}
   invulnerabilityDuration: 0.15
 --- !u!1 &8935102713843217059
 GameObject:

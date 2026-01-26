@@ -3,12 +3,13 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Maps/Room_4Way_2.tmx",
+    "activeFile": "Maps/01_BoonRoom.tmx",
     "expandedProjectPaths": [
-        "Maps",
-        "Tilesets",
         ".",
-        "Templates"
+        "Tilesets",
+        "Templates",
+        "Maps",
+        "Maps/Castle"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -16,11 +17,11 @@
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 4,
+            "scale": 2,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 149.75,
-                "y": 158.125
+                "x": 197.25,
+                "y": 122.25
             }
         },
         "Maps/01_LootRoom.tmx": {
@@ -30,8 +31,8 @@
             "scale": 3,
             "selectedLayer": 11,
             "viewCenter": {
-                "x": 200.5,
-                "y": 174.5
+                "x": 168,
+                "y": 168.16666666666666
             }
         },
         "Maps/Castle/02_BoonRoom.tmx": {
@@ -41,8 +42,8 @@
             "scale": 2,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 131.25,
-                "y": 191.75
+                "x": 208,
+                "y": 208.25
             }
         },
         "Maps/Castle/02_LootRoom.tmx": {
@@ -52,8 +53,8 @@
             "scale": 2,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 212.5,
-                "y": 196.25
+                "x": 208,
+                "y": 208.25
             }
         },
         "Maps/Castle/02_Room_2Way_1.tmx": {
@@ -372,8 +373,8 @@
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 157,
-                "y": 130.75
+                "x": 176.5,
+                "y": 159.75
             }
         },
         "Tilesets/Chests.tsx": {
@@ -412,28 +413,26 @@
     "openFiles": [
         "Tilesets/SpriteSheetGeneral.tsx",
         "Maps/template.tmx",
-        "Maps/Room_3Way_3.tmx",
-        "Maps/Room_2Way_1.tmx",
-        "Maps/Room_4Way_3.tmx",
-        "Maps/Room_4Way_4.tmx",
-        "Maps/Room_4Way_2.tmx",
-        "Maps/Room_4Way.tmx"
+        "Maps/Castle/02_LootRoom.tmx",
+        "Maps/Castle/02_BoonRoom.tmx",
+        "Maps/01_LootRoom.tmx",
+        "Maps/01_BoonRoom.tmx"
     ],
     "project": "OutOfTimeBounds.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "Tilesets/SpriteSheetGeneral.tsx",
+        "Maps/template.tmx",
+        "Maps/Castle/02_LootRoom.tmx",
+        "Maps/Castle/02_BoonRoom.tmx",
+        "Maps/01_LootRoom.tmx",
+        "Maps/01_BoonRoom.tmx",
         "Maps/Castle/02_Room_2Way_4.tmx",
         "Maps/Castle/02_Room_2Way_3.tmx",
         "Maps/Castle/02_Room_2Way_2.tmx",
         "Maps/Castle/02_Room_2Way_1.tmx",
         "Maps/Castle/template - Copy (8).tmx",
-        "Maps/Castle/02_Room_4Way_2.tmx",
-        "Maps/Castle/02_Room_4Way_3.tmx",
-        "Maps/Castle/02_Room_3Way_1.tmx",
-        "Maps/Castle/02_Room_3Way_2.tmx",
-        "Maps/Castle/02_Room_3Way_3.tmx",
-        "Maps/Castle/02_Room_3Way_4.tmx",
-        "Maps/Castle/02_StartRoom.tmx"
+        "Maps/Castle/02_Room_4Way_2.tmx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",

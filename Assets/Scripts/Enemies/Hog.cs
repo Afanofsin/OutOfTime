@@ -26,7 +26,8 @@ namespace Enemies
     
         [Header("Detection")]
         [SerializeField] protected LayerMask wallLayer;
-        [SerializeField] protected float wallCheckDistance = 0.6f;
+
+        [SerializeField] public Animator animator;
         
         protected NavMeshAgent agent;
         protected SpriteRenderer sprite;
@@ -36,9 +37,9 @@ namespace Enemies
         
         // Charge state
         protected Vector2 chargeDirection;
-        protected bool isCharging = false;
-        protected bool chargeHitSomething = false;
-        protected Dictionary<DamageType, float> chargeDamageDict;
+        public bool isCharging = false;
+        public bool chargeHitSomething = false;
+        public Dictionary<DamageType, float> chargeDamageDict;
     
         // Public properties
         public float ChargeWindupDuration => chargeWindupDuration;
@@ -57,7 +58,7 @@ namespace Enemies
         
             rb = GetComponent<Rigidbody2D>();
             agent = GetComponent<NavMeshAgent>();
-            sprite = GetComponent<SpriteRenderer>();
+            sprite = GetComponentInChildren<SpriteRenderer>();
         
             // Configure NavMeshAgent for 2D
             agent.updateRotation = false;
@@ -136,6 +137,19 @@ namespace Enemies
         protected virtual void Update()
         {
             if (Target == null || !isInitialized) return;
+            
+            if (animator != null)
+            {
+                if (agent.desiredVelocity.sqrMagnitude > 0.01f)
+                {
+                    animator.SetBool("IsRunning", true);
+                }
+                else
+                {
+                    animator.SetBool("IsRunning", false);
+                }
+            }
+            
             stateMachine.Update();
         }
 
@@ -209,7 +223,10 @@ namespace Enemies
             isCharging = true;
             chargeHitSomething = false;
             agent.enabled = false; // Disable NavMesh during charge
+            rb.simulated = true;
             rb.linearVelocity = chargeDirection * chargeSpeed;
+            animator.SetFloat("SpeedMult", 2f);
+            animator.SetBool("IsRunning", true);
         }
         
         private readonly RaycastHit2D[] castResults = new RaycastHit2D[4];
@@ -223,6 +240,7 @@ namespace Enemies
             {
                 rb.linearVelocity = Vector2.zero;
                 rb.MovePosition(rb.position + chargeDirection * (castResults[0].distance - 0.01f));
+                chargeHitSomething = true;
                 isCharging = false;
             }
             else
@@ -236,6 +254,9 @@ namespace Enemies
             isCharging = false;
             rb.linearVelocity = Vector2.zero;
             agent.enabled = true;
+            rb.simulated = false;
+            animator.SetFloat("SpeedMult", 1f);
+            animator.SetBool("IsRunning", false);
         }
 
         public bool HasChargeEnded()
@@ -253,7 +274,15 @@ namespace Enemies
         public void FaceTarget()
         {
             if (Target == null || sprite == null) return;
-            sprite.flipX = transform.position.x < Target.transform.position.x;
+            //sprite.flipX = transform.position.x < Target.transform.position.x;
+            if (transform.position.x < Target.transform.position.x)
+            {
+                animator.SetBool("ShouldFlip", true);
+            }
+            else
+            {
+                animator.SetBool("ShouldFlip", false);
+            }
         }
 
         public void FaceChargeDirection()
@@ -262,33 +291,13 @@ namespace Enemies
         
             // Face right if charging right, left otherwise
             if (chargeDirection == Vector2.right)
-                sprite.flipX = true;
+                animator.SetBool("ShouldFlip", true);
             else if (chargeDirection == Vector2.left)
-                sprite.flipX = false;
+                animator.SetBool("ShouldFlip", false);
         }
 
         // Collision handling
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (!isCharging) return;
         
-            // Hit player during charge
-            var damageable = collision.gameObject.GetComponent<IDamageable>();
-            if (damageable != null && collision.gameObject == Target)
-            {
-                damageable.TakeDamage(chargeDamageDict);
-                Debug.Log($"{name}: Hit player during charge!");
-                chargeHitSomething = true;
-                return;
-            }
-        
-            // Hit wall (fallback if raycast missed)
-            if (((1 << collision.gameObject.layer) & wallLayer) != 0)
-            {
-                Debug.Log($"{name}: Collision with wall!");
-                chargeHitSomething = true;
-            }
-        }
 
         public virtual void OnDeath()
         {

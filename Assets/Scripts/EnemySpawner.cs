@@ -14,13 +14,22 @@ public class EnemySpawner : MonoBehaviour
     private bool isSpawningEngaged = false;
     private float spawnRandomize;
     private Room room;
+    private bool hasSpawned;
     
-    private void Start()
+    private void Awake()
     {
         room = GetComponentInParent<Room>();
-        room.OnPlayerEnteredRoom += Spawn;
-        isSpawningEngaged = false;
-        
+    }
+
+    private void OnEnable()
+    {
+        hasSpawned = false;
+        room.OnPlayerEnteredRoom += HandlePlayerEnteredRoom;
+    }
+
+    private void OnDisable()
+    {
+        room.OnPlayerEnteredRoom -= HandlePlayerEnteredRoom;
     }
 
     public void SetEnemy(string name)
@@ -28,9 +37,11 @@ public class EnemySpawner : MonoBehaviour
         enemyToSpawn = enemyDb.GetEnemyByName(name);
     }
 
-    private void Spawn()
+    private void HandlePlayerEnteredRoom()
     {
-        room.OnPlayerEnteredRoom -= Spawn;
+        if (hasSpawned) return;
+        hasSpawned = true;
+        room.OnPlayerEnteredRoom -= HandlePlayerEnteredRoom;
         
         if(!enemyToSpawn) enemyToSpawn = enemyDb.GetEnemyByName(name);
         isSpawningEngaged = true;
@@ -45,24 +56,36 @@ public class EnemySpawner : MonoBehaviour
             position = transform.position;
         }
         spawnRandomize = UnityEngine.Random.Range(0f, maxSpawnTime);
-        AsyncSpawn(position).Forget();
-        
+        float delay = UnityEngine.Random.Range(0f, maxSpawnTime);
+        SpawnAfterDelayAsync(position, delay).Forget();
     }
 
-    private async UniTask AsyncSpawn(Vector3 position)
+    private async UniTaskVoid SpawnAfterDelayAsync(Vector3 position, float delay)
     {
-        await UniTask.Delay(
-            TimeSpan.FromSeconds(spawnRandomize),
-            cancellationToken: this.GetCancellationTokenOnDestroy()
-        );
+        try
+        {
+            await UniTask.Delay(
+                TimeSpan.FromSeconds(delay),
+                cancellationToken: this.GetCancellationTokenOnDestroy()
+            );
 
-        var enemy = Instantiate(enemyToSpawn, position, Quaternion.identity, transform.parent);
+            SpawnEnemy(position);
+            Destroy(gameObject);
+        }
+        catch (OperationCanceledException)
+        {
+            // Spawner was destroyed before spawn — this is expected and safe
+        }
+    }
+    
+    private void SpawnEnemy(Vector3 position)
+    {
+        var enemy = Instantiate(enemyToSpawn, position, Quaternion.identity, room.transform);
+
         enemy.SetTarget(GameController.Instance.GetPlayerReference);
 
         room.SubscribeEnemyToRoom();
         enemy.onEntityDeath += room.HandleEnemyDeath;
         enemy.onEntityDeath += BloodManager.Instance.HealPlayer;
-
-        Destroy(gameObject);
     }
 }

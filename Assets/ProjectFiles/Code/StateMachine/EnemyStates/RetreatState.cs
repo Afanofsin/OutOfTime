@@ -5,7 +5,7 @@ namespace FSM.EnemyStates
 {
     public class RetreatState : BaseState
     {
-        private IRangedEnemy enemy;
+        private RangedEnemyBase enemy;
         
         public override void OnEnter()
         {
@@ -27,7 +27,7 @@ namespace FSM.EnemyStates
             base.OnExit();
         }
 
-        public RetreatState(IRangedEnemy Enemy)
+        public RetreatState(RangedEnemyBase Enemy)
         {
             enemy = Enemy;
         }

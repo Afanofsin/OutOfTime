@@ -5,7 +5,7 @@ namespace FSM.EnemyStates
 {
     public class EngageState : BaseState
     {
-        private IRangedEnemy enemy;
+        private RangedEnemyBase enemy;
         
         public override void OnEnter()
         {
@@ -27,7 +27,7 @@ namespace FSM.EnemyStates
             base.OnExit();
         }
 
-        public EngageState(IRangedEnemy Enemy)
+        public EngageState(RangedEnemyBase Enemy)
         {
             enemy = Enemy;
         }

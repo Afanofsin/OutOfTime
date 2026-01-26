@@ -1,8 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using FSM;
 using FSM.GameStates;
-using ProjectFiles.Code.Other;
 
 namespace ProjectFiles.Code.Controllers
 {
@@ -11,7 +9,7 @@ namespace ProjectFiles.Code.Controllers
         public static GameStateSystem Instance { get; private set; }
         
         private IState CurrentState => stateMachine.GetState();
-        private StateMachine stateMachine;
+        private FSM.StateMachine stateMachine;
         
         private MainMenuState mainMenuState;
         private MainMenuState initialMenuState;
@@ -34,7 +32,7 @@ namespace ProjectFiles.Code.Controllers
 
         private void InitializeStateMachine()
         {
-            stateMachine = new StateMachine();
+            stateMachine = new FSM.StateMachine();
             initialMenuState = new MainMenuState(true);
             mainMenuState = new MainMenuState(false);
             firstLevelState = new FirstLevelState();
