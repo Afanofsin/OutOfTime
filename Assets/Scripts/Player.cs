@@ -46,7 +46,9 @@ public class Player : EntityBase, IDamageable
     public void Start()
     {
         Equip(inventory.GetSlotItem(0));
+        SoundManager.Instance.PlayFirstLevelMusic();
     }
+    
     
     public void Attack()
     {
@@ -61,6 +63,7 @@ public class Player : EntityBase, IDamageable
 
     private void Equip(WeaponBase item)
     {
+        
         if (HeldWeapon != null)
         {
             Unequip(HeldWeapon);
@@ -246,7 +249,11 @@ public class Player : EntityBase, IDamageable
     
     private bool CheckCost(SkillBase skill) => CurrentHealth - skill.Cost > 0;
     
-
+    public override void Die()
+    {
+        onEntityDeath?.Invoke();
+    }
+    
     public void TickSubtract(float tickAmount)
     {
         if (IsBandaged) return;

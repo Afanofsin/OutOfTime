@@ -6,20 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/MeleeGoblin.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EnemyTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EnemyTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EnemyTest/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EnemyTest/NavMesh-NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EnemyTest/NavMesh-NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EnemyTest/NavMesh-NavMesh.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Player.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerController/MoveRight.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerController/MoveRight.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerController/MoveUp.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerController/MoveUp.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerController/MoveUp.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerController/MoveUp.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerController/PlayerAnimation.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerController/PlayerAnimation.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestGoblinScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestGoblinScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/GoblinMelee.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prefabs/GoblinMelee.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/MeleeWeaponBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/MeleeWeaponBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwing/EnemyArcSwing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwing/EnemyArcSwing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/b978f1db688d4381f045ec640bad5396_T2HH9PoI.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sounds/b978f1db688d4381f045ec640bad5396_T2HH9PoI.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/MC_Idle-Sheet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/MC_Idle-Sheet.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sound/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sound/SoundManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
