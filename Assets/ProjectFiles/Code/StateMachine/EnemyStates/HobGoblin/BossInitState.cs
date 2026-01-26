@@ -12,13 +12,13 @@ namespace FSM.EnemyStates.HobGoblin
             this.boss = boss;
         }
 
-        public void OnEnter()
+        public override void OnEnter()
         {
             Debug.Log("Boss Init State");
         }
 
-        public void Update() { }
-        public void FixedUpdate() { }
-        public void OnExit() { }
+        public override void OnUpdate() { }
+        public override void OnFixedUpdate() { }
+        public override void OnExit() { }
     }
 }

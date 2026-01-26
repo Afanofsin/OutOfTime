@@ -8,14 +8,13 @@ namespace FSM.EnemyStates.HobGoblin
     {
         private BossRangedEnemy boss;
         private float shootTimer = 0f;
-        private float lazyChaseShootInterval = 1f;
 
         public BossLazyChaseState(BossRangedEnemy boss)
         {
             this.boss = boss;
         }
 
-        public void OnEnter()
+        public override void OnEnter()
         {
             Debug.Log("Boss Lazy Chase State");
             boss.ResetStateTimer();
@@ -25,7 +24,7 @@ namespace FSM.EnemyStates.HobGoblin
             boss.GetComponent<NavMeshAgent>().speed = boss.LazyChaseSpeed;
         }
 
-        public void Update()
+        public override void OnUpdate()
         {
             boss.FaceTarget();
             
@@ -44,16 +43,16 @@ namespace FSM.EnemyStates.HobGoblin
 
             // Shoot periodically
             shootTimer += Time.deltaTime;
-            if (shootTimer >= lazyChaseShootInterval)
+            if (shootTimer >= boss.attackCooldown)
             {
                 boss.Action();
                 shootTimer = 0f;
             }
         }
 
-        public void FixedUpdate() { }
+        public override void OnFixedUpdate() { }
 
-        public void OnExit()
+        public override void OnExit()
         {
             Debug.Log("Boss Lazy Chase State Complete - Cycling back to Riding");
         }

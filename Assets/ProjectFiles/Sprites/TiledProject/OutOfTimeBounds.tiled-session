@@ -35,6 +35,14 @@
                 "y": 168.16666666666666
             }
         },
+        "Maps/BOSS_GOBLIN.tmx": {
+            "scale": 1,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 477.5,
+                "y": 485.5
+            }
+        },
         "Maps/Castle/02_BoonRoom.tmx": {
             "expandedObjectLayers": [
                 9

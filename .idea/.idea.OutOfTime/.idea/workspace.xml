@@ -5,41 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Boss.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Boss/BossRangedEnemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Boss/BossRangedEnemy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossInitState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossInitState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossLazyChaseState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossLazyChaseState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossRidingState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossRidingState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossVulnerableState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossVulnerableState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/Hog/HogTrigger.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameStateSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/EngageState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/EngageState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/RetreatState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/RetreatState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/goblinSniper-Sheet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/goblinSniper-Sheet.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/boar-Sheet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/boar-Sheet.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/SandBlob-Sheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/SandBlob-Sheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/bloodbat-Sheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/bloodbat-Sheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/speeeder-Sheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/speeeder-Sheet.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Boss/BossRangedEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Boss/BossRangedEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Other/EnemyDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Other/EnemyDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossInitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossInitState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossLazyChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossLazyChaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossRidingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossRidingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossVulnerableState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/EnemyStates/HobGoblin/BossVulnerableState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Enemies/HobGoblin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Prefabs/Enemies/HobGoblin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Boses/Hob/Bosses_general-Sheet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Boses/Hob/Bosses_general-Sheet.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/GoblinRanged.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/GoblinRanged.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/GoblinRangedIdle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/GoblinRangedIdle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/GoblinRangedIdleFlip.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/GoblinRangedIdleFlip.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/GoblinRangedRun.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/GoblinRangedRun.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/GoblinRangedRunFlip.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/GoblinRanged/GoblinRangedRunFlip.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/Hog.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/Hog.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/HogIdle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/HogIdle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/HogIdleFlip.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/HogIdleFlip.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/HogRun.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/HogRun.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/HogRunFlip.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/Enemies/Hog/HogRunFlip.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-session" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Sprites/TiledProject/OutOfTimeBounds.tiled-session" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EnemyTest/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EnemyTest/NavMesh-NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/GoblinRanged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/GoblinRanged.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Hog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Hog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/GoblinRanged.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prefabs/GoblinRanged.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/Hog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prefabs/Hog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RangedEnemyBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RangedEnemyBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EnemyTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EnemyTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EnemyTest/NavMesh-NavMesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EnemyTest/NavMesh-NavMesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/ProjectilePool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/ProjectilePool.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +252,7 @@
       <workItem from="1769324455456" duration="16246000" />
       <workItem from="1769375787667" duration="2944000" />
       <workItem from="1769381402053" duration="7061000" />
-      <workItem from="1769407304137" duration="15335000" />
+      <workItem from="1769407304137" duration="26422000" />
     </task>
     <servers />
   </component>
