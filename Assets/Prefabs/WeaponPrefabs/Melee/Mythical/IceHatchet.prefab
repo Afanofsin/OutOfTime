@@ -181,6 +181,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   interactCollider: {fileID: 818833473054718792}
+  Icon: {fileID: 8875239686908906295}
   speedValue: 0.5
   attackSpeedValue: 0.65
   minAttackTime: 0.15

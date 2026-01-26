@@ -191,6 +191,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   interactCollider: {fileID: -4856653483524075496}
+  Icon: {fileID: 5096495153320809874}
   speedValue: 0
   attackSpeedValue: 0.65
   projectileAttenuation: {x: 1.25, y: 0.15}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
@@ -11,6 +12,7 @@ public abstract class WeaponBase : SerializedMonoBehaviour, IWeapon, IEquipable,
     public abstract StatModifier GetStatModifier();
     [SerializeField] public readonly int id;
     [SerializeField] public Collider2D interactCollider;
+    public SpriteRenderer Icon;
     public readonly RarityType rarity;
     public virtual void PickUp(Inventory context)
     {

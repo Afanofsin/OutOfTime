@@ -21,4 +21,32 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  boons: []
+  boons:
+  - {fileID: -934742344281971711, guid: de39c312e44ff6e499c7ad2c2ca7bf4d, type: 3}
+  - {fileID: -934742344281971711, guid: 257fc31d7d2aa3743930f28b3cffed32, type: 3}
+  - {fileID: -934742344281971711, guid: 3133e03562e02f94e8e74607c8e653b5, type: 3}
+  - {fileID: -934742344281971711, guid: d81455d3e1e9af14fa2bedb6f1567e6f, type: 3}
+  - {fileID: -934742344281971711, guid: 4b9d48d11c62a0046b9ba2e41269deee, type: 3}
+  - {fileID: -934742344281971711, guid: 071f2196f0769bd4187164d072115c16, type: 3}
+  - {fileID: -934742344281971711, guid: cc3374c8c056ada41a83729df8178fae, type: 3}
+  - {fileID: -934742344281971711, guid: 30a00d83790666f4ba963293e11e97a8, type: 3}
+  - {fileID: -934742344281971711, guid: 474e9158b7a92164ab8122e91bc335e8, type: 3}
+  - {fileID: -934742344281971711, guid: 1db69041225c5f343a1249a722f79540, type: 3}
+  - {fileID: -934742344281971711, guid: 8987b066e1f154741846f18848de649b, type: 3}
+  - {fileID: -934742344281971711, guid: 9eaa3c662cb4a4d479cf8768ab44002e, type: 3}
+  - {fileID: -934742344281971711, guid: 077d8a557fe91dd4897757bd6eb9e261, type: 3}
+  - {fileID: -934742344281971711, guid: d554a5309ca21674ba5abb1c63a73459, type: 3}
+  - {fileID: -934742344281971711, guid: 299916a8825a0f14aa13c3f52d97f0c2, type: 3}
+  - {fileID: -934742344281971711, guid: 0868dfaf8d6651c499ba448fc6d8fdd2, type: 3}
+  - {fileID: -934742344281971711, guid: 451439236c8d05b43b41fac02afcb32c, type: 3}
+  - {fileID: -1046296132967538470, guid: 64adead0e1b1fd24d87a11080df7913c, type: 3}
+  - {fileID: -7794108684447600972, guid: 25838ba64adec6b47b2364f513cedabb, type: 3}
+  - {fileID: -5498453160180215561, guid: 8504b6bc74445a84690b50aeeb7abb6f, type: 3}
+  - {fileID: 997762987748350582, guid: a5813d1478cda6342b9ac61f7520fbea, type: 3}
+  - {fileID: 7477922138723898650, guid: c6e390f60b7d81d46b00c0b8ab03c34a, type: 3}
+  - {fileID: 7477922138723898650, guid: a1eba713a9e7f27458a086f5f87ce556, type: 3}
+  - {fileID: 7477922138723898650, guid: d7ccd6d20d300244aacb66ce263253d1, type: 3}
+  - {fileID: 7477922138723898650, guid: 4cf20460ee6a1ec4e9ade85320b01581, type: 3}
+  - {fileID: -3769334535047071229, guid: ef2c8057a5ff1ef45ab71b820b673d53, type: 3}
+  - {fileID: -3769334535047071229, guid: 94094a75ba44c1a4ca08ee4d55e857c6, type: 3}
+  - {fileID: -6798174997350530530, guid: 9ce3e75086163b443a1e78cbaace7a56, type: 3}

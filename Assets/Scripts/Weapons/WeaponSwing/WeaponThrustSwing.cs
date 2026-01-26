@@ -39,6 +39,7 @@ public class WeaponThrustSwing : SwingBase, ISwing
         weaponCollider.enabled = true;
         _damage = damage;
         
+        SoundManager.Instance.Play(SoundId.SwordAttack);
         trail.Clear();
         trail.emitting = true;
         _swingTween = Tween.Custom(

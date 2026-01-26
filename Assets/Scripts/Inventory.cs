@@ -1,10 +1,13 @@
+using System;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private uint bandages;
+    [SerializeField] private int bandages;
     [SerializeField] private int debt;
     [SerializeField] private InventorySlot[] inventorySlots;
+    public event Action OnInventoryChanged;
+    public event Action<int> OnSlotChanged;
     private int ItemCount
     {
         get
@@ -22,6 +25,7 @@ public class Inventory : MonoBehaviour
     }
 
     public bool Bandages => bandages > 0;
+    public int BandagesAmount => bandages;
 
     private int _currentSlot;
     public int CurrentSlot => _currentSlot;
@@ -42,9 +46,14 @@ public class Inventory : MonoBehaviour
             _currentSlot = (_currentSlot + 1) % inventorySlots.Length;
 
             if (!IsSlotEmpty(_currentSlot))
+            {
+                OnSlotChanged?.Invoke(_currentSlot);
+                OnInventoryChanged?.Invoke();
                 return inventorySlots[_currentSlot].HeldItem;
+            }
 
         } while (_currentSlot != startSlot);
+
         return CurrentItem;
     }
 
@@ -81,6 +90,7 @@ public class Inventory : MonoBehaviour
             if (slot.HeldItem == null)
             {
                 slot.SetItem(item);
+                OnInventoryChanged?.Invoke();
                 return true;
             }
         }
@@ -111,7 +121,34 @@ public class Inventory : MonoBehaviour
 
         return droppedItem;
     }
+    
+    public WeaponBase GetCurrentItem()
+    {
+        return inventorySlots[_currentSlot].HeldItem;
+    }
 
-    public void AddBandage(uint amount) => bandages += amount;
+    public WeaponBase GetItemAtOffset(int offset)
+    {
+        if (ItemCount == 0) return null;
+
+        int index = _currentSlot;
+        int found = 0;
+
+        while (found < offset)
+        {
+            index = (index + 1) % inventorySlots.Length;
+
+            if (inventorySlots[index].HeldItem != null)
+                found++;
+        }
+        
+        if (ItemCount <= offset) return null;
+        
+        return inventorySlots[index].HeldItem;
+    }
+
+    public void AddBandage(int amount) => bandages += amount;
+    
     public void SubtractBandage() => bandages--;
+    
 }

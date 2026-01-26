@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController Instance;
     private float _elapsedTime = 1f;
+    public Action<Player> onPlayerSpawned;
+    
     private bool _canDash => _elapsedTime >= (player.PlayerStats.DashCooldown + DashTime);
     
     private void InitializeStateMachine()
@@ -97,6 +99,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         moveSpeed = player.PlayerStats.Speed;
+        
     }
     
     private void Update()
@@ -145,6 +148,7 @@ public class PlayerController : MonoBehaviour
         if (!context.performed || !_canDash) return;
 
         StartDash();
+        if (CurrentPlayer != null) onPlayerSpawned?.Invoke(CurrentPlayer);
     }
 
     private void StartDash()

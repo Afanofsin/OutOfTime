@@ -6,17 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Firemat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Firemat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BoonPrefabs/BoonDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BoonPrefabs/BoonDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SkillPrefabs/BloodSlashSkill.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SkillPrefabs/BloodSlashSkill.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SkillPrefabs/BloodSpearSkill.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SkillPrefabs/BloodSpearSkill.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Common/BaseballBat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Common/BaseballBat.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Common/StartingDagger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Common/StartingDagger.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Common/Sword.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Common/Sword.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Legendary/BloodKatana.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Legendary/BloodKatana.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Legendary/BloodScythe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Legendary/BloodScythe.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Legendary/FireSword.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Legendary/FireSword.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Legendary/IceSword.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Legendary/IceSword.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Legendary/LightSaber.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Legendary/LightSaber.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Mythical/BloodKatana.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Mythical/BloodKatana.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Mythical/Cleaver.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Mythical/Cleaver.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Mythical/GreatSword.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Mythical/GreatSword.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Mythical/IceHatchet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Mythical/IceHatchet.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Rare/Axe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Rare/Axe.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Rare/Hammer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Rare/Hammer.prefab" afterDir="false" />
@@ -26,54 +28,37 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Uncommon/Katana.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Uncommon/Katana.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Uncommon/Knife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Uncommon/Knife.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Uncommon/Spear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Melee/Uncommon/Spear.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/Arrow.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/Arrow.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/BlasterProjectile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/BlasterProjectile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/Bullet.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/Bullet.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/CardProjectile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/CardProjectile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/Fireball.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/Fireball.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/IcicleProjectile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/IcicleProjectile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/KunaiProjectile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/KunaiProjectile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/PotionProjectile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/PotionProjectile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/Syringe.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Projectiles/Syringe.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Revolver.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Revolver.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/ThePalka.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/ThePalka.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/WeaponDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/WeaponDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Other/EnemyDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/Other/EnemyDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/PlayerStates/PlayerDashingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProjectFiles/Code/StateMachine/PlayerStates/PlayerDashingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Common/Kunai.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Common/Kunai.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Common/Pooper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Common/Pooper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Legendary/BigBlaster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Legendary/BigBlaster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Legendary/Card.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Legendary/Card.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Mythical/AlienBlaster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Mythical/AlienBlaster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Mythical/GDeagle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Mythical/GDeagle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Mythical/Syringer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Mythical/Syringer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Rare/Colt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Rare/Colt.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Rare/Icicle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Rare/Icicle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Rare/Potion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Rare/Potion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Rare/RegularAssBlaster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Rare/RegularAssBlaster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Rare/ThePalka.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Rare/ThePalka.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Uncommon/Arbalest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Uncommon/Arbalest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Uncommon/Revolver.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/WeaponPrefabs/Ranged/Uncommon/Revolver.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestGoblinScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestGoblinScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseStats.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EntityBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/WeaponDatabase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/WeaponDatabase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/Goblin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prefabs/Goblin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkillBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkillBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/MeleeWeaponBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/MeleeWeaponBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Projectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/RangeWeaponBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/RangeWeaponBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/Axe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/Axe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/BaseballBat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/BaseballBat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/Cleaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/Cleaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/FireSword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/FireSword.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/Katana.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/Katana.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/weapons 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/weapons 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwing/WeaponArcSwing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwing/WeaponArcSwing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwing/WeaponThrustSwing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSwing/WeaponThrustSwing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Flash.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Flash.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI_invI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI_invI.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/invSlot1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/invSlot1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/skills.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/skills.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +70,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a8e68401729c47848d649c58cc15c230212600/ca/2aec1ffb/LayerMask.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/CoreManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ProjectFiles/Code/Controllers/GameController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -150,6 +136,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RangedEnemyBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RarityType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Sound/Sound.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Sound/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/ProjectilePool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/RangeWeaponBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponsScripts/BaseballBat.cs" root0="FORCE_HIGHLIGHTING" />
@@ -268,7 +256,9 @@
       <workItem from="1769243624665" duration="19544000" />
       <workItem from="1769268722547" duration="16639000" />
       <workItem from="1769335027520" duration="22950000" />
-      <workItem from="1769359462983" duration="12073000" />
+      <workItem from="1769359462983" duration="14670000" />
+      <workItem from="1769379456012" duration="14667000" />
+      <workItem from="1769414288925" duration="11958000" />
     </task>
     <servers />
   </component>

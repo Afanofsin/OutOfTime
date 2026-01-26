@@ -54,6 +54,7 @@ public class WeaponArcSwing : SwingBase, ISwing
             ease
         ).OnComplete(() =>
         { 
+            SoundManager.Instance.Play(SoundId.SwordAttack);
             weaponCollider.enabled = true;
             trail.emitting = true;
             _swingTween = Tween.Custom(
