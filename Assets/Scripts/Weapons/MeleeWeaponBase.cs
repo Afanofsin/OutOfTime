@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
@@ -11,6 +12,7 @@ public abstract class WeaponBase : SerializedMonoBehaviour, IWeapon, IEquipable,
     public abstract StatModifier GetStatModifier();
     public readonly int id;
     public Collider2D interactCollider;
+    public SpriteRenderer Icon;
     public readonly RarityType rarity;
     public virtual void PickUp(Inventory context)
     {
@@ -44,7 +46,7 @@ public abstract class MeleeWeaponBase : WeaponBase
         if (swing.IsRunning) return;
         
         weaponSprite.flipX = transform.localRotation.eulerAngles.z is > 90f and < 270f;
-        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 35f and < 145 ? 8 : 11;
+        weaponSprite.sortingOrder = transform.localRotation.eulerAngles.z is > 45f and < 135f ? 8 : 11;
     }
     
     public override void PerformAttack(Dictionary<DamageType, float> damageType, float durationModifier)

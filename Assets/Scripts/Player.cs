@@ -14,8 +14,11 @@ public class Player : EntityBase, IDamageable
     [SerializeField] private PlayerController controller;
     [SerializeField] private Inventory inventory;
     public PlayerStats PlayerStats { get; private set; }
-    public ParticleSystem playerParticles;
     
+    public ParticleSystem playerParticles;
+    public SpriteRenderer PlayerSprite;
+    
+    public Inventory Inventory => inventory;
     [SerializeField] private float invulnerabilityDuration;
     private float _invulnerableUntil;
     public bool CanTakeDamage => Time.time >= _invulnerableUntil;
@@ -27,7 +30,12 @@ public class Player : EntityBase, IDamageable
     private Coroutine _bandageRoutine;
     [Header("SkillCD")] 
     private WaitForSeconds _skillCooldown;
-    private bool _isSkilled = true;
+    public bool isSkilled = true;
+
+    [Header("UI")] 
+    public Action<SkillBase> onSkillChanged;
+    public Action<int> onBandageChange;
+    public Action<bool> onBandageUsed;
     
     public override void Awake()
     {
@@ -37,12 +45,18 @@ public class Player : EntityBase, IDamageable
 
     public void Start()
     {
-        //Equip(inventory.GetSlotItem(0));
+        Equip(inventory.GetSlotItem(0));
     }
     
     public void Attack()
     {
         HeldWeapon.PerformAttack(PlayerStats.Attack, PlayerStats.AttackSpeed);
+        
+        
+        if (HeldWeapon is RangeWeaponBase)
+        {
+            SoundManager.Instance.Play(SoundId.Shoot);
+        }
     }
 
     private void Equip(WeaponBase item)
@@ -90,19 +104,20 @@ public class Player : EntityBase, IDamageable
 
     private IEnumerator SkillCooldown()
     {
-        _isSkilled = false;
+        isSkilled = false;
         yield return _skillCooldown;
-        _isSkilled = true;
+        isSkilled = true;
     }
 
     public void UseSkill()
     {
-        if (HeldSkill != null && CheckCost(HeldSkill) && _isSkilled)
+        if (HeldSkill != null && CheckCost(HeldSkill) && isSkilled)
         {
             CurrentHealth -= HeldSkill.Cost;
             HeldSkill.Perform();
             _skillCooldown = new WaitForSeconds(HeldSkill.CoolDown);
             StartCoroutine(SkillCooldown());
+            SoundManager.Instance.Play(SoundId.Skill);
         }
     }
 
@@ -117,12 +132,7 @@ public class Player : EntityBase, IDamageable
     {
         
     }
-
-    private void Update()
-    {
-        
-    }
-
+    
     public void UseBandage()
     {
         if (!inventory.Bandages) return;
@@ -138,11 +148,17 @@ public class Player : EntityBase, IDamageable
     private IEnumerator Bandaged()
     {
         inventory.SubtractBandage();
+        onBandageChange?.Invoke(inventory.BandagesAmount);
         IsBandaged = true;
+        
+        onBandageUsed?.Invoke(IsBandaged);
 
         yield return _bandageTime;
 
         IsBandaged = false;
+        
+        onBandageUsed?.Invoke(IsBandaged);
+        
         _bandageRoutine = null;
     }
 
@@ -164,9 +180,12 @@ public class Player : EntityBase, IDamageable
             }
 
             HeldSkill = SkillDatabase.Instance.GetSkillByID(skill.id);
+            onSkillChanged?.Invoke(HeldSkill);
         }
 
         item.PickUp(inventory);
+        
+        onBandageChange?.Invoke(inventory.BandagesAmount);
     }
     
     private void SpawnDropped(IPickable item)
@@ -224,7 +243,7 @@ public class Player : EntityBase, IDamageable
         }
         React();
     }
-
+    
     private bool CheckCost(SkillBase skill) => CurrentHealth - skill.Cost > 0;
     
 
