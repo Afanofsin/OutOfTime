@@ -8,7 +8,7 @@ public class ProjectilePool : MonoBehaviour
     private readonly Queue<Projectile> _pool = new();
     
     private void Awake()
-    {
+    { 
         Warmup();
     }
 

@@ -1,0 +1,1170 @@
+fileFormatVersion: 2
+guid: 985b3c3a8dfa34d4eb1eb5b4ea02b32f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1779636381424447600
+    second: BossesCeo_Run-Sheet_0
+  - first:
+      213: 179843818876810631
+    second: BossesCeo_Run-Sheet_1
+  - first:
+      213: -1492477837291180640
+    second: BossesCeo_Run-Sheet_2
+  - first:
+      213: -6701429232704223654
+    second: BossesCeo_Run-Sheet_3
+  - first:
+      213: 3104011598390059425
+    second: BossesCeo_Run-Sheet_4
+  - first:
+      213: -7427864364570771321
+    second: BossesCeo_Run-Sheet_5
+  - first:
+      213: -6260525367790823873
+    second: BossesCeo_Run-Sheet_6
+  - first:
+      213: -8997255126350910370
+    second: BossesCeo_Run-Sheet_7
+  - first:
+      213: -8546946009850731487
+    second: BossesCeo_Run-Sheet_8
+  - first:
+      213: -8577312584175205320
+    second: BossesCeo_Run-Sheet_9
+  - first:
+      213: 7155932899901360017
+    second: BossesCeo_Run-Sheet_10
+  - first:
+      213: 1530603970270985786
+    second: BossesCeo_Run-Sheet_11
+  - first:
+      213: 3817557860336258109
+    second: BossesCeo_Run-Sheet_12
+  - first:
+      213: -4458910023695792004
+    second: BossesCeo_Run-Sheet_13
+  - first:
+      213: 152672150756772681
+    second: BossesCeo_Run-Sheet_14
+  - first:
+      213: 4152086604140870124
+    second: BossesCeo_Run-Sheet_15
+  - first:
+      213: 8428849623345653470
+    second: BossesCeo_Run-Sheet_16
+  - first:
+      213: 3450848649948003234
+    second: BossesCeo_Run-Sheet_17
+  - first:
+      213: -4905665285097751219
+    second: BossesCeo_Run-Sheet_18
+  - first:
+      213: -7428331416525470792
+    second: BossesCeo_Run-Sheet_19
+  - first:
+      213: -8565832753023521553
+    second: BossesCeo_Run-Sheet_20
+  - first:
+      213: 2870568748745218895
+    second: BossesCeo_Run-Sheet_21
+  - first:
+      213: 4380511032246554624
+    second: BossesCeo_Run-Sheet_22
+  - first:
+      213: 4460675753547760805
+    second: BossesCeo_Run-Sheet_23
+  - first:
+      213: -9079695285370986446
+    second: BossesCeo_Run-Sheet_24
+  - first:
+      213: 5039032280801030385
+    second: BossesCeo_Run-Sheet_25
+  - first:
+      213: 2532920659715858159
+    second: BossesCeo_Run-Sheet_26
+  - first:
+      213: -3874793643627588976
+    second: BossesCeo_Run-Sheet_27
+  - first:
+      213: 5955540589110918793
+    second: BossesCeo_Run-Sheet_28
+  - first:
+      213: -6880665044909900516
+    second: BossesCeo_Run-Sheet_29
+  - first:
+      213: -437042787402958433
+    second: BossesCeo_Run-Sheet_30
+  - first:
+      213: -981911517221355824
+    second: BossesCeo_Run-Sheet_31
+  - first:
+      213: -5694737462713887116
+    second: BossesCeo_Run-Sheet_32
+  - first:
+      213: -7635779697914347275
+    second: BossesCeo_Run-Sheet_33
+  - first:
+      213: 27381716684434132
+    second: BossesCeo_Run-Sheet_34
+  - first:
+      213: 2018110923563078248
+    second: BossesCeo_Run-Sheet_35
+  - first:
+      213: 6606532811436634006
+    second: BossesCeo_Run-Sheet_36
+  - first:
+      213: -2564451274652852709
+    second: BossesCeo_Run-Sheet_37
+  - first:
+      213: 3140299096582759063
+    second: BossesCeo_Run-Sheet_38
+  - first:
+      213: 1176658263267652870
+    second: BossesCeo_Run-Sheet_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 431
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0707a282cd982b810800000000000000
+      internalID: 1779636381424447600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 431
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 785b33b100fee7200800000000000000
+      internalID: 179843818876810631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 431
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0adad118057a94be0800000000000000
+      internalID: -1492477837291180640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 431
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a560f395e9dbff2a0800000000000000
+      internalID: -6701429232704223654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 383
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a16bbc5a1aa31b20800000000000000
+      internalID: 3104011598390059425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 383
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7800af507bceae890800000000000000
+      internalID: -7427864364570771321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 383
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36918109552e19a0800000000000000
+      internalID: -6260525367790823873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 383
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5caa40d124532380800000000000000
+      internalID: -8997255126350910370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 338
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 124a76043e5236980800000000000000
+      internalID: -8546946009850731487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 337
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834cfb436a347f880800000000000000
+      internalID: -8577312584175205320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 337
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197c6270f0bfe4360800000000000000
+      internalID: 7155932899901360017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 337
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3efdc3933ccd3510800000000000000
+      internalID: 1530603970270985786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 291
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3cc7dec5a0baf430800000000000000
+      internalID: 3817557860336258109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 291
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c780f2035f4ce12c0800000000000000
+      internalID: -4458910023695792004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 290
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94bc3f023866e1200800000000000000
+      internalID: 152672150756772681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 290
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce9797c84cc2f9930800000000000000
+      internalID: 4152086604140870124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 244
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed6e3b0131a49f470800000000000000
+      internalID: 8428849623345653470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 244
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab79c15090e3ef20800000000000000
+      internalID: 3450848649948003234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 243
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4d78ce1a639bebb0800000000000000
+      internalID: -4905665285097751219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 243
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b300240fe349e890800000000000000
+      internalID: -7428331416525470792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 191
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fec60aeae7c002980800000000000000
+      internalID: -8565832753023521553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 191
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bdb4c611f46d720800000000000000
+      internalID: 2870568748745218895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 191
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0005cbb2393bacc30800000000000000
+      internalID: 4380511032246554624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 191
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a48964d6f087ed30800000000000000
+      internalID: 4460675753547760805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 143
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2306ca68e317ef180800000000000000
+      internalID: -9079695285370986446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 143
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f03fd4592d3ee540800000000000000
+      internalID: 5039032280801030385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 143
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fee9c968bedb62320800000000000000
+      internalID: 2532920659715858159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 143
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 092d2ade5b7f93ac0800000000000000
+      internalID: -3874793643627588976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 98
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e706bac9456a250800000000000000
+      internalID: 5955540589110918793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 97
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1db2b3d897f280a0800000000000000
+      internalID: -6880665044909900516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 98
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99333186ef4fe9f0800000000000000
+      internalID: -437042787402958433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 98
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0def72f6dac8f52f0800000000000000
+      internalID: -981911517221355824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 51
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47654dd137a38f0b0800000000000000
+      internalID: -5694737462713887116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 51
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f00da222d2480690800000000000000
+      internalID: -7635779697914347275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 51
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dae058b687416000800000000000000
+      internalID: 27381716684434132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 51
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862105c4135c10c10800000000000000
+      internalID: 2018110923563078248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 4
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69fa4aec69e1fab50800000000000000
+      internalID: 6606532811436634006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 4
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1ed48a172d396cd0800000000000000
+      internalID: -2564451274652852709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 4
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 792ab4ce365949b20800000000000000
+      internalID: 3140299096582759063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossesCeo_Run-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 4
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605b81cc474545010800000000000000
+      internalID: 1176658263267652870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BossesCeo_Run-Sheet_0: 1779636381424447600
+      BossesCeo_Run-Sheet_1: 179843818876810631
+      BossesCeo_Run-Sheet_10: 7155932899901360017
+      BossesCeo_Run-Sheet_11: 1530603970270985786
+      BossesCeo_Run-Sheet_12: 3817557860336258109
+      BossesCeo_Run-Sheet_13: -4458910023695792004
+      BossesCeo_Run-Sheet_14: 152672150756772681
+      BossesCeo_Run-Sheet_15: 4152086604140870124
+      BossesCeo_Run-Sheet_16: 8428849623345653470
+      BossesCeo_Run-Sheet_17: 3450848649948003234
+      BossesCeo_Run-Sheet_18: -4905665285097751219
+      BossesCeo_Run-Sheet_19: -7428331416525470792
+      BossesCeo_Run-Sheet_2: -1492477837291180640
+      BossesCeo_Run-Sheet_20: -8565832753023521553
+      BossesCeo_Run-Sheet_21: 2870568748745218895
+      BossesCeo_Run-Sheet_22: 4380511032246554624
+      BossesCeo_Run-Sheet_23: 4460675753547760805
+      BossesCeo_Run-Sheet_24: -9079695285370986446
+      BossesCeo_Run-Sheet_25: 5039032280801030385
+      BossesCeo_Run-Sheet_26: 2532920659715858159
+      BossesCeo_Run-Sheet_27: -3874793643627588976
+      BossesCeo_Run-Sheet_28: 5955540589110918793
+      BossesCeo_Run-Sheet_29: -6880665044909900516
+      BossesCeo_Run-Sheet_3: -6701429232704223654
+      BossesCeo_Run-Sheet_30: -437042787402958433
+      BossesCeo_Run-Sheet_31: -981911517221355824
+      BossesCeo_Run-Sheet_32: -5694737462713887116
+      BossesCeo_Run-Sheet_33: -7635779697914347275
+      BossesCeo_Run-Sheet_34: 27381716684434132
+      BossesCeo_Run-Sheet_35: 2018110923563078248
+      BossesCeo_Run-Sheet_36: 6606532811436634006
+      BossesCeo_Run-Sheet_37: -2564451274652852709
+      BossesCeo_Run-Sheet_38: 3140299096582759063
+      BossesCeo_Run-Sheet_39: 1176658263267652870
+      BossesCeo_Run-Sheet_4: 3104011598390059425
+      BossesCeo_Run-Sheet_5: -7427864364570771321
+      BossesCeo_Run-Sheet_6: -6260525367790823873
+      BossesCeo_Run-Sheet_7: -8997255126350910370
+      BossesCeo_Run-Sheet_8: -8546946009850731487
+      BossesCeo_Run-Sheet_9: -8577312584175205320
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

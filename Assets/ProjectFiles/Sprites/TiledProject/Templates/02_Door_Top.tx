@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../Tilesets/SpriteSheetGeneral.tsx"/>
+ <object name="02_Door_Top" type="02_Door_Top" gid="29" width="16" height="16">
+  <properties>
+   <property name="SetDirection" value="South"/>
+  </properties>
+ </object>
+</template>

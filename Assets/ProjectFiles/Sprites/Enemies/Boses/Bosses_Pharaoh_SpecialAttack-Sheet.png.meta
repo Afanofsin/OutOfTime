@@ -1,0 +1,962 @@
+fileFormatVersion: 2
+guid: 9a83bd8cc7eef6b4cb048a73b9668272
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4942710851961129060
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_0
+  - first:
+      213: -3146512885233419216
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_1
+  - first:
+      213: 3463371087487432099
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_2
+  - first:
+      213: 580907332950126374
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_3
+  - first:
+      213: 1786759702573968173
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_4
+  - first:
+      213: -8205699178733248909
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_5
+  - first:
+      213: 280728312226558157
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_6
+  - first:
+      213: 7663701582724938522
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_7
+  - first:
+      213: 6697453052424642549
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_8
+  - first:
+      213: -997171480132702475
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_9
+  - first:
+      213: 3704623229277474178
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_10
+  - first:
+      213: 9221152183978254271
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_11
+  - first:
+      213: 7838372240470572000
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_12
+  - first:
+      213: -65118103791531333
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_13
+  - first:
+      213: -2668936669531532537
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_14
+  - first:
+      213: -3520638753116372730
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_15
+  - first:
+      213: 1183346110017765269
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_16
+  - first:
+      213: 4484252930552084273
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_17
+  - first:
+      213: 5366337590435639471
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_18
+  - first:
+      213: -7056041461186731918
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_19
+  - first:
+      213: -8402957960329072852
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_20
+  - first:
+      213: -6968116118405097134
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_21
+  - first:
+      213: -5483843514720177537
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_22
+  - first:
+      213: -7764540018183645133
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_23
+  - first:
+      213: -2483137151688830262
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_24
+  - first:
+      213: 2026945550724778515
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_25
+  - first:
+      213: -4051537581811230873
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_26
+  - first:
+      213: 552094314450490655
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_27
+  - first:
+      213: -4388845926077369715
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_28
+  - first:
+      213: 8679164974979894733
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_29
+  - first:
+      213: -152267848724229696
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_30
+  - first:
+      213: -6158060123121355129
+    second: Bosses_Pharaoh_SpecialAttack-Sheet_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 335
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4688c9e0559089440800000000000000
+      internalID: 4942710851961129060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 335
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03cf87aa3375554d0800000000000000
+      internalID: -3146512885233419216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 335
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a5fb0387ad501030800000000000000
+      internalID: 3463371087487432099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 335
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62f69eb342ccf0800800000000000000
+      internalID: 580907332950126374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 287
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b67ea9b78dbc810800000000000000
+      internalID: 1786759702573968173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 287
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ed3e592108f1e80800000000000000
+      internalID: -8205699178733248909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 287
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc0b8a0a9e855e300800000000000000
+      internalID: 280728312226558157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 287
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b3be64cffea5a60800000000000000
+      internalID: 7663701582724938522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 239
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff50a9011222fc50800000000000000
+      internalID: 6697453052424642549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 239
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fe2a8272d55922f0800000000000000
+      internalID: -997171480132702475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 239
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d8eb7f237796330800000000000000
+      internalID: 3704623229277474178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 239
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbf57d93e0d18ff70800000000000000
+      internalID: 9221152183978254271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 191
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ebf782f50e77cc60800000000000000
+      internalID: 7838372240470572000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 191
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bba0f0bfd67a81ff0800000000000000
+      internalID: -65118103791531333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 191
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7031f8c5d3806fad0800000000000000
+      internalID: -2668936669531532537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 191
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 601460a05bd242fc0800000000000000
+      internalID: -3520638753116372730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 143
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ff2f574071c6010800000000000000
+      internalID: 1183346110017765269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 143
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 137bf8028444b3e30800000000000000
+      internalID: 4484252930552084273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 143
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa0fdbe3b9f097a40800000000000000
+      internalID: 5366337590435639471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 143
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2706981fca7e31e90800000000000000
+      internalID: -7056041461186731918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 95
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2f6b008142b26b80800000000000000
+      internalID: -8402957960329072852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 95
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2595ac81f474c4f90800000000000000
+      internalID: -6968116118405097134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 95
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f723645c06975e3b0800000000000000
+      internalID: -5483843514720177537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 95
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 338dbd3edffce3490800000000000000
+      internalID: -7764540018183645133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 47
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac21301baef1a8dd0800000000000000
+      internalID: -2483137151688830262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 47
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a420a3d38212c10800000000000000
+      internalID: 2026945550724778515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 47
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7671ff9090c06c7c0800000000000000
+      internalID: -4051537581811230873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 47
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1595579ade69a700800000000000000
+      internalID: 552094314450490655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d82fc3222efa713c0800000000000000
+      internalID: -4388845926077369715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 0
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcd40b08f86927870800000000000000
+      internalID: 8679164974979894733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 0
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c15416c23903edf0800000000000000
+      internalID: -152267848724229696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_SpecialAttack-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7867adfd1fc2a8aa0800000000000000
+      internalID: -6158060123121355129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bosses_Pharaoh_SpecialAttack-Sheet_0: 4942710851961129060
+      Bosses_Pharaoh_SpecialAttack-Sheet_1: -3146512885233419216
+      Bosses_Pharaoh_SpecialAttack-Sheet_10: 3704623229277474178
+      Bosses_Pharaoh_SpecialAttack-Sheet_11: 9221152183978254271
+      Bosses_Pharaoh_SpecialAttack-Sheet_12: 7838372240470572000
+      Bosses_Pharaoh_SpecialAttack-Sheet_13: -65118103791531333
+      Bosses_Pharaoh_SpecialAttack-Sheet_14: -2668936669531532537
+      Bosses_Pharaoh_SpecialAttack-Sheet_15: -3520638753116372730
+      Bosses_Pharaoh_SpecialAttack-Sheet_16: 1183346110017765269
+      Bosses_Pharaoh_SpecialAttack-Sheet_17: 4484252930552084273
+      Bosses_Pharaoh_SpecialAttack-Sheet_18: 5366337590435639471
+      Bosses_Pharaoh_SpecialAttack-Sheet_19: -7056041461186731918
+      Bosses_Pharaoh_SpecialAttack-Sheet_2: 3463371087487432099
+      Bosses_Pharaoh_SpecialAttack-Sheet_20: -8402957960329072852
+      Bosses_Pharaoh_SpecialAttack-Sheet_21: -6968116118405097134
+      Bosses_Pharaoh_SpecialAttack-Sheet_22: -5483843514720177537
+      Bosses_Pharaoh_SpecialAttack-Sheet_23: -7764540018183645133
+      Bosses_Pharaoh_SpecialAttack-Sheet_24: -2483137151688830262
+      Bosses_Pharaoh_SpecialAttack-Sheet_25: 2026945550724778515
+      Bosses_Pharaoh_SpecialAttack-Sheet_26: -4051537581811230873
+      Bosses_Pharaoh_SpecialAttack-Sheet_27: 552094314450490655
+      Bosses_Pharaoh_SpecialAttack-Sheet_28: -4388845926077369715
+      Bosses_Pharaoh_SpecialAttack-Sheet_29: 8679164974979894733
+      Bosses_Pharaoh_SpecialAttack-Sheet_3: 580907332950126374
+      Bosses_Pharaoh_SpecialAttack-Sheet_30: -152267848724229696
+      Bosses_Pharaoh_SpecialAttack-Sheet_31: -6158060123121355129
+      Bosses_Pharaoh_SpecialAttack-Sheet_4: 1786759702573968173
+      Bosses_Pharaoh_SpecialAttack-Sheet_5: -8205699178733248909
+      Bosses_Pharaoh_SpecialAttack-Sheet_6: 280728312226558157
+      Bosses_Pharaoh_SpecialAttack-Sheet_7: 7663701582724938522
+      Bosses_Pharaoh_SpecialAttack-Sheet_8: 6697453052424642549
+      Bosses_Pharaoh_SpecialAttack-Sheet_9: -997171480132702475
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

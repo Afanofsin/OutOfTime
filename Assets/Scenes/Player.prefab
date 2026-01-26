@@ -36,7 +36,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8284017753757884240}
   - {fileID: 6918447357141966261}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -284,6 +283,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0ae1c917-bb00-4c7c-a6ec-067b3455a344
+    m_ActionName: 'Player/Skill[/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -350,7 +353,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.79}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -360,7 +363,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.99, y: 0.98}
+  m_Size: {x: 1, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &1533477935390475021
 MonoBehaviour:
@@ -374,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f348fdd0cdaa1714ba48315b41714600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  keys: 0
+  bandages: 0
   debt: 0
   inventorySlots:
   - {fileID: 0}
@@ -397,6 +400,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   player: {fileID: 3117350534092284549}
+  dashTrail: {fileID: 0}
 --- !u!114 &3117350534092284549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,58 +514,16 @@ MonoBehaviour:
     - Name: onEntityDeath
       Entry: 6
       Data: 
+    - Name: onHealthChanged
+      Entry: 6
+      Data: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   baseStats: {fileID: 11400000, guid: 268a8b9c1878ee942aafbb694ff3a72d, type: 2}
   controller: {fileID: 4952366348338342014}
   inventory: {fileID: 1533477935390475021}
-  ps: {fileID: 0}
+  playerParticles: {fileID: 4193279612838063512}
   invulnerabilityDuration: 0.15
---- !u!1 &5686377928953745122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8284017753757884240}
-  - component: {fileID: 4297612359062288867}
-  m_Layer: 0
-  m_Name: Pool
-  m_TagString: PlayerPool
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8284017753757884240
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5686377928953745122}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 311115912101815918}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4297612359062288867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5686377928953745122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f15f98b96ae039642b1e1ac2ac2a0f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ProjectilePool
-  initialSize: 32
 --- !u!1 &8935102713843217059
 GameObject:
   m_ObjectHideFlags: 0

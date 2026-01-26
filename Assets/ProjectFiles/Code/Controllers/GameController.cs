@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using ProjectFiles.Code.Events;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace ProjectFiles.Code.Controllers
@@ -27,6 +28,8 @@ namespace ProjectFiles.Code.Controllers
             Instance = this;
             ControllerTransform = transform;
             InstantiatePlayer();
+            SpawnPlayer(new Vector3(21,13,0));
+            Debug.Log($"GameController.Awake() END - playerReference is {(playerReference != null ? playerReference.name : "NULL")}");
         }
 
         private void Start()
@@ -36,18 +39,24 @@ namespace ProjectFiles.Code.Controllers
         
         public async UniTask GenerateLevel()
         {
-            
-            Vector3 spawnPoint = await LevelGenerator.Instance.GenerateLevel();
-            if (!LevelGenerator.Instance.IsBossRoomGenerated &&
-                LevelGenerator.Instance.SpecialRoomsGenerated != 2)
+            Vector3 spawnPoint;
+            int maxAttemps = 10;
+            int attempts = 0;
+
+            do
             {
                 spawnPoint = await LevelGenerator.Instance.GenerateLevel();
-            }
+                attempts++;
 
-            if (spawnPoint == Vector3.zero)
-            {
-                return;
-            }
+                if (attempts >= maxAttemps)
+                {
+                    // TODO : Restart the session.
+                    return;
+                }
+                
+            } while (!LevelGenerator.Instance.IsBossRoomGenerated &&
+                     LevelGenerator.Instance.SpecialRoomsGenerated != 2);
+            
             SpawnPlayer(spawnPoint);
         }
 
@@ -57,6 +66,7 @@ namespace ProjectFiles.Code.Controllers
             playerReference.SetActive(false);
         }
 
+        [Button]
         public void SpawnPlayer(Vector3 spawn)
         {
             if (playerReference == null)

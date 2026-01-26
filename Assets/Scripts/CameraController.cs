@@ -1,11 +1,17 @@
 using System;
 using ProjectFiles.Code.Events;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] private bool isFollowing = false;
+    [SerializeField]
+    float m_cameraDivider =  5;
+
+    [SerializeField] private float boundry = 2;
+    [SerializeField] private float time = 1f;
+    float m_cameraZaxis = -10;
+    
     private Transform _playerPos;
     
     private float _camHeight;
@@ -14,6 +20,11 @@ public class CameraController : MonoBehaviour
     private int _currentX;
     private int _currentY;
     private bool playerExists;
+    
+    private Vector3 velocity = Vector3.zero;
+    [SerializeField] private float minSmoothTime = 0.05f; // Fast when player is far
+    [SerializeField] private float maxSmoothTime = 0.3f; // Slow when player is close
+    [SerializeField] private float maxPlayerDistanceFromCamera = 6f;
 
     private void OnEnable()
     {
@@ -33,16 +44,52 @@ public class CameraController : MonoBehaviour
         if(_playerPos != null) playerExists = true;
         _camHeight = cam.orthographicSize * 2;
         _camWidth = _camHeight * cam.aspect;
-        
+
+        if (isFollowing) return;
         UpdateCell(true);
     }
 
     private void LateUpdate()
     {
         if(!playerExists) return;
+        
+        if (isFollowing)
+        {
+            FollowPlayer();
+            return;
+        }
         UpdateCell(false);
     }
 
+    private void FollowPlayer()
+    {
+        var mousePos = PlayerController.WorldMousePos;
+        Vector3 mousePos3d = new Vector3(mousePos.x, mousePos.y, m_cameraZaxis);
+
+        Vector3 cameraTargetPosition;
+        
+        Vector3 playerPos3d = new Vector3(_playerPos.position.x, _playerPos.position.y, m_cameraZaxis);
+        float distanceToPlayerSqr = (mousePos3d - playerPos3d).sqrMagnitude;
+        
+        if (distanceToPlayerSqr < boundry)
+        {
+            cameraTargetPosition = _playerPos.position;
+        }
+        else
+        {
+            cameraTargetPosition = (mousePos3d + (m_cameraDivider - 1) * _playerPos.position) / m_cameraDivider;
+        }
+        
+        cameraTargetPosition.z = m_cameraZaxis;
+        
+        float currentDistance = Vector3.Distance(transform.position, playerPos3d);
+        float dynamicSmoothTime = Mathf.Lerp(minSmoothTime, maxSmoothTime, 
+            Mathf.InverseLerp(maxPlayerDistanceFromCamera, 0, currentDistance));
+    
+        transform.position = Vector3.SmoothDamp(transform.position, cameraTargetPosition, 
+            ref velocity, dynamicSmoothTime);
+    }
+    
     private void UpdateCell(bool force)
     {
         var cellX = Mathf.FloorToInt(_playerPos.position.x / _camWidth);

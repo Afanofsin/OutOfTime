@@ -67,15 +67,12 @@ namespace ProjectFiles.Code.LevelGeneration
         private void CloseDoors()
         {
             //if (enemyCount == 0) return;
-            Debug.Log($"CloseDoors called in room {name}, doors count: {Doors.Count}");
             List<Direction> openDirs = new List<Direction>(4);
         
             foreach (var c in ConnectionPoints)
             {
-                Debug.Log($"{c.connectionState}");
                 if (c.connectionState == ConnectionState.Used)
                 {
-                    Debug.Log($"Used connector");
                     c.CoverCollider?.SetActive(true);
                     openDirs.Add(c.direction);
                 }
@@ -86,7 +83,6 @@ namespace ProjectFiles.Code.LevelGeneration
                 if (openDirs.Contains(door.Direction))
                 {
                     door.Close();
-                    Debug.Log($"Closing offf a {door.Direction}");
                 }
             }
         }
@@ -103,6 +99,7 @@ namespace ProjectFiles.Code.LevelGeneration
         public void OnPlayerEnteringRoom()
         {
             OnPlayerEnteredRoom?.Invoke();
+            if (enemyCount < 1) return;
             CloseDoors();
         }
 
@@ -306,16 +303,16 @@ public class ConnectionPoint
             case ConnectionState.Open:
             case ConnectionState.ClosedRandomly:
                 VisualCover.enabled = true;
-                CoverCollider?.SetActive(true);
+                CoverCollider.SetActive(true);
                 break;
             case ConnectionState.Used:
                 VisualCover.enabled = false;
-                CoverCollider?.SetActive(false);
+                CoverCollider.SetActive(false);
                 OnStateFinalized?.Invoke(this.direction);
                 break;
             default:
                 VisualCover.enabled = false;
-                CoverCollider?.SetActive(false);
+                CoverCollider.SetActive(false);
                 OnStateFinalized?.Invoke(this.direction);
                 break;
         }

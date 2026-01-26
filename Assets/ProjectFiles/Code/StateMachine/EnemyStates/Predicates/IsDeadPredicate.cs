@@ -1,16 +1,17 @@
 ﻿using DefaultNamespace;
+using Interfaces;
 
 namespace FSM.EnemyStates.Predicates
 {
     public class IsDeadPredicate : IPredicate
     {
-        private RangedEnemyBase enemy;
+        private IRangedEnemy enemy;
         
-        public IsDeadPredicate(RangedEnemyBase Enemy)
+        public IsDeadPredicate(IRangedEnemy Enemy)
         {
             enemy = Enemy;
         }
 
-        public bool Evaluate() => enemy.CurrentHealth <= 0;
+        public bool Evaluate() => false; //enemy.CurrentHealth <= 0;
     }
 }
