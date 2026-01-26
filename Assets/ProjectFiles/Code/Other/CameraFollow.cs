@@ -25,8 +25,9 @@ namespace ProjectFiles.Code.Other
             GameEvents.OnPlayerCreated -= GainPlayerReference;
         }
 
-        private void GainPlayerReference(Transform player)
+        private void GainPlayerReference(GameObject Player)
         {
+            var player = Player.transform;
             playerExists = true;
             playerTransform = player;
         }

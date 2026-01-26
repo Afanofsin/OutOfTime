@@ -27,19 +27,37 @@ public class ProjectilePool : MonoBehaviour
         return p;
     }
 
+    // public Projectile Get()
+    // {
+    //     if (_pool.Count == 0)
+    //         CreateNew();
+    //
+    //     return _pool.Dequeue();
+    // }
+    
     public Projectile Get()
     {
+        Projectile p;
         if (_pool.Count == 0)
-            CreateNew();
+            p = CreateNew();
+        else
+            p = _pool.Dequeue();
 
-        return _pool.Dequeue();
+        p.gameObject.SetActive(true);  // <--- activate immediately
+        return p;
     }
 
+    // public void Release(Projectile projectile)
+    // {
+    //     _pool.Enqueue(projectile);
+    // }
+    
     public void Release(Projectile projectile)
     {
+        projectile.gameObject.SetActive(false);  // deactivate
         _pool.Enqueue(projectile);
     }
-
+    
     public void SetPrefab(Projectile prefab)
     {
         this.prefab = prefab;

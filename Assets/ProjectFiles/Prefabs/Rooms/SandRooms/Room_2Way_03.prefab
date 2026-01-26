@@ -71,10 +71,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 693490407810777618}
     m_Modifications:
+    - target: {fileID: -7978219684664883334, guid: c93ff64ae301f0b4281b8141e6dba8cb, type: 3}
+      propertyPath: enemyToSpawn
+      value: 
+      objectReference: {fileID: -2749463286383384188, guid: 9d46e9fa93869594f9ce245b03a3103f, type: 3}
+    - target: {fileID: -7884027957662486200, guid: c93ff64ae301f0b4281b8141e6dba8cb, type: 3}
+      propertyPath: enemyToSpawn
+      value: 
+      objectReference: {fileID: -2749463286383384188, guid: 9d46e9fa93869594f9ce245b03a3103f, type: 3}
+    - target: {fileID: -7030683238488584333, guid: c93ff64ae301f0b4281b8141e6dba8cb, type: 3}
+      propertyPath: enemyToSpawn
+      value: 
+      objectReference: {fileID: -2749463286383384188, guid: 9d46e9fa93869594f9ce245b03a3103f, type: 3}
     - target: {fileID: -6412803342970474503, guid: c93ff64ae301f0b4281b8141e6dba8cb, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5486673233606293335, guid: c93ff64ae301f0b4281b8141e6dba8cb, type: 3}
+      propertyPath: enemyToSpawn
+      value: 
+      objectReference: {fileID: -2749463286383384188, guid: 9d46e9fa93869594f9ce245b03a3103f, type: 3}
     - target: {fileID: -87721485349470471, guid: c93ff64ae301f0b4281b8141e6dba8cb, type: 3}
       propertyPath: m_IsActive
       value: 1

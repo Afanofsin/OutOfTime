@@ -1,4 +1,5 @@
-﻿using ProjectFiles.Code.Controllers;
+﻿using Cysharp.Threading.Tasks;
+using ProjectFiles.Code.Controllers;
 using ProjectFiles.Code.Other;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,6 +19,8 @@ namespace FSM.GameStates
                 .Unload(SceneDatabase.Slots.MainMenu)
                 .WithOverlay()
                 .Perform();
+
+            await UniTask.WaitUntil(() => UIManager.Instance != null && UIManager.Instance.IsInitialized);
             await GameController.Instance.GenerateLevel();
         }
 

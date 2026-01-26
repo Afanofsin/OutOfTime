@@ -99,7 +99,8 @@ namespace ProjectFiles.Code.LevelGeneration
         public void OnPlayerEnteringRoom()
         {
             OnPlayerEnteredRoom?.Invoke();
-            if (enemyCount < 1) return;
+            var spawner = GetComponentInChildren<EnemySpawner>();
+            if (!spawner) return;
             CloseDoors();
         }
 

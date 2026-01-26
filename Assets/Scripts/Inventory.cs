@@ -1,4 +1,5 @@
 using System;
+using ProjectFiles.Code.Controllers;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -35,6 +36,10 @@ public class Inventory : MonoBehaviour
     {
         _currentSlot = 0;
         bandages = 0;
+    }
+
+    private void Start()
+    {
     }
     
     public WeaponBase Next()
@@ -147,8 +152,11 @@ public class Inventory : MonoBehaviour
         return inventorySlots[index].HeldItem;
     }
 
-    public void AddBandage(int amount) => bandages += amount;
-    
+    public void AddBandage(int amount)
+    {
+        bandages += amount;
+    }
+
     public void SubtractBandage() => bandages--;
     
 }

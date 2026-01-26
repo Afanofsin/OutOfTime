@@ -13,7 +13,7 @@ namespace FSM.EnemyStates.HobGoblin
             this.boss = boss;
         }
 
-        public void OnEnter()
+        public override void OnEnter()
         {
             Debug.Log("Boss Vulnerable State - Open for attacks!");
             boss.ResetStateTimer();
@@ -28,15 +28,15 @@ namespace FSM.EnemyStates.HobGoblin
             }
         }
 
-        public void Update()
+        public override void OnUpdate()
         {
             boss.FaceTarget();
             // Just wait, do nothing - vulnerable to attacks
         }
 
-        public void FixedUpdate() { }
+        public override void OnFixedUpdate() { }
 
-        public void OnExit()
+        public override void OnExit()
         {
             Debug.Log("Boss Vulnerable State Complete");
             boss.GetComponent<NavMeshAgent>().isStopped = false;

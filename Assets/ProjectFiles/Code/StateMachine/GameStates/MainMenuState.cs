@@ -2,6 +2,7 @@
 using ProjectFiles.Code.Other;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 namespace FSM.GameStates
 {
@@ -11,9 +12,8 @@ namespace FSM.GameStates
         private bool initial = false;
         public override void OnEnter()
         {
+            CoreManager.Instance.GoToMenu = false;
             MoveToPlay = false;
-            if (!initial)
-            {
                 Debug.Log("Not Initial Menu");
                 SceneController.Instance
                     .NewTransition()
@@ -22,16 +22,11 @@ namespace FSM.GameStates
                     .Unload(SceneDatabase.Slots.Session)
                     .WithOverlay()
                     .Perform();
-            }
-            Debug.Log("Initial Menu");
         }
 
         public override void OnUpdate()
         {
-            if (Keyboard.current.aKey.wasPressedThisFrame)
-            {
-                MoveToPlay = true;
-            }
+            InputSystem.onAnyButtonPress.CallOnce( _ => MoveToPlay = true);
         }
 
         public override void OnFixedUpdate()
@@ -43,11 +38,6 @@ namespace FSM.GameStates
         {
             Debug.Log("Menu exit");
             MoveToPlay = false;
-        }
-
-        public MainMenuState(bool Initial)
-        {
-            initial = Initial;
         }
     }
 }

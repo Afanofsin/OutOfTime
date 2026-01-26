@@ -116,7 +116,6 @@ namespace DefaultNamespace
                 }
             }
             
-            Debug.Log(CurrentState);
             stateMachine.Update();
         }
 
