@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OutOfTime/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerController/MoveRight.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerController/MoveRight.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerController/MoveUp.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerController/MoveUp.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerController/MoveUp.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerController/MoveUp.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerController/PlayerAnimation.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerController/PlayerAnimation.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestGoblinScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestGoblinScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sound/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sound/SoundManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="194c293b-0113-496f-9fdd-6ef3a4876cf9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
