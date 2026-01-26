@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 389ec78f8545fa542a191ca7bcbd4a30
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8226064270697141777
+    second: bloodbat-Sheet_0
+  - first:
+      213: -8556429545487484574
+    second: bloodbat-Sheet_1
+  - first:
+      213: -2707310299738580664
+    second: bloodbat-Sheet_2
+  - first:
+      213: 5078892625779149456
+    second: bloodbat-Sheet_3
+  - first:
+      213: -1062790840114435916
+    second: bloodbat-Sheet_4
+  - first:
+      213: 7183618706456616749
+    second: bloodbat-Sheet_5
+  - first:
+      213: -941173370226820584
+    second: bloodbat-Sheet_6
+  - first:
+      213: 3033454610315565274
+    second: bloodbat-Sheet_7
+  - first:
+      213: -648480936735067974
+    second: bloodbat-Sheet_8
+  - first:
+      213: -6913368978324018002
+    second: bloodbat-Sheet_9
+  - first:
+      213: -2151798642129231883
+    second: bloodbat-Sheet_10
+  - first:
+      213: -2931935609138648048
+    second: bloodbat-Sheet_11
+  - first:
+      213: 1541766314861759639
+    second: bloodbat-Sheet_12
+  - first:
+      213: -6666360589836163220
+    second: bloodbat-Sheet_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bloodbat-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 201
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe9609d112627dd80800000000000000
+      internalID: -8226064270697141777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 201
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 269bf8b89a4714980800000000000000
+      internalID: -8556429545487484574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 168
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849535750a3bd6ad0800000000000000
+      internalID: -2707310299738580664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 168
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09acaeb1fe9db7640800000000000000
+      internalID: 5078892625779149456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 135
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b8a070ac553041f0800000000000000
+      internalID: -1062790840114435916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 135
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f9230372751b360800000000000000
+      internalID: 7183618706456616749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 103
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81ab29b6ec740f2f0800000000000000
+      internalID: -941173370226820584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 103
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad8512a65eef81a20800000000000000
+      internalID: 3033454610315565274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 70
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab03b4a16022007f0800000000000000
+      internalID: -648480936735067974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 70
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eacaac5fa87ce00a0800000000000000
+      internalID: -6913368978324018002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 40
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff18b329864322e0800000000000000
+      internalID: -2151798642129231883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 40
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01ce8f8f81caf47d0800000000000000
+      internalID: -2931935609138648048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 9
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c8ff37b44756510800000000000000
+      internalID: 1541766314861759639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodbat-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 9
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67e62a0d545c73a0800000000000000
+      internalID: -6666360589836163220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bloodbat-Sheet_0: -8226064270697141777
+      bloodbat-Sheet_1: -8556429545487484574
+      bloodbat-Sheet_10: -2151798642129231883
+      bloodbat-Sheet_11: -2931935609138648048
+      bloodbat-Sheet_12: 1541766314861759639
+      bloodbat-Sheet_13: -6666360589836163220
+      bloodbat-Sheet_2: -2707310299738580664
+      bloodbat-Sheet_3: 5078892625779149456
+      bloodbat-Sheet_4: -1062790840114435916
+      bloodbat-Sheet_5: 7183618706456616749
+      bloodbat-Sheet_6: -941173370226820584
+      bloodbat-Sheet_7: 3033454610315565274
+      bloodbat-Sheet_8: -648480936735067974
+      bloodbat-Sheet_9: -6913368978324018002
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

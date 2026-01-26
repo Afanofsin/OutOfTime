@@ -11,7 +11,6 @@ namespace FSM.GameStates
         public override async void OnEnter()
         {
             MoveToPlay = false;
-            Debug.Log("FirstLevelLoading");
             await SceneController.Instance
                 .NewTransition()
                 .Load(SceneDatabase.Slots.Session, SceneDatabase.Scenes.Session)
@@ -20,7 +19,6 @@ namespace FSM.GameStates
                 .WithOverlay()
                 .Perform();
             await GameController.Instance.GenerateLevel();
-            Debug.Log("$$$$FirstLevelLoaded$$$$");
         }
 
         public override void OnUpdate()
@@ -38,7 +36,6 @@ namespace FSM.GameStates
 
         public override void OnExit()
         {
-            Debug.Log("Exiting First Level");
             MoveToPlay = false;
         }
 

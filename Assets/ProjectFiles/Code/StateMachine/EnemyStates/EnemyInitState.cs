@@ -1,7 +1,11 @@
-﻿namespace FSM.EnemyStates
+﻿using UnityEngine;
+
+namespace FSM.EnemyStates
 {
     public class EnemyInitState : BaseState
     {
+        private EnemyEntityBase enemy;
+        
         public override void OnEnter()
         {
             base.OnEnter();
@@ -19,7 +23,12 @@
 
         public override void OnExit()
         {
-            base.OnExit();
+            
+        }
+
+        public EnemyInitState(EnemyEntityBase Enemy)
+        {
+            enemy = Enemy;
         }
     }
 }

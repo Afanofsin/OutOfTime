@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 930ec7354d239a7428e4a3fe66af04cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1195448376506984021
+    second: SandBlob-Sheet_0
+  - first:
+      213: -7403719906236664762
+    second: SandBlob-Sheet_1
+  - first:
+      213: 9065665118671564779
+    second: SandBlob-Sheet_2
+  - first:
+      213: 7939486664077903242
+    second: SandBlob-Sheet_3
+  - first:
+      213: -7902434803968550580
+    second: SandBlob-Sheet_4
+  - first:
+      213: -6708923033575730020
+    second: SandBlob-Sheet_5
+  - first:
+      213: -7644070559790403153
+    second: SandBlob-Sheet_6
+  - first:
+      213: 8479329215597019520
+    second: SandBlob-Sheet_7
+  - first:
+      213: 6832841999011540673
+    second: SandBlob-Sheet_8
+  - first:
+      213: 2643919201597746493
+    second: SandBlob-Sheet_9
+  - first:
+      213: 3328277250824279164
+    second: SandBlob-Sheet_10
+  - first:
+      213: -5782694497938471816
+    second: SandBlob-Sheet_11
+  - first:
+      213: 8105158079300981446
+    second: SandBlob-Sheet_12
+  - first:
+      213: -2446736014837020324
+    second: SandBlob-Sheet_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SandBlob-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 194
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5562405f6f5179010800000000000000
+      internalID: 1195448376506984021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 194
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644764cc8f3b04990800000000000000
+      internalID: -7403719906236664762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 160
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef611bb466bfcd70800000000000000
+      internalID: 9065665118671564779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 160
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8580574e09be2e60800000000000000
+      internalID: 7939486664077903242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 127
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4955c82a69e45290800000000000000
+      internalID: -7902434803968550580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 127
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c94584edb0e15e2a0800000000000000
+      internalID: -6708923033575730020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 95
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1fbad635ecae590800000000000000
+      internalID: -7644070559790403153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 95
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08180450ff0aca570800000000000000
+      internalID: 8479329215597019520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 64
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cee37d989123de50800000000000000
+      internalID: 6832841999011540673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 64
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d611a718611b420800000000000000
+      internalID: 2643919201597746493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 33
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c741561968a603e20800000000000000
+      internalID: 3328277250824279164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 33
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87485cdfdfdbfbfa0800000000000000
+      internalID: -5782694497938471816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 2
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c25f15845e4b7070800000000000000
+      internalID: 8105158079300981446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SandBlob-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c590c70de827b0ed0800000000000000
+      internalID: -2446736014837020324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SandBlob-Sheet_0: 1195448376506984021
+      SandBlob-Sheet_1: -7403719906236664762
+      SandBlob-Sheet_10: 3328277250824279164
+      SandBlob-Sheet_11: -5782694497938471816
+      SandBlob-Sheet_12: 8105158079300981446
+      SandBlob-Sheet_13: -2446736014837020324
+      SandBlob-Sheet_2: 9065665118671564779
+      SandBlob-Sheet_3: 7939486664077903242
+      SandBlob-Sheet_4: -7902434803968550580
+      SandBlob-Sheet_5: -6708923033575730020
+      SandBlob-Sheet_6: -7644070559790403153
+      SandBlob-Sheet_7: 8479329215597019520
+      SandBlob-Sheet_8: 6832841999011540673
+      SandBlob-Sheet_9: 2643919201597746493
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

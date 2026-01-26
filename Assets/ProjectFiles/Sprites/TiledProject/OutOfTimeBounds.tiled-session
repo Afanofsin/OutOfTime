@@ -3,15 +3,205 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Maps/Room_4Way.tmx",
+    "activeFile": "Maps/01_BoonRoom.tmx",
     "expandedProjectPaths": [
+        ".",
+        "Tilesets",
         "Templates",
         "Maps",
-        "Tilesets",
-        "."
+        "Maps/Castle"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "Maps/01_BoonRoom.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 197.25,
+                "y": 122.25
+            }
+        },
+        "Maps/01_LootRoom.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 3,
+            "selectedLayer": 11,
+            "viewCenter": {
+                "x": 168,
+                "y": 168.16666666666666
+            }
+        },
+        "Maps/Castle/02_BoonRoom.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 208,
+                "y": 208.25
+            }
+        },
+        "Maps/Castle/02_LootRoom.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 208,
+                "y": 208.25
+            }
+        },
+        "Maps/Castle/02_Room_2Way_1.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 136,
+                "y": 103.75
+            }
+        },
+        "Maps/Castle/02_Room_2Way_2.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 284.66666666666663,
+                "y": 287
+            }
+        },
+        "Maps/Castle/02_Room_2Way_3.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 240.5,
+                "y": 218.25
+            }
+        },
+        "Maps/Castle/02_Room_2Way_4.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 254.66666666666663,
+                "y": 361
+            }
+        },
+        "Maps/Castle/02_Room_3Way_1.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 351.99999999999994,
+                "y": 287.6666666666667
+            }
+        },
+        "Maps/Castle/02_Room_3Way_2.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 259,
+                "y": 252.5
+            }
+        },
+        "Maps/Castle/02_Room_3Way_3.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 316.66666666666663,
+                "y": 385.66666666666663
+            }
+        },
+        "Maps/Castle/02_Room_3Way_4.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 311.99999999999994,
+                "y": 305
+            }
+        },
+        "Maps/Castle/02_Room_4Way_1.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 341.99999999999994,
+                "y": 317.6666666666667
+            }
+        },
+        "Maps/Castle/02_Room_4Way_2.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 217.5,
+                "y": 271.75
+            }
+        },
+        "Maps/Castle/02_Room_4Way_3.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 395.33333333333337,
+                "y": 256.33333333333326
+            }
+        },
+        "Maps/Castle/02_StartRoom.tmx": {
+            "scale": 3,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 213.99999999999997,
+                "y": 142.5
+            }
+        },
+        "Maps/Castle/template - Copy (10).tmx": {
+            "scale": 2.5590625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 159.82415435340093,
+                "y": 160.01953840517768
+            }
+        },
+        "Maps/Castle/template - Copy (8).tmx": {
+            "scale": 2.5590625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 159.82415435340093,
+                "y": 160.01953840517768
+            }
+        },
         "Maps/Room_01.tmx": {
             "expandedObjectLayers": [
                 9
@@ -19,49 +209,123 @@
             "scale": 2,
             "selectedLayer": 9,
             "viewCenter": {
-                "x": 160,
+                "x": 180,
+                "y": 129.75
+            }
+        },
+        "Maps/Room_2Way_1.tmx": {
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 240,
                 "y": 159.75
+            }
+        },
+        "Maps/Room_2Way_2.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 262.5,
+                "y": 277.75
+            }
+        },
+        "Maps/Room_2Way_3.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 369.33333333333337,
+                "y": 238.3333333333333
+            }
+        },
+        "Maps/Room_2Way_4.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 243,
+                "y": 280.75
             }
         },
         "Maps/Room_3Way_1.tmx": {
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 1.5,
+            "scale": 2,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 290.66666666666663,
-                "y": 166.33333333333334
+                "x": 226.5,
+                "y": 192.75
             }
         },
         "Maps/Room_3Way_2.tmx": {
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 1,
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 370.66666666666663,
+                "y": 315
+            }
+        },
+        "Maps/Room_3Way_3.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 2,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 240,
+                "y": 240.25
+            }
+        },
+        "Maps/Room_3Way_4.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.5,
             "selectedLayer": 9,
             "viewCenter": {
-                "x": 380,
-                "y": 357.5
+                "x": 318.66666666666663,
+                "y": 235
+            }
+        },
+        "Maps/Room_3Way_5.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 357,
+                "y": 232.5
             }
         },
         "Maps/Room_4Way.tmx": {
             "scale": 2,
-            "selectedLayer": 2,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 287,
-                "y": 248.25
+                "x": 264,
+                "y": 224.25
             }
         },
         "Maps/Room_4Way_2.tmx": {
             "expandedObjectLayers": [
                 9
             ],
-            "scale": 2,
+            "scale": 1,
             "selectedLayer": 8,
             "viewCenter": {
-                "x": 269,
-                "y": 259.75
+                "x": 16,
+                "y": 242.5
             }
         },
         "Maps/Room_4Way_3.tmx": {
@@ -69,10 +333,10 @@
                 9
             ],
             "scale": 2,
-            "selectedLayer": 0,
+            "selectedLayer": 8,
             "viewCenter": {
-                "x": 195,
-                "y": 210.75
+                "x": 160,
+                "y": 159.75
             }
         },
         "Maps/Room_4Way_4.tmx": {
@@ -82,8 +346,8 @@
             "scale": 3,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 136.33333333333331,
-                "y": 454.16666666666663
+                "x": 128,
+                "y": 240.16666666666663
             }
         },
         "Maps/TestMap.tmx": {
@@ -106,22 +370,39 @@
             }
         },
         "Maps/template.tmx": {
-            "scale": 2.5590625,
+            "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 147.3195750396874,
-                "y": 158.06569788740995
+                "x": 176.5,
+                "y": 159.75
             }
+        },
+        "Tilesets/Chests.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 11
         },
         "Tilesets/Doors.tsx": {
             "scaleInDock": 4,
             "scaleInEditor": 5.5
+        },
+        "Tilesets/Doors3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tilesets/Level3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "Tilesets/NewWalls.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 8
         },
         "Tilesets/SpriteSheetGeneral.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 5.5
         }
     },
+    "last.externalTilesetPath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Tilesets",
     "last.imagePath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Art",
     "last.objectTemplatePath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/Templates",
     "last.objectTypesPath": "D:/Unity/Projects/OutOfTime/Assets/ProjectFiles/Sprites/TiledProject/propertytypes.xml",
@@ -131,26 +412,29 @@
     "map.width": 20,
     "openFiles": [
         "Tilesets/SpriteSheetGeneral.tsx",
-        "Maps/TestMap.tmx",
         "Maps/template.tmx",
-        "Maps/Tester.tmx",
-        "Maps/Room_01.tmx",
-        "Maps/Room_4Way.tmx"
+        "Maps/Castle/02_LootRoom.tmx",
+        "Maps/Castle/02_BoonRoom.tmx",
+        "Maps/01_LootRoom.tmx",
+        "Maps/01_BoonRoom.tmx"
     ],
     "project": "OutOfTimeBounds.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "Maps/Room_4Way_4.tmx",
-        "Maps/Room_4Way_3.tmx",
-        "Maps/Room_4Way_2.tmx",
-        "Maps/Room_4Way.tmx",
-        "Maps/Room_01.tmx",
         "Tilesets/SpriteSheetGeneral.tsx",
-        "Maps/TestMap.tmx",
         "Maps/template.tmx",
-        "Maps/Tester.tmx",
-        "Tilesets/Doors.tsx"
+        "Maps/Castle/02_LootRoom.tmx",
+        "Maps/Castle/02_BoonRoom.tmx",
+        "Maps/01_LootRoom.tmx",
+        "Maps/01_BoonRoom.tmx",
+        "Maps/Castle/02_Room_2Way_4.tmx",
+        "Maps/Castle/02_Room_2Way_3.tmx",
+        "Maps/Castle/02_Room_2Way_2.tmx",
+        "Maps/Castle/02_Room_2Way_1.tmx",
+        "Maps/Castle/template - Copy (8).tmx",
+        "Maps/Castle/02_Room_4Way_2.tmx"
     ],
+    "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
         "height": 16,

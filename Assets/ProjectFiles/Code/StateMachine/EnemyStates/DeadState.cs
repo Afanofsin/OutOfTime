@@ -1,14 +1,15 @@
 ﻿using DefaultNamespace;
+using Interfaces;
 
 namespace FSM.EnemyStates
 {
     public class DeadState : BaseState
     {
-        private RangedEnemyBase enemy;
+        private EnemyEntityBase enemy;
         
         public override void OnEnter()
         {
-            enemy.OnDeath();
+            enemy.Die();
         }
 
         public override void OnUpdate()
@@ -26,7 +27,7 @@ namespace FSM.EnemyStates
             base.OnExit();
         }
 
-        public DeadState(RangedEnemyBase Enemy)
+        public DeadState(EnemyEntityBase Enemy)
         {
             enemy = Enemy;
         }

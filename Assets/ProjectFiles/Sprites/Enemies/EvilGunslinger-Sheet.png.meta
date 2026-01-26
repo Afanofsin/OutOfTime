@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 4d52ebc6534ad2743b708cc40f45cac2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8973359704381416224
+    second: EvilGunslinger-Sheet_0
+  - first:
+      213: -8504021694749380354
+    second: EvilGunslinger-Sheet_1
+  - first:
+      213: -7092849391942430500
+    second: EvilGunslinger-Sheet_2
+  - first:
+      213: 711029625846478329
+    second: EvilGunslinger-Sheet_3
+  - first:
+      213: -1333391399178308036
+    second: EvilGunslinger-Sheet_4
+  - first:
+      213: 5080484507416222511
+    second: EvilGunslinger-Sheet_5
+  - first:
+      213: -8934818985808420725
+    second: EvilGunslinger-Sheet_6
+  - first:
+      213: 6600256606384212222
+    second: EvilGunslinger-Sheet_7
+  - first:
+      213: -442668890769683776
+    second: EvilGunslinger-Sheet_8
+  - first:
+      213: 964565359899293771
+    second: EvilGunslinger-Sheet_9
+  - first:
+      213: -6103014245787452661
+    second: EvilGunslinger-Sheet_10
+  - first:
+      213: -3235211620237070056
+    second: EvilGunslinger-Sheet_11
+  - first:
+      213: -3754170736247420176
+    second: EvilGunslinger-Sheet_12
+  - first:
+      213: 5894038105272723067
+    second: EvilGunslinger-Sheet_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 193
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec9a8a44e8387380800000000000000
+      internalID: -8973359704381416224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 193
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef07f3a2355abf980800000000000000
+      internalID: -8504021694749380354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 161
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd01debbe03219d90800000000000000
+      internalID: -7092849391942430500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 161
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5bb517da51ed900800000000000000
+      internalID: 711029625846478329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c367a694697de7de0800000000000000
+      internalID: -1333391399178308036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 129
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b5b6fedb1818640800000000000000
+      internalID: 5080484507416222511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80297a9875210480800000000000000
+      internalID: -8934818985808420725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 97
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef8c4f1f962d89b50800000000000000
+      internalID: 6600256606384212222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca8e8c3df25bd9f0800000000000000
+      internalID: -442668890769683776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 65
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b48b1779513d26d00800000000000000
+      internalID: 964565359899293771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 33
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0bb0bce0ecbd4ba0800000000000000
+      internalID: -6103014245787452661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 33
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 811bd8a1c283a13d0800000000000000
+      internalID: -3235211620237070056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa4ec71b9186ebc0800000000000000
+      internalID: -3754170736247420176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilGunslinger-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b76a565cd64dbc150800000000000000
+      internalID: 5894038105272723067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EvilGunslinger-Sheet_0: -8973359704381416224
+      EvilGunslinger-Sheet_1: -8504021694749380354
+      EvilGunslinger-Sheet_10: -6103014245787452661
+      EvilGunslinger-Sheet_11: -3235211620237070056
+      EvilGunslinger-Sheet_12: -3754170736247420176
+      EvilGunslinger-Sheet_13: 5894038105272723067
+      EvilGunslinger-Sheet_2: -7092849391942430500
+      EvilGunslinger-Sheet_3: 711029625846478329
+      EvilGunslinger-Sheet_4: -1333391399178308036
+      EvilGunslinger-Sheet_5: 5080484507416222511
+      EvilGunslinger-Sheet_6: -8934818985808420725
+      EvilGunslinger-Sheet_7: 6600256606384212222
+      EvilGunslinger-Sheet_8: -442668890769683776
+      EvilGunslinger-Sheet_9: 964565359899293771
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: dd5a51400e0793c4d94ba66550e5cd5b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3151415575898279419
+    second: savedoffGuy-Sheet_0
+  - first:
+      213: -9219431394741040477
+    second: savedoffGuy-Sheet_1
+  - first:
+      213: 4653994915214233916
+    second: savedoffGuy-Sheet_2
+  - first:
+      213: -3787500252054997032
+    second: savedoffGuy-Sheet_3
+  - first:
+      213: -5596998394568912340
+    second: savedoffGuy-Sheet_4
+  - first:
+      213: -8131920338434454004
+    second: savedoffGuy-Sheet_5
+  - first:
+      213: 6962887559333646462
+    second: savedoffGuy-Sheet_6
+  - first:
+      213: -4561796332581290430
+    second: savedoffGuy-Sheet_7
+  - first:
+      213: 2414659834622214743
+    second: savedoffGuy-Sheet_8
+  - first:
+      213: 3411332391425222272
+    second: savedoffGuy-Sheet_9
+  - first:
+      213: -7632436379008985272
+    second: savedoffGuy-Sheet_10
+  - first:
+      213: -2889395633796615828
+    second: savedoffGuy-Sheet_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 160
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50233fa0b3ce344d0800000000000000
+      internalID: -3151415575898279419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 160
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aa406d3efffd0080800000000000000
+      internalID: -9219431394741040477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 128
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3191dba7bf469040800000000000000
+      internalID: 4653994915214233916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 128
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d73f897698107bc0800000000000000
+      internalID: -3787500252054997032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 96
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c22d9434d977352b0800000000000000
+      internalID: -5596998394568912340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 96
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e07d5798d952f80800000000000000
+      internalID: -8131920338434454004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 64
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e709111285521a060800000000000000
+      internalID: 6962887559333646462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 64
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24effcaa76e31b0c0800000000000000
+      internalID: -4561796332581290430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 33
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7528f008358928120800000000000000
+      internalID: 2414659834622214743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 33
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0862fa96cbc775f20800000000000000
+      internalID: 3411332391425222272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 847966a3d83241690800000000000000
+      internalID: -7632436379008985272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: savedoffGuy-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61fcffcafdc6e7d0800000000000000
+      internalID: -2889395633796615828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      savedoffGuy-Sheet_0: -3151415575898279419
+      savedoffGuy-Sheet_1: -9219431394741040477
+      savedoffGuy-Sheet_10: -7632436379008985272
+      savedoffGuy-Sheet_11: -2889395633796615828
+      savedoffGuy-Sheet_2: 4653994915214233916
+      savedoffGuy-Sheet_3: -3787500252054997032
+      savedoffGuy-Sheet_4: -5596998394568912340
+      savedoffGuy-Sheet_5: -8131920338434454004
+      savedoffGuy-Sheet_6: 6962887559333646462
+      savedoffGuy-Sheet_7: -4561796332581290430
+      savedoffGuy-Sheet_8: 2414659834622214743
+      savedoffGuy-Sheet_9: 3411332391425222272
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

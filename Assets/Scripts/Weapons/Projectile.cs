@@ -41,6 +41,8 @@ public class Projectile : SerializedMonoBehaviour
         _timer = 0f;
         trail.Clear();
         _direction = direction;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        gameObject.transform.rotation = Quaternion.Euler(0f, 0f, angle);
         gameObject.SetActive(true);
     }
 
@@ -57,6 +59,8 @@ public class Projectile : SerializedMonoBehaviour
             ReturnToPool();
         }
     }
+    
+    public void SetSpeed(float value) => speed = value;
     
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 4071b9df36fcdce43816266e690e72bb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8294892545600094705
+    second: Bosses_Pharaoh_Idle-Sheet_0
+  - first:
+      213: 892220453636400030
+    second: Bosses_Pharaoh_Idle-Sheet_1
+  - first:
+      213: -6639310051900485789
+    second: Bosses_Pharaoh_Idle-Sheet_2
+  - first:
+      213: 5623827508344467387
+    second: Bosses_Pharaoh_Idle-Sheet_3
+  - first:
+      213: 1305843500115450740
+    second: Bosses_Pharaoh_Idle-Sheet_4
+  - first:
+      213: 6020725701219710098
+    second: Bosses_Pharaoh_Idle-Sheet_5
+  - first:
+      213: -4676150646412262451
+    second: Bosses_Pharaoh_Idle-Sheet_6
+  - first:
+      213: 2100786563934649673
+    second: Bosses_Pharaoh_Idle-Sheet_7
+  - first:
+      213: 1048266283808477006
+    second: Bosses_Pharaoh_Idle-Sheet_8
+  - first:
+      213: 1703403871854526756
+    second: Bosses_Pharaoh_Idle-Sheet_9
+  - first:
+      213: 3576135787670952643
+    second: Bosses_Pharaoh_Idle-Sheet_10
+  - first:
+      213: 9092102816184784708
+    second: Bosses_Pharaoh_Idle-Sheet_11
+  - first:
+      213: -111153230073506123
+    second: Bosses_Pharaoh_Idle-Sheet_12
+  - first:
+      213: -1145533022704867488
+    second: Bosses_Pharaoh_Idle-Sheet_13
+  - first:
+      213: -9113138506681464788
+    second: Bosses_Pharaoh_Idle-Sheet_14
+  - first:
+      213: 7317805679520372509
+    second: Bosses_Pharaoh_Idle-Sheet_15
+  - first:
+      213: 5747457245377220589
+    second: Bosses_Pharaoh_Idle-Sheet_16
+  - first:
+      213: 936947894077352021
+    second: Bosses_Pharaoh_Idle-Sheet_17
+  - first:
+      213: 7567633724645593971
+    second: Bosses_Pharaoh_Idle-Sheet_18
+  - first:
+      213: -7998289557648638222
+    second: Bosses_Pharaoh_Idle-Sheet_19
+  - first:
+      213: 9161772029568714912
+    second: Bosses_Pharaoh_Idle-Sheet_20
+  - first:
+      213: 3425874079430708480
+    second: Bosses_Pharaoh_Idle-Sheet_21
+  - first:
+      213: -1740078476665655320
+    second: Bosses_Pharaoh_Idle-Sheet_22
+  - first:
+      213: 3784512229697210220
+    second: Bosses_Pharaoh_Idle-Sheet_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 239
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1878e62d06d1370800000000000000
+      internalID: 8294892545600094705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 239
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93e55086cdc16c00800000000000000
+      internalID: 892220453636400030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 239
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f8ac23fae6cd3a0800000000000000
+      internalID: -6639310051900485789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 239
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf21f09259db0e40800000000000000
+      internalID: 5623827508344467387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 191
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b52a4aeb94f1210800000000000000
+      internalID: 1305843500115450740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 191
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294f347402aed8350800000000000000
+      internalID: 6020725701219710098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 191
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc3426c23c9fa1fb0800000000000000
+      internalID: -4676150646412262451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 143
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94dfc3cdf3e772d10800000000000000
+      internalID: 2100786563934649673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 191
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f4c6491a03c8e00800000000000000
+      internalID: 1048266283808477006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 143
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4210ae2ebc4b3a710800000000000000
+      internalID: 1703403871854526756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 143
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca50bc3d8cf0a130800000000000000
+      internalID: 3576135787670952643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 143
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 447d50cd653ad2e70800000000000000
+      internalID: 9092102816184784708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 95
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6d4d5e9ba157ef0800000000000000
+      internalID: -111153230073506123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 95
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 067623ff8cf3a10f0800000000000000
+      internalID: -1145533022704867488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 95
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c284158cfc0a78180800000000000000
+      internalID: -9113138506681464788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 95
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17d52f7e711e8560800000000000000
+      internalID: 7317805679520372509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 47
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def4470d9e113cf40800000000000000
+      internalID: 5747457245377220589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 47
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558e78f3525b00d00800000000000000
+      internalID: 936947894077352021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 47
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37354cb07c2a50960800000000000000
+      internalID: 7567633724645593971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 47
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fef2a9260e500190800000000000000
+      internalID: -7998289557648638222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a88d87ae17252f70800000000000000
+      internalID: 9161772029568714912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 0
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d8fadf2562b8f20800000000000000
+      internalID: 3425874079430708480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 0
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef6a0548dff9d7e0800000000000000
+      internalID: -1740078476665655320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bosses_Pharaoh_Idle-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67493b52d9458430800000000000000
+      internalID: 3784512229697210220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bosses_Pharaoh_Idle-Sheet_0: 8294892545600094705
+      Bosses_Pharaoh_Idle-Sheet_1: 892220453636400030
+      Bosses_Pharaoh_Idle-Sheet_10: 3576135787670952643
+      Bosses_Pharaoh_Idle-Sheet_11: 9092102816184784708
+      Bosses_Pharaoh_Idle-Sheet_12: -111153230073506123
+      Bosses_Pharaoh_Idle-Sheet_13: -1145533022704867488
+      Bosses_Pharaoh_Idle-Sheet_14: -9113138506681464788
+      Bosses_Pharaoh_Idle-Sheet_15: 7317805679520372509
+      Bosses_Pharaoh_Idle-Sheet_16: 5747457245377220589
+      Bosses_Pharaoh_Idle-Sheet_17: 936947894077352021
+      Bosses_Pharaoh_Idle-Sheet_18: 7567633724645593971
+      Bosses_Pharaoh_Idle-Sheet_19: -7998289557648638222
+      Bosses_Pharaoh_Idle-Sheet_2: -6639310051900485789
+      Bosses_Pharaoh_Idle-Sheet_20: 9161772029568714912
+      Bosses_Pharaoh_Idle-Sheet_21: 3425874079430708480
+      Bosses_Pharaoh_Idle-Sheet_22: -1740078476665655320
+      Bosses_Pharaoh_Idle-Sheet_23: 3784512229697210220
+      Bosses_Pharaoh_Idle-Sheet_3: 5623827508344467387
+      Bosses_Pharaoh_Idle-Sheet_4: 1305843500115450740
+      Bosses_Pharaoh_Idle-Sheet_5: 6020725701219710098
+      Bosses_Pharaoh_Idle-Sheet_6: -4676150646412262451
+      Bosses_Pharaoh_Idle-Sheet_7: 2100786563934649673
+      Bosses_Pharaoh_Idle-Sheet_8: 1048266283808477006
+      Bosses_Pharaoh_Idle-Sheet_9: 1703403871854526756
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

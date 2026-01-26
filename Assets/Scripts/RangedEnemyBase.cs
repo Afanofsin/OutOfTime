@@ -10,33 +10,38 @@ namespace DefaultNamespace
 {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Rigidbody2D))]
-    public class RangedEnemyBase : EnemyEntityBase, IDamageable
+    public abstract class RangedEnemyBase : EnemyEntityBase, IDamageable
     {
         [Header("AI Settings")]
-        [SerializeField] private float attackRange = 8f;
-        [SerializeField] private float retreatDistance = 4f;
-        [SerializeField] private float strafeRadius = 2f;
-        [SerializeField] private float moveSpeed = 3f;
+        [SerializeField] protected float attackRange = 8f;
+        [SerializeField] protected float retreatDistance = 4f;
+        [SerializeField] protected float strafeRadius = 2f;
+        [SerializeField] protected float moveSpeed = 3f;
         
         [Header("Attack Settings")]
-        [SerializeField] private float attackCooldown = 1.5f;
+        public float attackCooldown = 1.5f;
+        [SerializeField] protected BulletType bulletType;
     
-        private NavMeshAgent agent;
-        private SpriteRenderer sprite;
-        private Rigidbody2D rb;
-        private StateMachine stateMachine;
-        private float lastAttackTime;
-        private bool isInitialized = false;
+        [SerializeField] public Animator animator;
+        
+        protected NavMeshAgent agent;
+        protected SpriteRenderer sprite;
+        protected Rigidbody2D rb;
+        protected StateMachine stateMachine;
+        protected float lastAttackTime;
+        protected bool isInitialized = false;
         
         // Public properties for predicates
         public float AttackRange => attackRange;
         public float RetreatDistance => retreatDistance;
+
+        public IState CurrentState => stateMachine.GetState();
         
-        private EnemyInitState initState;
-        private EngageState engageState;
-        private AttackState attackState;
-        private RetreatState retreatState;
-        private DeadState deadState;
+        /*protected EnemyInitState initState;
+        protected EngageState engageState;
+        protected AttackState attackState;
+        protected RetreatState retreatState;
+        protected DeadState deadState;*/
         
         public override void Awake()
         {
@@ -45,7 +50,7 @@ namespace DefaultNamespace
             // Setup components
             rb = GetComponent<Rigidbody2D>();
             agent = GetComponent<NavMeshAgent>();
-            sprite = GetComponent<SpriteRenderer>();
+            sprite = GetComponentInChildren<SpriteRenderer>();
         
             // Configure NavMeshAgent for 2D
             agent.updateRotation = false;
@@ -56,65 +61,78 @@ namespace DefaultNamespace
             InitializeStateMachine();
         }
 
-        private void InitializeStateMachine()
-        {
-            stateMachine = new StateMachine();
+        public abstract void InitializeStateMachine();
+        
+        /*stateMachine = new StateMachine();
 
             initState = new EnemyInitState();
             engageState = new EngageState(this);
             attackState = new AttackState(this);
             retreatState = new RetreatState(this);
             deadState = new DeadState(this);
-            
+
             var isDead = new IsDeadPredicate(this);
             var isTooClose = new IsTooClosePredicate(this);
             var isInAttackRange = new IsInAttackRangePredicate(this);
             var isTooFar = new IsTooFarPredicate(this);
-            
+
             stateMachine.AddAnyTransition(deadState, isDead);
-        
+
             stateMachine.AddTransition(initState, engageState, new FuncPredicate(
                     () => Target != null
                 ));
-            
+
             // Engage -> Attack (when in range)
             stateMachine.AddTransition(engageState, attackState, isInAttackRange);
-        
+
             // Attack -> Retreat (when too close)
             stateMachine.AddTransition(attackState, retreatState, isTooClose);
-        
+
             // Attack -> Engage (when too far)
             stateMachine.AddTransition(attackState, engageState, isTooFar);
-        
+
             // Retreat -> Attack (when back in attack range)
             stateMachine.AddTransition(retreatState, attackState, isInAttackRange);
-        
+
             // Retreat -> Engage (when far enough after retreating)
             stateMachine.AddTransition(retreatState, engageState, isTooFar);
-        
+
             // Start in Engage state (enemies are immediately aggroed)
-            stateMachine.SetState(initState);
-        }
+            stateMachine.SetState(initState);*/
         
-        private void Update()
+        protected virtual void Update()
         {
             if (Target == null || !isInitialized) return;
+            
+            if (animator != null)
+            {
+                if (agent.desiredVelocity.sqrMagnitude > 0.01f)
+                {
+                    animator.SetBool("IsRunning", true);
+                }
+                else
+                {
+                    animator.SetBool("IsRunning", false);
+                }
+            }
+            
+            Debug.Log(CurrentState);
             stateMachine.Update();
         }
 
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             if (Target == null || !isInitialized) return;
             stateMachine.FixedUpdate();
         }
         
-        public void MoveTowardsTarget()
+        public virtual void MoveTowardsTarget()
         {
             if (Target == null) return;
             agent.SetDestination(Target.transform.position);
         }
 
-        public void MoveAwayFromTarget()
+        public virtual void MoveAwayFromTarget()
         {
             if (Target == null) return;
             
@@ -124,7 +142,7 @@ namespace DefaultNamespace
             agent.SetDestination(retreatPosition);
         }
         
-        public void StrafeAroundTarget()
+        public virtual void StrafeAroundTarget()
         {
             if (Target == null) return;
         
@@ -140,26 +158,26 @@ namespace DefaultNamespace
             agent.SetDestination(strafePosition);
         }
         
-        public float GetDistanceToTarget()
+        public virtual float GetDistanceToTarget()
         {
             if (Target == null) return Mathf.Infinity;
             return Vector2.Distance(transform.position, Target.transform.position);
         }
 
-        public void FaceTarget()
+        public virtual void FaceTarget()
         {
             // To the Right
-            if (this.transform.position.x < Target.transform.position.x)
+            if (transform.position.x < Target.transform.position.x)
             {
-                sprite.flipX = true;
+                animator.SetBool("ShouldFlip", true);
             }
             else
             {
-                sprite.flipX = false;
+                animator.SetBool("ShouldFlip", false);
             }
         }
 
-        public void OnDeath()
+        public virtual void OnDeath()
         {
             agent.enabled = false;
             // Additional death logic here
@@ -178,7 +196,7 @@ namespace DefaultNamespace
         
         public override void React()
         {
-            
+            base.React();
         }
 
         public override void SetTarget(GameObject targetGo)
@@ -187,7 +205,7 @@ namespace DefaultNamespace
             isInitialized = true;
         }
 
-        public void TakeDamage(IReadOnlyDictionary<DamageType, float> damage)
+        public virtual void TakeDamage(IReadOnlyDictionary<DamageType, float> damage)
         {
             foreach (var damageKvp in damage)
             {
@@ -195,5 +213,13 @@ namespace DefaultNamespace
             }
             React();
         }
+
+
+        /*public void Attack()
+        {
+            var instance = PoolManager.Instance.projectilePools[bulletType].Get();
+            instance.Launch(Target.transform.position, 
+                new Dictionary<DamageType, float>() { { DamageType.Physical, 10f } });
+        }*/
     }
 }
